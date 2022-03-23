@@ -1,0 +1,75 @@
+package com.example.projectwork.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.crypto.Data;
+
+import org.hibernate.annotations.ManyToAny;
+
+@Entity
+@Table(name="prenotazioni")
+public class PrenotazioneEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private Date data_prenotazione;
+
+    @ManyToOne
+    @JoinColumn(name="id")
+    private UtenteEntity utente;
+    
+    @ManyToOne
+    @JoinColumn(name="id")
+    private VeicoloEntity veicolo;
+
+
+    public PrenotazioneEntity(){
+
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getData_prenotazione() {
+        return data_prenotazione;
+    }
+
+    public void setData_prenotazione(Date data_prenotazione) {
+        this.data_prenotazione = data_prenotazione;
+    }
+
+    public UtenteEntity getUtente() {
+        return utente;
+    }
+
+    public void setUtente(UtenteEntity utente) {
+        this.utente = utente;
+    }
+
+    public VeicoloEntity getVeicolo() {
+        return veicolo;
+    }
+
+    public void setVeicolo(VeicoloEntity veicolo) {
+        this.veicolo = veicolo;
+    }
+    
+
+
+    
+}
