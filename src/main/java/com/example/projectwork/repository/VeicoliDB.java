@@ -1,0 +1,11 @@
+package com.example.projectwork.repository;
+
+import com.example.projectwork.model.VeicoloEntity;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface VeicoliDB extends JpaRepository<VeicoloEntity,Integer> {
+    
+}
