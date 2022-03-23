@@ -17,4 +17,20 @@ public class VeicoloService {
     public List<VeicoloEntity> getVeicoli(){
         return vDB.findAll();
     }
-}
+    public List<VeicoloEntity> getVeicoloByCategoria(String categoria){
+		
+		return vDB.findByCategoria(categoria);
+	}
+
+    public List<VeicoloEntity> getVeicolocoloByDescrizione(String descrizione){
+		
+		return vDB.findByDescrizione(descrizione);
+    }
+        public List<VeicoloEntity> getVeicoloByIndirizzo(String indirizzo){
+		
+            return vDB.findByIndirizzo(indirizzo);
+        }
+	
+    
+    }
+
