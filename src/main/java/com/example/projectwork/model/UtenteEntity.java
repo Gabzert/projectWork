@@ -1,6 +1,7 @@
 package com.example.projectwork.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +34,7 @@ public class UtenteEntity {
     private List<PrenotazioneEntity> prenotazioni;
     public List<PrenotazioneEntity> getPrenotazioni(){
 		return prenotazioni;
+    }
     @JsonIgnore
     
 

@@ -1,9 +1,11 @@
 package com.example.projectwork.repository;
 
+import com.example.projectwork.model.UtenteEntity;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import it.es.projectWork.model.UtenteEntity;
+
 
 
 @Repository
