@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.projectwork.model.PrenotazioneEntity;
 import com.example.projectwork.repo.PrenotazioneDB;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 

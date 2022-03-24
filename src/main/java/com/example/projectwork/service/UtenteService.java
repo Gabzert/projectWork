@@ -17,4 +17,28 @@ public class UtenteService {
 	public List<UtenteEntity> getUtenti(){
 		return uDB.findAll();
 	}
+
+	public UtenteEntity login(UtenteEntity ut) throws Exception {
+		
+		List<UtenteEntity> lista = uDB.findAll(); 
+		
+		for (UtenteEntity utente : lista) {
+		
+			if(utente.getEmail().equals(ut.getEmail())) { 
+				
+				if(utente.getPassword().equals(ut.getPassword())) { 
+					
+					return utente;
+					
+				}
+			}
+			
+		}
+		
+		throw new Exception("Credenziali errate.");
+	}
+	
+
+}
+
 }
