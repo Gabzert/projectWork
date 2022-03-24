@@ -36,7 +36,7 @@ public class UtenteMVC {
 	
 	
 	@PostMapping("/login-utente") 
-	public String loginUtente(@ModelAttribute UtenteEntity utenteForm, Model model, HttpSession session, String chiamante) {
+	public String loginUtente(@ModelAttribute UtenteEntity utenteForm, Model model, HttpSession session) {
 		
 		try {
 			
@@ -44,7 +44,7 @@ public class UtenteMVC {
 			System.out.println("utente: " + utente);
 			session.setAttribute("utente", utente); 
 			
-			return "redirect:/"+chiamante;			
+			return "redirect:/"+session.getAttribute("chiamante");			
 			
 			
 		} catch(Exception e) {
