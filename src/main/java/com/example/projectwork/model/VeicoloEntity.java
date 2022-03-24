@@ -19,12 +19,22 @@ public class VeicoloEntity {
     private String alimentazione;
     private String indirizzo;
     private String gps;
-    private int disponibilita;
+    private boolean disponibilita;
     private String immagine;
     private String status;
+    private double prezzo;
+    
 
     public int getId() {
         return id;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
     }
 
     public void setId(int id) {
@@ -71,11 +81,11 @@ public class VeicoloEntity {
         this.gps = gps;
     }
 
-    public int getDisponibilita() {
+    public boolean getDisponibilita() {
         return disponibilita;
     }
 
-    public void setDisponibilita(int disponibilita) {
+    public void setDisponibilita(Boolean disponibilita) {
         this.disponibilita = disponibilita;
     }
 
@@ -97,10 +107,12 @@ public class VeicoloEntity {
 
     @Override
     public String toString() {
-        return "Veicolo [alimentazione=" + alimentazione + ", categoria=" + categoria + ", descrizione=" + descrizione
-                + ", disponibilita=" + disponibilita + ", gps=" + gps + ", id=" + id + ", immagine=" + immagine
-                + ", indirizzo=" + indirizzo + ", status=" + status + "]";
+        return "VeicoloEntity [alimentazione=" + alimentazione + ", categoria=" + categoria + ", descrizione="
+                + descrizione + ", disponibilita=" + disponibilita + ", gps=" + gps + ", id=" + id + ", immagine="
+                + immagine + ", indirizzo=" + indirizzo + ", prezzo=" + prezzo + ", status=" + status + "]";
     }
+
+  
 
     
 

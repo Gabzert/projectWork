@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name ="utente")
+@Table(name ="users")
 @Scope("Session")
 public class UtenteEntity {
     
