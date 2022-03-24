@@ -39,7 +39,20 @@ public class VeicoliREST {
 		return service.getVeicoloByIndirizzo(indirizzo);
 		
 	}
-
-
+	@GetMapping("alimentazione/{alimentazione}")
+	public List<VeicoloEntity> getByAlimentazione(@PathVariable("alimentazione") String alimentazione){
+		
+		return service.getVeicoloByAlimentazione(alimentazione);
+		
+	}
+	@GetMapping("/{min}/{max}")
+	public List<VeicoloEntity> getPrezzoRange(@PathVariable("min")double min, @PathVariable("max")double max){
+		return service.getRangePrezzo(min, max);
+	}
+	@GetMapping("/{id}")
+	public VeicoloEntity getVeicolo(@PathVariable("id") int id) {
+		
+		return service.getVeicolo(id);
+	}
 
 }

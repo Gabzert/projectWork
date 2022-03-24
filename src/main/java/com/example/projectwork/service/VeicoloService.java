@@ -30,7 +30,17 @@ public class VeicoloService {
 		
             return vDB.findByIndirizzo(indirizzo);
         }
-	
-    
+        public List<VeicoloEntity> getVeicoloByAlimentazione(String alimentazione){
+		
+            return vDB.findByAlimentazione(alimentazione);
+        }
+        public List<VeicoloEntity> getRangePrezzo(double min, double max){
+		
+            return vDB.findByPrezzoBetween(min, max);
+        }
+        public VeicoloEntity getVeicolo(int id) {
+		
+            return vDB.findById(id);
+        }
     }
 
