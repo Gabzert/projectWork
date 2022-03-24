@@ -1,0 +1,22 @@
+.login{
+    background-image: url("https://motori.ilgiornale.it/wp-content/uploads/2021/09/car_sharing_roma_polizia_penitenziaria.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: left center;
+  min-height: calc(100vh - 56px);
+  position: relative;
+}
+
+.card-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+}
+
+.bold{
+    font-weight: bold;
+}
