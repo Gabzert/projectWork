@@ -1,18 +1,18 @@
 /* OVERRIDE COLORI BOOTSTRAP  */
 .btn-primary {
-    background-color:#00B5E5;
-    border-color: #00B5E5;
+    background-color:#00e687;
+    border-color: #00e687;
 }
 
 .btn-primary:hover, .btn-primary:active {
     /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
-    background-color:#006b89;
-    border-color: #006b89;
+    background-color:#00995a;
+    border-color: #00995a;
 
 }
 
 .nav-link:hover {
-    color:#006b89;
+    color:#00995a;
 }
 
 .logo {
@@ -20,7 +20,7 @@
 }
 
 .nav-link {
-    color:#00B5E5;
+    color:#00e687;
 }
 
 
@@ -84,7 +84,7 @@
 }
 
 #mainFooter {
-    background:#1a52ee;
+    background:#00995a;
     color:black;
 }
 
