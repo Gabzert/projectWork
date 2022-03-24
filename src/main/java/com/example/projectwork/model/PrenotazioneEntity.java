@@ -20,6 +20,7 @@ public class PrenotazioneEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date data_prenotazione;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name="utente_id")
@@ -32,6 +33,16 @@ public class PrenotazioneEntity {
 
     public PrenotazioneEntity(){
 
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 
