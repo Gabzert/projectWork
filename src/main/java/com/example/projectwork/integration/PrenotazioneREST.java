@@ -2,7 +2,7 @@ package com.example.projectwork.integration;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
+
 
 import com.example.projectwork.model.PrenotazioneEntity;
 import com.example.projectwork.model.UtenteEntity;

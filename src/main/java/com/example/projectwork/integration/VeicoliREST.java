@@ -3,7 +3,7 @@ package com.example.projectwork.integration;
 import java.util.List;
 
 import com.example.projectwork.model.VeicoloEntity;
-import com.example.projectwork.repository.VeicoliDB;
+
 import com.example.projectwork.service.VeicoloService;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,5 @@
 package com.example.projectwork.integration;
 
-import java.io.IOException;
 
 import com.example.projectwork.model.UtenteEntity;
 import com.example.projectwork.model.VeicoloEntity;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;

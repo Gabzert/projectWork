@@ -85,11 +85,7 @@ public class VeicoloEntity {
         return disponibilita;
     }
 
-<<<<<<< HEAD
     public void setDisponibilita(Boolean disponibilita) {
-=======
-    public void setDisponibilita(boolean disponibilita) {
->>>>>>> b1e4a60ae11466ffe813e30af63c530512ed5635
         this.disponibilita = disponibilita;
     }
 
