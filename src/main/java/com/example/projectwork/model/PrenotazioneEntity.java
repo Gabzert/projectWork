@@ -2,6 +2,7 @@ package com.example.projectwork.model;
 
 import java.util.Date;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +22,11 @@ public class PrenotazioneEntity {
     private Date data_prenotazione;
 
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="utente_id")
     private UtenteEntity utente;
     
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="veicolo_id")
     private VeicoloEntity veicolo;
 
 
