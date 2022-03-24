@@ -19,7 +19,7 @@ public class VeicoloEntity {
     private String alimentazione;
     private String indirizzo;
     private String gps;
-    private int disponibilita;
+    private boolean disponibilita;
     private String immagine;
     private String status;
 
@@ -71,11 +71,11 @@ public class VeicoloEntity {
         this.gps = gps;
     }
 
-    public int getDisponibilita() {
+    public boolean getDisponibilita() {
         return disponibilita;
     }
 
-    public void setDisponibilita(int disponibilita) {
+    public void setDisponibilita(boolean disponibilita) {
         this.disponibilita = disponibilita;
     }
 
