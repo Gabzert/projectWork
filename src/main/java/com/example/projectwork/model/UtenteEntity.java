@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name ="utente")
+@Table(name ="users")
 @Scope("Session")
 public class UtenteEntity {
     
@@ -33,6 +33,7 @@ public class UtenteEntity {
     @OneToMany(mappedBy = "utente")
     @JsonIgnore
     private List<PrenotazioneEntity> prenotazioni;
+    
     public List<PrenotazioneEntity> getPrenotazioni(){
 		return prenotazioni;
     }
