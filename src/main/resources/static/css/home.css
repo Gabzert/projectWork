@@ -24,9 +24,9 @@
 }
 
 
-
 .hero {
-  font-family: 'Pacifico', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
 }
 
 .cta {
@@ -67,9 +67,19 @@
     height: auto;
 }
 
+.card-title {
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+}
+
+.list-group-item {
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+}
+
 #imageSpacer {
     height:30rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
-    background: url('https://source.unsplash.com/1920x600/?mainboard');
+    background: url('https://cutsrl.com/45607-home_default/new-tappeto-verde-acqua-da-4-mm-qualsiasi-dimensione-extra-grip-prezzo-al-metro-quadro.jpg');
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,8 +89,8 @@
 }
 
 #mainFooter {
-    background:#00B5E5;
-    color:#efefef;
+    background:#1a52ee;
+    color:black;
 }
 
 
