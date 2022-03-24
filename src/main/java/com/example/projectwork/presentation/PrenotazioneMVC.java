@@ -25,7 +25,7 @@ public class PrenotazioneMVC {
 
         }
 
-        return "redirect:/prenotazioni";
+        return "redirect:/api/prenotazioni";
 
     }
 }
