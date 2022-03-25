@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.Tuple;
 import javax.transaction.Transactional;
 
-import com.example.projectwork.DTO.DescrizioneDTO;
 import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.repository.VeicoliDB;
 

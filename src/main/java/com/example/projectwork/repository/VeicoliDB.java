@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VeicoliDB extends JpaRepository<VeicoloEntity,Integer> {
     
+    public VeicoloEntity findVeicoloById(int id);
 }

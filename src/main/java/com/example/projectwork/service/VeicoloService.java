@@ -1,6 +1,7 @@
 package com.example.projectwork.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.repository.VeicoliDB;
@@ -16,5 +17,9 @@ public class VeicoloService {
 
     public List<VeicoloEntity> getVeicoli(){
         return vDB.findAll();
+    }
+
+    public VeicoloEntity getVeicoloById(int id){
+        return vDB.findVeicoloById(id);
     }
 }

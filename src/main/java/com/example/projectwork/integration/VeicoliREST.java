@@ -28,6 +28,11 @@ public class VeicoliREST {
     public List<VeicoloEntity> getVeicoli(){
         return service.getVeicoli();
     }
+
+	@GetMapping("/location/{id}")
+	public VeicoloEntity getPositon(@PathVariable int id){
+		return service.getVeicoloById(id);
+	}
 /*
 	@PostMapping("/desc/{modello}")
 	public List<VeicoloEntity> getByDesc(@PathVariable String modello){

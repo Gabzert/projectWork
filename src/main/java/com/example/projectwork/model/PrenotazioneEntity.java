@@ -24,11 +24,11 @@ public class PrenotazioneEntity {
     private Date data_prenotazione;
 
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="utente_id")
     private UtenteEntity utente;
     
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="veicolo_id")
     private VeicoloEntity veicolo;
 
 
