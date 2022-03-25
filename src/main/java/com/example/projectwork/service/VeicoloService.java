@@ -15,35 +15,37 @@ public class VeicoloService {
     @Autowired
     VeicoliDB vDB;
 
-    public List<VeicoloEntity> getVeicoli(){
+    public List<VeicoloEntity> getVeicoli() {
         return vDB.findAll();
     }
 
-    public VeicoloEntity getVeicoloById(int id){
+    public VeicoloEntity getVeicoloById(int id) {
         return vDB.findVeicoloById(id);
     }
 
-    public List<VeicoloEntity> getVeicoloByCategoria(String categoria){
-		
-		return vDB.findByCategoria(categoria);
-	}
+    public List<VeicoloEntity> getVeicoloByCategoria(String categoria) {
 
-    public List<VeicoloEntity> getVeicolocoloByDescrizione(String descrizione){
-		
-		return vDB.findByDescrizione(descrizione);
+        return vDB.findByCategoria(categoria);
     }
-        public List<VeicoloEntity> getVeicoloByIndirizzo(String indirizzo){
-		
-            return vDB.findByIndirizzo(indirizzo);
-        }
-        public List<VeicoloEntity> getVeicoloByAlimentazione(String alimentazione){
-		
-            return vDB.findByAlimentazione(alimentazione);
-        }
-        public List<VeicoloEntity> getRangePrezzo(double min, double max){
-		
-            return vDB.findByPrezzoBetween(min, max);
-        }
+
+    public List<VeicoloEntity> getVeicolocoloByDescrizione(String descrizione) {
+
+        return vDB.findByDescrizione(descrizione);
+    }
+
+    public List<VeicoloEntity> getVeicoloByIndirizzo(String indirizzo) {
+
+        return vDB.findByIndirizzo(indirizzo);
+    }
+
+    public List<VeicoloEntity> getVeicoloByAlimentazione(String alimentazione) {
+
+        return vDB.findByAlimentazione(alimentazione);
+    }
+
+    public List<VeicoloEntity> getRangePrezzo(double min, double max) {
+
+        return vDB.findByPrezzoBetween(min, max);
+    }
 
 }
-
