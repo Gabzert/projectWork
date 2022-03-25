@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/veicoli")
-public class VeicoliREST {
+public class VeicoloREST {
 
 	@Autowired
 	VeicoloService service;
