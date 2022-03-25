@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import java.util.List;
 
-import com.example.projectwork.repository.VeicoliDB;
+import com.example.projectwork.repository.VeicoloDB;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ProjectworkApplicationTests {
 
 	@Autowired
-	VeicoliDB vecDB;
+	VeicoloDB vecDB;
 
 	@Test
 	@Transactional
