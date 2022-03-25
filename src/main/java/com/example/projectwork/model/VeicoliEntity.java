@@ -29,10 +29,6 @@ public class VeicoliEntity {
     private String gps;
     private String status;
 
-    @OneToMany(mappedBy = "veicolo")
-    private List<PrenotazioneEntity> prenotazioni;
-
-
     public int getId() {
         return id;
     }
