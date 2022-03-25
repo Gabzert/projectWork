@@ -41,11 +41,14 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 1rem;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                   Button                                   */
+/* -------------------------------------------------------------------------- */
 
-/* OVERRIDE COLORI BOOTSTRAP  */
 .btn-primary {
     background-color:#00e687;
     border-color: #00e687;
+    color: black;
 }
 
 .btn-primary:hover, .btn-primary:active {
@@ -108,7 +111,8 @@ h1, h2, h3, h4, h5, h6{
 
 #imageSpacer {
     height:30rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
-    background: url('https://cutsrl.com/45607-home_default/new-tappeto-verde-acqua-da-4-mm-qualsiasi-dimensione-extra-grip-prezzo-al-metro-quadro.jpg');
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(0,48,255,1) 100%);
 
     background-size: cover;
     background-repeat: no-repeat;
