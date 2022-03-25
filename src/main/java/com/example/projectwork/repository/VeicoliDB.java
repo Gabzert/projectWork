@@ -1,5 +1,7 @@
 package com.example.projectwork.repository;
 
+import java.util.List;
+
 import com.example.projectwork.model.VeicoloEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;

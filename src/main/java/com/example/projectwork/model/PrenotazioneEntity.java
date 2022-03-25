@@ -2,17 +2,15 @@ package com.example.projectwork.model;
 
 import java.util.Date;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.crypto.Data;
 
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name="prenotazioni")
@@ -22,6 +20,7 @@ public class PrenotazioneEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date data_prenotazione;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name="utente_id")
@@ -34,6 +33,16 @@ public class PrenotazioneEntity {
 
     public PrenotazioneEntity(){
 
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,16 +17,29 @@ public class VeicoloEntity {
     private int id;
 
     private String categoria;
-    private String descrizione;
+    
     private String alimentazione;
     private String indirizzo;
     private String gps;
     private boolean disponibilita;
     private String immagine;
     private String status;
+    private double prezzo;
+    
+    @OneToOne
+    @JoinColumn(name = "descrizione_id")
+    private DescrizioneEntity descrizione;
 
     public int getId() {
         return id;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
     }
 
     public void setId(int id) {
@@ -39,11 +54,13 @@ public class VeicoloEntity {
         this.categoria = categoria;
     }
 
-    public String getDescrizione() {
+    
+
+    public DescrizioneEntity getDescrizione() {
         return descrizione;
     }
 
-    public void setDescrizione(String descrizione) {
+    public void setDescrizione(DescrizioneEntity descrizione) {
         this.descrizione = descrizione;
     }
 
@@ -75,7 +92,7 @@ public class VeicoloEntity {
         return disponibilita;
     }
 
-    public void setDisponibilita(boolean disponibilita) {
+    public void setDisponibilita(Boolean disponibilita) {
         this.disponibilita = disponibilita;
     }
 
@@ -97,10 +114,12 @@ public class VeicoloEntity {
 
     @Override
     public String toString() {
-        return "Veicolo [alimentazione=" + alimentazione + ", categoria=" + categoria + ", descrizione=" + descrizione
-                + ", disponibilita=" + disponibilita + ", gps=" + gps + ", id=" + id + ", immagine=" + immagine
-                + ", indirizzo=" + indirizzo + ", status=" + status + "]";
+        return "VeicoloEntity [alimentazione=" + alimentazione + ", categoria=" + categoria + ", descrizione="
+                + descrizione + ", disponibilita=" + disponibilita + ", gps=" + gps + ", id=" + id + ", immagine="
+                + immagine + ", indirizzo=" + indirizzo + ", prezzo=" + prezzo + ", status=" + status + "]";
     }
+
+  
 
     
 
