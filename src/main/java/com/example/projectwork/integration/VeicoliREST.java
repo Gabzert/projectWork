@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.projectwork.model.VeicoloEntity;
-
+import com.example.projectwork.model.VeicoliEntity;
 import com.example.projectwork.service.VeicoloService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,54 +23,54 @@ public class VeicoliREST {
 	VeicoloService service;
 
 	@GetMapping("categoria/{categoria}")
-	public List<VeicoloEntity> getByCategoria(@PathVariable String categoria) {
+	public List<VeicoliEntity> getByCategoria(@PathVariable String categoria) {
 
 		return service.getVeicoloByCategoria(categoria);
 	}
 
 	@GetMapping("descrizione/{descrizione}")
-	public List<VeicoloEntity> getByDescrizione(@PathVariable String descrizione) {
+	public List<VeicoliEntity> getByDescrizione(@PathVariable String descrizione) {
 
 		return service.getVeicolocoloByDescrizione(descrizione);
 
 	}
 
 	@GetMapping("indirizzo/{indirizzo}")
-	public List<VeicoloEntity> getByIndirizzo(@PathVariable String indirizzo) {
+	public List<VeicoliEntity> getByIndirizzo(@PathVariable String indirizzo) {
 
 		return service.getVeicoloByIndirizzo(indirizzo);
 
 	}
 
 	@GetMapping("alimentazione/{alimentazione}")
-	public List<VeicoloEntity> getByAlimentazione(@PathVariable String alimentazione) {
+	public List<VeicoliEntity> getByAlimentazione(@PathVariable String alimentazione) {
 
 		return service.getVeicoloByAlimentazione(alimentazione);
 
 	}
 
 	@GetMapping("/{min}/{max}")
-	public List<VeicoloEntity> getPrezzoRange(@PathVariable double min, @PathVariable double max) {
+	public List<VeicoliEntity> getPrezzoRange(@PathVariable double min, @PathVariable double max) {
 		return service.getRangePrezzo(min, max);
 	}
 
     @GetMapping
-    public List<VeicoloEntity> getVeicoli(){
+    public List<VeicoliEntity> getVeicoli(){
         return service.getVeicoli();
     }
 
 	@GetMapping("/location/{id}")
-	public VeicoloEntity getPositon(@PathVariable int id){
+	public VeicoliEntity getPositon(@PathVariable int id){
 		return service.getVeicoloById(id);
 	}
 /*
 	@PostMapping("/desc/{modello}")
-	public List<VeicoloEntity> getByDesc(@PathVariable String modello){
+	public List<VeicoliEntity> getByDesc(@PathVariable String modello){
 
 		ObjectMapper mapper = service.getVeicoli();
 		
 
-		List<VeicoloEntity> veicoli = (List<VeicoloEntity>) obj.get("Students");
+		List<VeicoliEntity> veicoli = (List<VeicoliEntity>) obj.get("Students");
 		Object[] rentVeic = veicoli
     	.stream()
     	.filter(veicolo -> ((Map)veicolo).get("modello").equals(modello))

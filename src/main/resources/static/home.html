@@ -284,6 +284,30 @@
     })()
   </script>
 
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <script id="template-table" type="text/x-handlebars-template">
+    {{#each veicoli}}
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Modello: {{this.modello}}, Marca: {{this.marca}}</h5>
+          <p class="card-text">La citycar migliore di sempre è qui. Comoda ed agile è perfetta per l'utilizzo
+            urbano.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"></li>
+          <li class="list-group-item">{{this.alimentazione}}</li>
+          <li class="list-group-item">{{this.cilindrata}}</li>
+          <li class="list-group-item"></li>
+        </ul>
+        <div class="card-body">
+          <a class="nav-link active" href="veicolo.html"><button class="btn btn-primary">Prenota</button></a>
+        </div>
+    {{/each}}
+  </script>
+
+  <script src="js/handle.js"></script>
+
 </body>
 
 </html>
