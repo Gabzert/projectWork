@@ -9,10 +9,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VeicoliDB extends JpaRepository<VeicoloEntity,Integer> {
-     List<VeicoloEntity> findByCategoria(String categoria); 
-     List<VeicoloEntity> findByDescrizione(String descrizione);
-     List<VeicoloEntity> findByIndirizzo(String indirizzo);
-     List<VeicoloEntity> findByAlimentazione(String alimentazione);
-     List<VeicoloEntity> findByPrezzoBetween(double min, double max); 
-     VeicoloEntity findById (int id);
-    }
+
+    List<VeicoloEntity> findByCategoria(String categoria); 
+    List<VeicoloEntity> findByDescrizione(String descrizione);
+    List<VeicoloEntity> findByIndirizzo(String indirizzo);
+    List<VeicoloEntity> findByAlimentazione(String alimentazione);
+    List<VeicoloEntity> findByPrezzoBetween(double min, double max); 
+    
+    public VeicoloEntity findVeicoloById(int id);
+}

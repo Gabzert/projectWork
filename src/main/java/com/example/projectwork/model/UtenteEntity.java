@@ -33,6 +33,7 @@ public class UtenteEntity {
     @OneToMany(mappedBy = "utente")
     @JsonIgnore
     private List<PrenotazioneEntity> prenotazioni;
+    
     public List<PrenotazioneEntity> getPrenotazioni(){
 		return prenotazioni;
     }
