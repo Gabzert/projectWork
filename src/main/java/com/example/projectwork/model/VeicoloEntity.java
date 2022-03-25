@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +17,7 @@ public class VeicoloEntity {
     private int id;
 
     private String categoria;
-    private String descrizione;
+    
     private String alimentazione;
     private String indirizzo;
     private String gps;
@@ -24,6 +26,9 @@ public class VeicoloEntity {
     private String status;
     private double prezzo;
     
+    @OneToOne
+    @JoinColumn(name = "descrizione_id")
+    private DescrizioneEntity descrizione;
 
     public int getId() {
         return id;
@@ -49,11 +54,13 @@ public class VeicoloEntity {
         this.categoria = categoria;
     }
 
-    public String getDescrizione() {
+    
+
+    public DescrizioneEntity getDescrizione() {
         return descrizione;
     }
 
-    public void setDescrizione(String descrizione) {
+    public void setDescrizione(DescrizioneEntity descrizione) {
         this.descrizione = descrizione;
     }
 
