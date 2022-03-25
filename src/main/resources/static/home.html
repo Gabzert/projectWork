@@ -74,42 +74,37 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 px-3 py-3">
-        <img class="px-2" src="./IMG/SVG/Car.png" alt="">
+        <img class="px-2 mx-auto d-block" src="./IMG/SVG/Car.png" alt="">
         <div class="slideText">
           <h2>AUTO</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
         </div>
       </div>
       <div class="col-lg-3 px-3 py-3">
-        <img class="px-2" src="./IMG/SVG/Scooter.png" alt="">
+        <img class="px-2 mx-auto d-block" src="./IMG/SVG/Scooter.png" alt="">
         <div class="slideText">
           <h2>MONOPATTINO</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
         </div>
       </div>
       <div class="col-lg-3 px-3 py-3">
-        <img class="px-2" src="./IMG/SVG/Bike.png" alt="">
+        <img class="px-2 mx-auto d-block" src="./IMG/SVG/Bike.png" alt="">
         <div class="slideText">
           <h2>BICICLETTA</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
         </div>
       </div>
       <div class="col-lg-3 px-3 py-3">
-        <img class="px-2" src="./IMG/SVG/Motorcycle.png" alt="">
+        <img class="px-2 mx-auto d-block" src="./IMG/SVG/Motorcycle.png" alt="">
         <div class="slideText">
           <h2>MOTOVEICOLO</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <div class="row">
-      <div class="my-5">
-        <a class="nav-link active" aria-current="page" href="disponibilita.html">
-          <button class="btn btn-primary col-12">Tutti i veicoli</button>
+  
+      <div class="my-5 col-12 d-flex">
+        <a class="btn btn-primary mx-auto px-5" href="disponibilita.html">
+        Tutti i veicoli
         </a>
       </div>
     </div>
@@ -119,14 +114,30 @@
   <div id="contenitoreswiper1" class="container">
     <!-- Slider main container -->
     <h2>Auto</h2>
-    <div class="swiper container mt-4 mb-4">
+    <div class="swiperA">
       <!-- swiper è una classe per il carousel, container è una classe di BS -->
 
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide px-3 py-3">
-          <img class="px-2" src="https://source.unsplash.com/400x400/?cars" alt="">
+        <div class="swiper-slide">
+          <img src="https://source.unsplash.com/400x400/?cars" alt="">
+          <div class="slideText">
+            <h2>AUTO</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+            <button class="btn btn-primary">NOLEGGIA</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://source.unsplash.com/400x400/?car" alt="">
+          <div class="slideText">
+            <h2>AUTO</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+            <button class="btn btn-primary">NOLEGGIA</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://source.unsplash.com/400x400/?bike" alt="">
           <div class="slideText">
             <h2>AUTO</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
@@ -134,14 +145,14 @@
           </div>
         </div>
         <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination swiper-paginationA"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev swiper-button-prevA"></div>
+        <div class="swiper-button-next swiper-button-nextA"></div>
 
         <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <div class="swiper-scrollbar swiper-scrollbarA"></div>
       </div>
     </div>
   </div>
@@ -150,7 +161,7 @@
   <div id="contenitoreswiper2" class="container">
     <!-- Slider main container -->
     <h2>Moto</h2>
-    <div class="swiper container mt-4 mb-4">
+    <div class="swiperM container mt-4 mb-4">
       <!-- swiper è una classe per il carousel, container è una classe di BS -->
 
       <!-- Additional required wrapper -->
@@ -164,15 +175,31 @@
             <button class="btn btn-primary">NOLEGGIA</button>
           </div>
         </div>
+        <div class="swiper-slide px-3 py-3">
+          <img class="px-2" src="https://source.unsplash.com/400x400/?car" alt="">
+          <div class="slideText">
+            <h2>AUTO</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+            <button class="btn btn-primary">NOLEGGIA</button>
+          </div>
+        </div>
+        <div class="swiper-slide px-3 py-3">
+          <img class="px-2" src="https://source.unsplash.com/400x400/?bike" alt="">
+          <div class="slideText">
+            <h2>AUTO</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+            <button class="btn btn-primary">NOLEGGIA</button>
+          </div>
+        </div>
         <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+        <div class=" swiper-pagination swiper-paginationM"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev swiper-button-prevM"></div>
+        <div class="swiper-button-next swiper-button-nextM"></div>
 
         <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <div class="swiper-scrollbar swiper-scrollbarM"></div>
       </div>
     </div>
   </div>
@@ -313,7 +340,7 @@
   <!-- INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI -->
 
   <script>
-    const swiper = new Swiper('.swiper', {
+    const swiperA = new Swiper('.swiperA', {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
@@ -339,31 +366,62 @@
 
       // If we need pagination
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-paginationA',
+        type: 'bullets'
       },
 
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-nextA',
+        prevEl: '.swiper-button-prevA',
       },
 
       // And if we need scrollbar
       scrollbar: {
-        el: '.swiper-scrollbar',
+        el: '.swiper-scrollbarA',
       },
     });
-  </script>
+    const swiperM = new Swiper('.swiperM', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
+      spaceBetween: 10,
+      breakpoints: {
+        // when window width is >= 576
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        // when window width is >= 1200px
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20
+        }
+      },
 
-  <script>
-    //gestione off-canvas
-    (function () {
-      'use strict'
+      // If we need pagination
+      pagination: {
+        el: '.swiper-paginationM',
+        type: 'bullets'
+      },
 
-      document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
-        document.querySelector('.offcanvas-collapse').classList.toggle('open')
-      })
-    })()
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-nextM',
+        prevEl: '.swiper-button-prevM',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbarM',
+      },
+    });
   </script>
 
 </body>

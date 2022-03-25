@@ -81,9 +81,9 @@ h1, h2, h3, h4, h5, h6{
 /* -------------------------------------------------------------------------- */
 
 .swiper {
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
-.swiper-slide img {
+.swiper-slide img{
     width: 100%;
     height:auto;
 }
