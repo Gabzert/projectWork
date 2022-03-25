@@ -1,4 +1,4 @@
-package com.example.projectwork.repo;
+package com.example.projectwork.repository;
 
 import com.example.projectwork.model.PrenotazioneEntity;
 
