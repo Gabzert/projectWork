@@ -55,12 +55,6 @@ public class VeicoliREST {
 		return service.getRangePrezzo(min, max);
 	}
 
-	@GetMapping("/{id}")
-	public VeicoloEntity getVeicolo(@PathVariable("id") int id) {
-
-		return service.getVeicolo(id);
-	}
-
     @GetMapping
     public List<VeicoloEntity> getVeicoli(){
         return service.getVeicoli();

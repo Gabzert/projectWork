@@ -22,7 +22,7 @@ public class VeicoloService {
     public VeicoloEntity getVeicoloById(int id){
         return vDB.findVeicoloById(id);
     }
-}
+
     public List<VeicoloEntity> getVeicoloByCategoria(String categoria){
 		
 		return vDB.findByCategoria(categoria);
@@ -44,9 +44,6 @@ public class VeicoloService {
 		
             return vDB.findByPrezzoBetween(min, max);
         }
-        public VeicoloEntity getVeicolo(int id) {
-		
-            return vDB.findById(id);
-        }
-    }
+
+}
 
