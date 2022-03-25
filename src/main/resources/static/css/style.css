@@ -163,3 +163,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgb
 .card-pren:last-child{
     margin-bottom: 0rem;
 }
+
+#map{
+    height: 300px;
+}

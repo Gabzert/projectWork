@@ -2,6 +2,7 @@ package com.example.projectwork.model;
 
 import java.util.Date;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,18 +20,29 @@ public class PrenotazioneEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date data_prenotazione;
+    private String status;
 
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="utente_id")
     private UtenteEntity utente;
     
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="veicolo_id")
     private VeicoloEntity veicolo;
 
 
     public PrenotazioneEntity(){
 
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 
