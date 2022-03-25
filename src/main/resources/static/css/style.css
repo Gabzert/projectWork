@@ -151,4 +151,11 @@ h1, h2, h3, h4, h5, h6{
 /* -------------------------------------------------------------------------- */
 .utenteImg{
     padding: 2rem;
+    max-width: 100%;
+}
+.card-pren{
+    margin-bottom: 1rem;
+}
+.card-pren:last-child{
+    margin-bottom: 0rem;
 }
