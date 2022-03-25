@@ -2,19 +2,19 @@ package com.example.projectwork.repository;
 
 import java.util.List;
 
-import com.example.projectwork.model.VeicoliEntity;
+import com.example.projectwork.model.VeicoloEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface VeicoliDB extends JpaRepository<VeicoliEntity,Integer> {
+public interface VeicoliDB extends JpaRepository<VeicoloEntity,Integer> {
 
-    List<VeicoliEntity> findByCategoria(String categoria); 
-    List<VeicoliEntity> findByDescrizione(String descrizione);
-    List<VeicoliEntity> findByIndirizzo(String indirizzo);
-    List<VeicoliEntity> findByAlimentazione(String alimentazione);
-    List<VeicoliEntity> findByPrezzoBetween(double min, double max); 
+    List<VeicoloEntity> findByCategoria(String categoria); 
+    List<VeicoloEntity> findByDescrizione(String descrizione);
+    List<VeicoloEntity> findByIndirizzo(String indirizzo);
+    List<VeicoloEntity> findByAlimentazione(String alimentazione);
+    List<VeicoloEntity> findByPrezzoBetween(double min, double max); 
     
-    public VeicoliEntity findVeicoloById(int id);
+    public VeicoloEntity findVeicoloById(int id);
 }

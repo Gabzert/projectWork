@@ -28,7 +28,7 @@ public class PrenotazioneEntity {
     
     @ManyToOne
     @JoinColumn(name="veicolo_id")
-    private VeicoliEntity veicolo;
+    private VeicoloEntity veicolo;
 
 
     public PrenotazioneEntity(){
@@ -71,12 +71,12 @@ public class PrenotazioneEntity {
     }
 
 
-    public VeicoliEntity getVeicolo() {
+    public VeicoloEntity getVeicolo() {
         return veicolo;
     }
 
 
-    public void setVeicolo(VeicoliEntity veicolo) {
+    public void setVeicolo(VeicoloEntity veicolo) {
         this.veicolo = veicolo;
     }
 

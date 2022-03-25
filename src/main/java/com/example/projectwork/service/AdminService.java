@@ -2,7 +2,7 @@ package com.example.projectwork.service;
 
 import java.io.IOException;
 
-import com.example.projectwork.model.VeicoliEntity;
+import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.repository.VeicoliDB;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class AdminService {
     @Autowired
 	FileService fs;
 
-    public VeicoliEntity addVeicolo(VeicoliEntity veicolo, MultipartFile img) throws IOException,Exception{
+    public VeicoloEntity addVeicolo(VeicoloEntity veicolo, MultipartFile img) throws IOException,Exception{
         
         if(veicolo.getCategoria()  == null || veicolo.getAlimentazione() == null){
             throw new Exception("Errore inserimento dati");

@@ -2,7 +2,7 @@ package com.example.projectwork.integration;
 
 
 import com.example.projectwork.model.UtenteEntity;
-import com.example.projectwork.model.VeicoliEntity;
+import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.service.AdminService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class AdminREST {
     AdminService service;
 
     @PostMapping("/addVeicolo")
-    public ResponseEntity<VeicoliEntity> addVeicolo(@ModelAttribute VeicoliEntity veicolo, @SessionAttribute UtenteEntity utente,@RequestPart (name="file") MultipartFile file){
+    public ResponseEntity<VeicoloEntity> addVeicolo(@ModelAttribute VeicoloEntity veicolo, @SessionAttribute UtenteEntity utente,@RequestPart (name="file") MultipartFile file){
         try{
             if (!utente.getRuolo().equals("amministratore")){
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).build();

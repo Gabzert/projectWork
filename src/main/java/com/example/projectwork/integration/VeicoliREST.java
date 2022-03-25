@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.projectwork.model.VeicoliEntity;
+import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.service.VeicoloService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,44 +23,44 @@ public class VeicoliREST {
 	VeicoloService service;
 
 	@GetMapping("categoria/{categoria}")
-	public List<VeicoliEntity> getByCategoria(@PathVariable String categoria) {
+	public List<VeicoloEntity> getByCategoria(@PathVariable String categoria) {
 
 		return service.getVeicoloByCategoria(categoria);
 	}
 
 	@GetMapping("descrizione/{descrizione}")
-	public List<VeicoliEntity> getByDescrizione(@PathVariable String descrizione) {
+	public List<VeicoloEntity> getByDescrizione(@PathVariable String descrizione) {
 
 		return service.getVeicolocoloByDescrizione(descrizione);
 
 	}
 
 	@GetMapping("indirizzo/{indirizzo}")
-	public List<VeicoliEntity> getByIndirizzo(@PathVariable String indirizzo) {
+	public List<VeicoloEntity> getByIndirizzo(@PathVariable String indirizzo) {
 
 		return service.getVeicoloByIndirizzo(indirizzo);
 
 	}
 
 	@GetMapping("alimentazione/{alimentazione}")
-	public List<VeicoliEntity> getByAlimentazione(@PathVariable String alimentazione) {
+	public List<VeicoloEntity> getByAlimentazione(@PathVariable String alimentazione) {
 
 		return service.getVeicoloByAlimentazione(alimentazione);
 
 	}
 
 	@GetMapping("/{min}/{max}")
-	public List<VeicoliEntity> getPrezzoRange(@PathVariable double min, @PathVariable double max) {
+	public List<VeicoloEntity> getPrezzoRange(@PathVariable double min, @PathVariable double max) {
 		return service.getRangePrezzo(min, max);
 	}
 
     @GetMapping
-    public List<VeicoliEntity> getVeicoli(){
+    public List<VeicoloEntity> getVeicoli(){
         return service.getVeicoli();
     }
 
 	@GetMapping("/location/{id}")
-	public VeicoliEntity getPositon(@PathVariable int id){
+	public VeicoloEntity getPositon(@PathVariable int id){
 		return service.getVeicoloById(id);
 	}
 /*
