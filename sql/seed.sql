@@ -37,9 +37,8 @@ CREATE TABLE if not exists descrizioni (
   kw tinyint,
   peso smallint,
   cavalli tinyint,
-  trazione enum('anteriore','posteriore','integrale')
+  trazione enum('anteriore','posteriore','integrale'),
   cilindrata smallint
-
 );
 
 
