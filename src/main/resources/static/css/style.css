@@ -98,6 +98,16 @@ h1, h2, h3, h4, h5, h6{
 .sw-img{
     padding: 2rem 0rem;
 }
+
+.swiper-slide{
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+@media (max-width: 573.98px) {
+    .swiper-slide{
+        padding: 0rem 3rem 0rem 3rem;
+    }  
+}
 /* -------------------------------------------------------------------------- */
 /*                                   Servizi                                  */
 /* -------------------------------------------------------------------------- */
@@ -118,6 +128,12 @@ h1, h2, h3, h4, h5, h6{
 .list-group-item {
     font-family: 'Rubik', sans-serif;
     font-style: italic;
+}
+.hquote{
+    height: 30rem;
+}
+.blockquote p{
+    max-width: 80rem;
 }
 
 #imageSpacer {
