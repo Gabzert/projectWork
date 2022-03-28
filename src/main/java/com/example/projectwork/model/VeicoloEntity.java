@@ -28,7 +28,16 @@ public class VeicoloEntity {
     private String indirizzo;
     private String gps;
     private String status;
+    private String cambio;
 
+    
+
+    public String getCambio() {
+        return cambio;
+    }
+    public void setCambio(String cambio) {
+        this.cambio = cambio;
+    }
     public int getId() {
         return id;
     }

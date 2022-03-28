@@ -17,7 +17,7 @@
   <link rel="stylesheet" href=".\css\style.css">
 </head>
 
-<body>
+<body onload="getVeicoloById(1)">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="homepage.html">
@@ -45,30 +45,7 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <!-- img -->
-        <img src=".\IMG\png-clipart-audi-audi-removebg-preview.png" alt="">
-      </div>
-      <div class="col-4">
-        <div class="card mt-5">
-          <div class="card-body">
-            <h5 class="card-title">Nome Veicolo</h5>
-            <div class="card-text">
-              <ul class="list-unstyled">
-                <li>Car1</li>
-                <li>car2</li>
-                <li>car3</li>
-                <li>car4</li>
-              </ul>
-            </div>
-            <a href="#" class="btn btn-primary">Prenota</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="container" id="ouput-div"></div>
 
   <div id="map" class="container"></div>
 
@@ -103,5 +80,36 @@
 
   <script type="text/javascript" src="./js/maps.js"></script>
 </body>
+
+<script src="js/singleCarJs.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+<script id="template" type="text/x-handlebars-template">
+  {{#veico}}
+      <div class="row">
+      <div class="col">
+        <img src=".\IMG\png-clipart-audi-audi-removebg-preview.png" alt=""/>
+      </div>
+      <div class="col-4">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h5 class="card-title">{{marca}} {{modello}}</h5>
+            <div class="card-text">
+              <ul class="list-unstyled">
+                <li>Alimentazione: {{alimentazione}}</li>
+                <li>Trazione: {{trazione}}</li>
+                <li>Stato: {{status}}</li>
+                <li>Cambio: {{cambio}}</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary">Prenota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/veico}}
+</script>
+
 
 </html>

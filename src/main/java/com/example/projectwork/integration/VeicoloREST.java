@@ -56,6 +56,12 @@ public class VeicoloREST {
 	public VeicoloEntity getPositon(@PathVariable int id){
 		return service.getVeicoloById(id);
 	}
+
+
+	@GetMapping("/veicolo/{id}")
+	public VeicoloEntity getVeicoloById(@PathVariable int id){
+		return service.getVeicoloById(id);
+	}
 /*
 	@PostMapping("/desc/{modello}")
 	public List<VeicoliEntity> getByDesc(@PathVariable String modello){
