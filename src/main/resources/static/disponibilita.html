@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="getVeicoli()">
+<body onload="getVeicoliById('auto')">
 
 
   <div id="header">
@@ -51,6 +51,15 @@
         </div>
       </div>
     </nav>
+
+    <div class="container">
+      <div class="row d-flex">
+        <button class="btn btn-primary col-3" id="auto" onclick="getVeicoliById(this.id)">Auto</button>
+        <button class="btn btn-primary col-3" id="moto" onclick="getVeicoliById(this.id)">Moto</button>
+        <button class="btn btn-primary col-3" id="bici" onclick="getVeicoliById(this.id)">Bici</button>
+        <button class="btn btn-primary col-3" id="monopattino" onclick="getVeicoliById(this.id)">Monopattini</button>
+      </div>
+    </div>
 
 
     <div class="container" id="ouput-div1"></div>
@@ -118,7 +127,7 @@
       {{/each}}
   </script>
 
-  <script src="js/handle.js"></script>
+  <script src="js/handleId.js"></script>
 
 </body>
 

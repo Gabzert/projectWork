@@ -79,6 +79,8 @@ async function getVeicoli(){
 }
 
 
+
+
 function handle(idTemplate, idOutput, context) {			
 			
     let templateScript = document.getElementById(idTemplate).innerHTML;
