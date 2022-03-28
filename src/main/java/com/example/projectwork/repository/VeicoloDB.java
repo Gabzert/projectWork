@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface VeicoloDB extends JpaRepository<VeicoloEntity,Integer> {
 
     List<VeicoloEntity> findByCategoria(String categoria); 
-    List<VeicoloEntity> findByDescrizione(String descrizione);
     List<VeicoloEntity> findByIndirizzo(String indirizzo);
     List<VeicoloEntity> findByAlimentazione(String alimentazione);
     List<VeicoloEntity> findByPrezzoBetween(double min, double max); 

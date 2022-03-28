@@ -34,11 +34,6 @@ public class VeicoloService {
         return vDB.findByIndirizzo(indirizzo);
     }
 
-    public List<VeicoloEntity> getVeicolocoloByDescrizione(String descrizione) {
-
-        return vDB.findByDescrizione(descrizione);
-    }
-
     public List<VeicoloEntity> getVeicoloByAlimentazione(String alimentazione) {
 
         return vDB.findByAlimentazione(alimentazione);

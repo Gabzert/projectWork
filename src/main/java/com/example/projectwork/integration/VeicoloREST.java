@@ -28,13 +28,6 @@ public class VeicoloREST {
 		return service.getVeicoloByCategoria(categoria);
 	}
 
-	@GetMapping("descrizione/{descrizione}")
-	public List<VeicoloEntity> getByDescrizione(@PathVariable String descrizione) {
-
-		return service.getVeicolocoloByDescrizione(descrizione);
-
-	}
-
 	@GetMapping("indirizzo/{indirizzo}")
 	public List<VeicoloEntity> getByIndirizzo(@PathVariable String indirizzo) {
 
