@@ -11,14 +11,38 @@ let hb_old = null;
 function editPrenotazione(event){
 	let originator = event.currentTarget;
 	let prenotazione_id = originator.getAttribute('data-prenotazione-id');
-	let prenotazione_veicolo = originator.getAttribute('data-prenotazione-veicolo');
-	let prenotazione_data = originator.getAttribute('data-prenotazione-data');
+	let slot_veicolo =document.querySelector(".card-title[data-prenotazione-id="+prenotazione_id+"]") ;
+	let slot_data = document.querySelector(".card-header[data-prenotazione-id="+prenotazione_id+"]") ;
+	let prenotazione_veicolo = slot_veicolo.innerHTML;
+	let prenotazione_data = slot_data.innerHTML;
 	
-		document.getElementById("input_id").value = prenotazione_id;
-		document.getElementById("input_veicolo").value = prenotazione_veicolo;
-		document.getElementById("input_data").value = prenotazione_data;
 		
-		prenotazioneModal.show();
+		let dd = document.createElement('select');
+		dd.id ="dropdownVeicoli"
+		slot_veicolo.replaceWith(dd);
+		fetch("http://localhost:8080/api/veicoli")
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(json) {
+			for(let li=0; li<json.length; li++){
+				let opzione =document.createElement("option");
+				opzione.text =json.data[li].modello;
+				dd.appendChild(opzione);
+			}
+		})
+		for (let i = 0; i < dd.options.length; i++) {
+		if (dd.options[i].text === prenotazione_veicolo) {
+			dd.selectedIndex = i;
+			break;
+			}
+		}	
+
+		let data_select = document.createElement("input");
+		data_select.setAttribute("type", "date");
+		slot_data.replaceWith(data_select);
+		data_select.value = prenotazione_data;
+	
 	}
 
 
@@ -26,36 +50,17 @@ function editPrenotazione(event){
 
 function salvaModifiche(event){
 	let originator = event.currentTarget;
-	
-	
+/*	
+	fetch(url+"/editPrenotazione/"+
 	let prenotazione_id = document.getElementById("input_id").value;
 	let prenotazione_veicolo = document.getElementById("input_veicolo").value;
 	let prenotazione_data = document.getElementById("input_data").value;
 	
+	)
+*/	
+	refreshPrenotazioni();
 
-
-
-	/*	fetch(url+""+encodeURIComponent(prenotazione_id)
-			+"&prenotazione="+encodeURIComponent(prenotazione.trim())
-			
-		.then(function(response) {
-			return response.json();
-		})
-		.then(function(json) {
-				
-				
-
-				if(json.result !== 0){
-					alert("Error "+json.result+" in editprenotazione: "+json.message);
-				}
-				refreshPrenotazioni();
-			
-		})
-		.catch(function(err) { 
-				alert(err);
-				console.log('Failed to fetch page: ', err);
-		})	
-		*/
+	
 }
 
 function deletePrenotazione(event){

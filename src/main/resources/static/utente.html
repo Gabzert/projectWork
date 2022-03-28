@@ -112,9 +112,9 @@
       <div class="row">
         <div id="now" class="col-12 card-pren">
           <div class="card border border-success border-3">
-            <h5 class="card-header" data>{{this.data_prenotazione}}</h5>
+            <h5 class="card-header" data-prenotazione-id="{{this.id}}" >{{this.data_prenotazione}}</h5>
             <div class="card-body">
-              <h5 class="card-title">{{this.veicolo}}</h5>
+              <h5 class="card-title" data-prenotazione-id="{{this.id}}">{{this.veicolo}}</h5>
               <p class="card-text">{{this.prezzo}}</p>
               <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Modifica</button>
               <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Cancella</button>
