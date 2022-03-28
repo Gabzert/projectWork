@@ -3,7 +3,10 @@
 /* -------------------------------------------------------------------------- */
 /*                                    font                                    */
 /* -------------------------------------------------------------------------- */
-
+.font{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+}
 body{
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
@@ -61,6 +64,9 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.nav-link .bg-primary{
+    color:#00e687;
+}
 .nav-link:hover {
     color:#00995a;
 }
@@ -69,9 +75,6 @@ h1, h2, h3, h4, h5, h6{
     width: 10rem;
 }
 
-.nav-link {
-    color:#00e687;
-}
 
 
 .hero {
@@ -83,7 +86,7 @@ h1, h2, h3, h4, h5, h6{
 /*                                   Swiper                                   */
 /* -------------------------------------------------------------------------- */
 
-.swiper {
+.swiper{
   /* padding-bottom: 3rem; */
 }
 .swiper-slide img{
@@ -138,14 +141,18 @@ h1, h2, h3, h4, h5, h6{
 
 #imageSpacer {
     height:15rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(0,48,255,1) 100%);
-
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(2,0,36,1) 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
 
+}
+
+.greenbg{
+    border-radius: 0.6rem;
+    background: #00e687;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -198,5 +205,5 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgb
 /*                                    Mappa                                   */
 /* -------------------------------------------------------------------------- */
 #map{
-    height: 180px;
+    height: 400px;
 }
