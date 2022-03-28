@@ -18,6 +18,9 @@ h1, h2, h3, h4, h5, h6{
 .italic{
     font-style: italic;
 }
+.white{
+    color: #efefef;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                    Login                                   */
@@ -48,7 +51,7 @@ h1, h2, h3, h4, h5, h6{
 .btn-primary {
     background-color:#00e687;
     border-color: #00e687;
-    color: black;
+    color: #3d3e3f;
 }
 
 .btn-primary:hover, .btn-primary:active {
@@ -81,9 +84,9 @@ h1, h2, h3, h4, h5, h6{
 /* -------------------------------------------------------------------------- */
 
 .swiper {
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
-.swiper-slide img {
+.swiper-slide img{
     width: 100%;
     height:auto;
 }
@@ -92,8 +95,26 @@ h1, h2, h3, h4, h5, h6{
     width:1rem;
     height:1rem;
 }
+.sw-img{
+    padding: 2rem 0rem;
+}
 
+.swiper-slide{
+    padding: 0rem 1rem 0rem 1rem;
+}
 
+@media (max-width: 573.98px) {
+    .swiper-slide{
+        padding: 0rem 3rem 0rem 3rem;
+    }  
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Servizi                                  */
+/* -------------------------------------------------------------------------- */
+
+.serv-svg{
+   background-color: #3d3e3f;
+}
 .serviziImg img {
     width: 100%;
     height: auto;
@@ -108,9 +129,15 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Rubik', sans-serif;
     font-style: italic;
 }
+.hquote{
+    height: 30rem;
+}
+.blockquote p{
+    max-width: 80rem;
+}
 
 #imageSpacer {
-    height:30rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
+    height:15rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(0,48,255,1) 100%);
 
@@ -127,7 +154,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgb
 
 #mainFooter {
     background:#00e687;
-    color:black;
+    color:#3d3e3f;
 }
 
 
@@ -149,6 +176,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgb
     color: #efefef;
     
 }
+.square{
+    min-height: 15rem;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   Utente                                   */
@@ -164,6 +194,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgb
     margin-bottom: 0rem;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                    Mappa                                   */
+/* -------------------------------------------------------------------------- */
 #map{
-    height: 300px;
+    height: 180px;
 }
