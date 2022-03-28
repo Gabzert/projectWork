@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUVT Home</title>
+  <title>Home Project Work</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel=" preconnect" href="https://fonts.googleapis.com">
+  <link href="<link rel=" preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -46,7 +46,7 @@
             </li>
             <li class="nav-item ">
               <a class="nav-link active" aria-current="page" href="utente.html"><button class="btn">Profilo</button></a>
-            </li>
+          </li>
           </ul>
         </div>
       </div>
@@ -56,7 +56,7 @@
 
 
   <div id="hero">
-    <div class="container-fluid ml-0 px-0 frontimg">
+    <div class="container-fluid ml-0 mb-5 px-0 frontimg">
       <img src=".\IMG\van-side-view-mockup-cro.png" alt="hero" width="100%">
       <ul class="centered px-0">
         <li>
@@ -66,281 +66,97 @@
         <button type="button" class="btn btn-primary">Bottone</button>
       </ul>
     </div>
-  </div>
 
-  <div class="container-fluid serv-svg mt-0 pt-5">
+
+    <div id="hero">
+
+      <!-- Slider main container -->
+      <div class="swiper container mt-4 mb-4">
+        <!-- swiper è una classe per il carousel, container è una classe di BS -->
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide px-3 py-3">
+            <img class="px-2"src="./IMG/SVG/Car.png" alt="">
+            <div class="slideText">
+              <h2>AUTO</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+              <button class="btn btn-primary">NOLEGGIA</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide px-3 py-3">
+            <img class="px-2"src="./IMG/SVG/Scooter.png" alt="">
+            <div class="slideText">
+              <h2>MONOPATTINO</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+              <button class="btn btn-primary">NOLEGGIA</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide px-3 py-3">
+            <img class="px-2"src="./IMG/SVG/Bike.png" alt="">
+            <div class="slideText">
+              <h2>BICICLETTA</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+              <button class="btn btn-primary">NOLEGGIA</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide px-3 py-3">
+            <img class="px-2"src="./IMG/SVG/Motorcycle.png" alt="">
+            <div class="slideText">
+              <h2>MOTOVEICOLO</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+              <button class="btn btn-primary">NOLEGGIA</button>
+            </div>
+          </div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+    </div>
+
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 px-3 py-3">
-          <div class="square position-relative mb-5"><img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Carverde.svg" alt=""></div>
-          <div class="slideText">
-            <h2 class="white">AUTO</h2>
-            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.targetmotori.com/wp-content/uploads/2021/04/Panda-City-Life-8-1024x683.jpg"
+              class="img-fluid rounded-start" alt="panda">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">FIAT PANDA</h5>
+              <p class="card-text">La citycar migliore di sempre è qui. Comoda ed agile è perfetta per l'utilizzo
+                urbano.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">Motore: 1.0 FireFly 70Cv S&S Hybrid Cross</li>
+              <li class="list-group-item">Auto</li>
+              <li class="list-group-item"></li>
+            </ul>
+            <div class="card-body">
+              <a class="nav-link active" href="veicolo.html"><button class="btn btn-primary">Prenota</button></a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-3 px-3 py-3">
-          <div class="square position-relative mb-5"><img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Scooter.svg" alt=""></div>
-          <div class="slideText">
-            <h2 class="white">MONOPATTINO</h2>
-            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          </div>
-        </div>
-        <div class="col-lg-3 px-3 py-3">
-          <div class="square position-relative mb-5"><img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Bike.svg" alt=""></div>
-          <div class="slideText">
-            <h2 class="white">BICICLETTA</h2>
-            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          </div>
-        </div>
-        <div class="col-lg-3 px-3 py-3">
-          <div class="square position-relative mb-5"><img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Motorcycle.svg" alt=""></div>
-          <div class="slideText">
-            <h2 class="white">MOTOVEICOLO</h2>
-            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          </div>
-        </div>
-        <div class="my-5 col-12 d-flex">
-          <a class="btn btn-primary col-lg-6 mx-auto px-5" href="disponibilita.html">
-            Tutti i veicoli
-          </a>
-        </div>
       </div>
     </div>
-
-    
   </div>
-  
-  <div id="quote" class="hquote position-relative">
-    <div class="position-absolute top-50 start-50 translate-middle">
-      <figure  class="text-center">
-        <blockquote class="blockquote fst-italic fs-1">
-        <p>“La vita è come andare in bicicletta: se vuoi stare in equilibrio devi muoverti.”</p>
-        </blockquote>
-        <figcaption class="blockquote-footer fs-5">
-          ALBERT EINSTEIN
-        </figcaption>
-    </div>
-    </figure>
   </div>
 
-  <hr class="mt-0">
-
-  <div id="sw1" class="swiper container mb-5">
-    <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">MOTO</h2>
-
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?motorbike" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?motorcicle" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?enduro" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?honda" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-    </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
-
-<hr class="mt-0">
-
-  <div id="sw2" class="swiper container mb-5">
-    <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">MONOPATTINI</h2>
-
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?kickscooter" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?ninebot" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?ostrich" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?m365" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-    </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
-<hr class="mt-0">
-  <div id="sw3" class="swiper container mb-5">
-    <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">AUTO</h2>
-
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cars" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?car" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?porche" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-    </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
-<hr class="mt-0">
-  <div id="sw4" class="swiper container mb-5">
-    <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">BICICLETTE</h2>
-
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-3">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?Bianchi" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?specilized" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?gravel-bike" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-    </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
-<hr>
-  <div class="container mb-5">
-    <canvas id="myChart"></canvas>
-  </div>
 
   <div id="imageSpacer"></div>
 
@@ -404,60 +220,9 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
-
-  <!-- ----------------------------------------------------------------------- -->
-  <!--                             script tabella                              -->
-  <!-- ----------------------------------------------------------------------- -->
-
-  <script>
-    const CHART_COLORS = {
-  red: 'rgb(255, 99, 132)',
-  orange: 'rgb(255, 159, 64)',
-  yellow: 'rgb(255, 205, 86)',
-  green: 'rgb(75, 192, 192)',
-  blue: 'rgb(54, 162, 235)',
-  purple: 'rgb(153, 102, 255)',
-  grey: 'rgb(201, 203, 207)'
-};
-    const data = {
-      labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: Object.values(CHART_COLORS),
-        data: [15, 10, 15, 20, 40],
-      }]
-    };
-  
-    const config = {
-  type: 'pie',
-  data: data,
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Risparmiamo co2 Siamo troppo ecologici'
-      }
-    }
-  },
-};
-
-  </script>
-
-  <script>
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script>
-
 
   <!-- IMPORTO JS PER SWIPER -->
 
@@ -471,22 +236,22 @@
       direction: 'horizontal',
       loop: true,
       slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
-      spaceBetween: 0,
+      spaceBetween: 10,
       breakpoints: {
         // when window width is >= 576
         576: {
           slidesPerView: 2,
-          spaceBetween: 0
+          spaceBetween: 20
         },
         // when window width is >= 768px
         768: {
           slidesPerView: 3,
-          spaceBetween: 0
+          spaceBetween: 20
         },
         // when window width is >= 1200px
         1200: {
           slidesPerView: 4,
-          spaceBetween: 0
+          spaceBetween: 20
         }
       },
 
@@ -506,6 +271,17 @@
         el: '.swiper-scrollbar',
       },
     });
+  </script>
+
+  <script>
+    //gestione off-canvas
+    (function () {
+      'use strict'
+
+      document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
+        document.querySelector('.offcanvas-collapse').classList.toggle('open')
+      })
+    })()
   </script>
 
 </body>
