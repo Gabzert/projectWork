@@ -16,7 +16,7 @@
   <!-- IMPORTO IL CSS DI SWIPER (slider) -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
-  <link rel="stylesheet" href=".\css\style.css">
+  <link rel="stylesheet" href="/css/style.css">
   
 </head>
 
@@ -24,33 +24,7 @@
 
 
   <div id="header">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">
-          <img src="./IMG/MUUUUVT.png" alt="" width="180">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center align-items-center">
-            <li class="nav-item ">
-              <a class="nav-link " href="disponibilita.html"><button class="btn">Disponibilità</button></a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" aria-current="page" href="utente.html"><button class="btn">Profilo</button></a>
-            </li>
-            <li class="nav-item d-flex d-lg-block">
-              <a class="nav-link btn btn-primary mx-auto px-2 " href="login.html">Login</a>
-
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <nav th:replace="fragment/nav"></nav>
   </div>
 
 
@@ -295,7 +269,7 @@
     <h2 class="mb-3">BICICLETTE</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-3">
+    <div class="swiper-wrapper mb-5">
       <!-- Slides -->
       <div class="swiper-slide">
         <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
@@ -364,30 +338,8 @@
 
   <div id="imageSpacer"></div>
 
-  <footer id="mainFooter">
 
-    <div class="container">
-      <div class="row d-flex align-items-center py-5">
-        <div class="col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
-          Vicolo Corto 12<br>
-          10100 Barletta<br>
-          ITALY
-        </div>
-        <div class="col-lg-4 text-center mb-2 mb-lg-0">
-          <ul class="list-inline">
-            <li class="list-inline-item"><i class="bi bi-facebook"></i></li>
-            <li class="list-inline-item"><i class="bi bi-instagram"></i></li>
-            <li class="list-inline-item"><i class="bi bi-twitter"></i></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 text-center text-lg-end">
-          © MUVT 2022
-        </div>
-      </div>
-    </div>
-
-  </footer>
-
+  <footer th:replace="fragment/footer"></footer>
 
 
   <!-- MODAL -->
