@@ -26,9 +26,11 @@ function editPrenotazione(event){
 		})
 		.then(function(json) {
 			for(let li=0; li<json.length; li++){
+				if(json.data[li].status == "disponibile"){
 				let opzione =document.createElement("option");
 				opzione.text =json.data[li].modello;
 				dd.appendChild(opzione);
+				}
 			}
 		})
 		for (let i = 0; i < dd.options.length; i++) {
@@ -103,11 +105,12 @@ function refreshPrenotazioni(event){
 		if(json.result !== 0){
 			alert("Error "+json.result+" in prenotazioni: "+json.message);
 		} else {
-			if(json.data.status == "in prenotazione"){
+			for(let li=0; li<json.length; li++){
+			if(json.data[li].status == "in prenotazione"){
 				p_incorso.innerHTML = hb_incorso(json);
 			}
 			p_old.innerHTML = hb_old(json);
-
+			}
 		}
 		agganciaEventiAppreciateDeleteEdit();
 	})
