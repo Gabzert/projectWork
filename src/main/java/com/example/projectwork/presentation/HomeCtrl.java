@@ -1,5 +1,7 @@
 package com.example.projectwork.presentation;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.projectwork.model.UtenteEntity;
 
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class HomeCtrl {
 
     @GetMapping
-    public String homeCliente(@ModelAttribute UtenteEntity utente) {
+    public String homeCliente(@ModelAttribute UtenteEntity utente, HttpSession session) {
+        session.setAttribute("chiamante", "/");
         return "homepage";
     }
 

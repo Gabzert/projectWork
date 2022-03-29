@@ -46,7 +46,7 @@ public class UtenteMVC {
 			System.out.println("utente: " + utente);
 			session.setAttribute("utente", utente); 
 			
-			return "redirect:/"+session.getAttribute("chiamante");			
+			return "redirect:"+session.getAttribute("chiamante");			
 			
 			
 		} catch(Exception e) {
