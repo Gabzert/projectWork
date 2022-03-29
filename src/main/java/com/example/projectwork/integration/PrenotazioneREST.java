@@ -34,7 +34,7 @@ public class PrenotazioneREST {
   public ResponseEntity<List<PrenotazioneEntity>> getAll(@SessionAttribute UtenteEntity utente) {
   
     try{
-      if(!utente.getRuolo().equals("")){
+      if(utente.getRuolo().equals("")){
           return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
       }
       
