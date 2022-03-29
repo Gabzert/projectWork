@@ -30,7 +30,7 @@
     <!-- ----------------------------------------------------------------------- -->
     <!--                             Barra laterale                              -->
     <!-- ----------------------------------------------------------------------- -->
-    <div class="ms-4 col-lg-2 p-3 rounded-3" style="position: fixed; border: 3px solid #00e687; margin-top: 3rem;">
+    <div class="ms-4 col-lg-2 col-md-1 p-3 rounded-3" style="position: fixed; border: 3px solid #00e687; margin-top: 3rem;">
       <ul class="list-unstyled">
         <li>
           <select class="form-select mb-2" aria-label="select example">
@@ -50,8 +50,8 @@
         </li>
         <li>
           <label for="max-price" class="form-label">Prezzo massimo</label>
-          <input type="range" class="form-range" name="minPriceNameIN2" id="minPriceIdIN2" value="60" min="1" max="100" oninput="minPriceIdOU2.value = minPriceIdIN2.value">
-          <output class="" name="minPriceNameOU2" id="minPriceIdOU2">60</output> 
+          <input type="range" class="form-range" name="maxPriceNameIN" id="maxPriceIdIN" value="60" min="1" max="100" oninput="maxPriceIdOU.value = maxPriceIdIN.value">
+          <output class="" name="maxPriceNameOU" id="maxPriceIdOU">60</output> 
           <!-- TODO gestione non presenza veicoli nella selezione -->
         </li>
       </ul>
@@ -110,8 +110,8 @@
   </script>
 
 <script>
-  document.minPriceIdIN2.oninput = function(){
-  document.minPriceIdOU2.value = document.minPriceIdIN2.value;
+  document.maxPriceIdIN.oninput = function(){
+  document.maxPriceIdIN.value = document.maxPriceIdIN.value;
 }
 </script>
 </body>

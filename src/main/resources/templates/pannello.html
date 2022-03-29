@@ -34,8 +34,13 @@
           <td class="">campo 2</td>
           <td class="">campo 3</td>
           <td class="">campo 4</td>
-          <td><button class="btn btn-primary italic font" id="Modifica">Modifica</button></td>
-          <td><button class="btn btn-warning italic font" id="Elimina">Elimina</button></td>
+          <td>
+            <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary italic font" data-bs-toggle="modal" data-bs-target="#update">
+              Modifica
+          </button>
+          </td>
+          <td><button class="btn btn-warning italic font" data-bs-toggle="modal" data-bs-target="#delete" id="Elimina">Elimina</button></td>
         </tr>
        
       </tbody>
@@ -43,6 +48,63 @@
   </div>
 
   <footer th:replace="fragment/footer"></footer>
+
+
+<!-- Modal 4 update-->
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifica il veicolo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInput" class="form-label">Campo1</label>
+            <input type="text" class="form-control" id="exampleInput">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInput2" class="form-label">Campo2</label>
+            <input type="text" class="form-control" id="exampleInput2">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInput3" class="form-label">Campo3</label>
+            <input type="text" class="form-control" id="exampleInput3">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInput4" class="form-label">Campo4</label>
+            <input type="text" class="form-control" id="exampleInput4">
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 delete-->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminazione del veicolo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Sei sicuro di voler eliminare il veicolo?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Elimina</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
