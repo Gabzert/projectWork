@@ -30,11 +30,6 @@ async function getVeicoliById(id){
     
 
     handle("template-swiper", "ouput-div1", context);	
-        //sw = '#' + sw;
-        //od = '#' + od;
-        
-        //let dt =   document.querySelector(sw);
-        //let swiper = new DataSwiper(od, {});
 }
 
 
