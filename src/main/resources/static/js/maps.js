@@ -6,7 +6,7 @@ async function putPosizione() {
   const p = posizione.gps;
   const split = p.split(',');
 
-  var map = L.map('map').setView([split[0], split[1]], 13);
+  var map = L.map('map').setView([split[0], split[1]], 20);
 
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -24,9 +24,7 @@ async function putPosizione() {
 
 async function loadMap() {
 
-  const id = 2;
-
-  let response = await fetch('http://localhost:8080/api/veicoli/location/' + id);
+  let response = await fetch('http://localhost:8080/api/veicoli/location/' + idl);
   let art = await response.json();
 
   return art;
