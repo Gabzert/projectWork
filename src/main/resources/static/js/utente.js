@@ -52,13 +52,22 @@ function editPrenotazione(event){
 
 function salvaModifiche(event){
 	let originator = event.currentTarget;
-/*	
-	fetch(url+"/editPrenotazione/"+
-	let prenotazione_id = document.getElementById("input_id").value;
-	let prenotazione_veicolo = document.getElementById("input_veicolo").value;
-	let prenotazione_data = document.getElementById("input_data").value;
+
+
+
 	
-	)
+/*	
+	fetch(url+"/editPrenotazione", {
+        method: 'POST',
+        body: JSON.stringify(newPrenotazione),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
 */	
 	refreshPrenotazioni();
 
