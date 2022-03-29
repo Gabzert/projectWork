@@ -66,11 +66,14 @@ a:hover {
     color: #3d3e3f;
 }
 
-.btn-primary:hover, .btn-primary:active {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
     /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
     background-color:#00995a;
     border-color: #00995a;
 
+}
+.btn-primary:focus {
+    box-shadow: 0 0 0 0rem rgb(49 132 253 / 50%);
 }
 
 .nav-link .bg-primary{
@@ -171,6 +174,12 @@ a:hover {
     padding: 8rem 2rem 8rem 2rem;
 }
 
+hr.ft-hr{
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 0px 15px 0px 15px;
+
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -223,5 +232,10 @@ a:hover {
     .swiper-slide{
         padding: 0rem 3rem 0rem 3rem;
     }  
+    #mainFooter {
+        height: 10rem;
+    }
+}
+@media (min-width: 575px) {
    
 }
