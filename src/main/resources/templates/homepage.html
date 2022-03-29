@@ -78,24 +78,28 @@
     
   </div>
   
-  <div id="quote" class="hquote position-relative">
-    <div class="position-absolute top-50 start-50 translate-middle">
-      <figure  class="text-center">
-        <blockquote class="blockquote fst-italic fs-1">
-        <p>“La vita è come andare in bicicletta: se vuoi stare in equilibrio devi muoverti.”</p>
-        </blockquote>
-        <figcaption class="blockquote-footer fs-5">
-          ALBERT EINSTEIN
-        </figcaption>
+  
+    <div class="container py-4 py-lg-5">
+      <div class="row justify-content-center">
+      
+          <div class="col-lg-10">
+            <h2 class="fst-italic fs-1">CHI SIAMO?</h2>
+            <p class=" fst-italic fs-3">MUVT in origine nasce da un team di sei ragazzi in cerca di realizzare i propri obiettivi rendendoli il
+              lavoro della propria vita. Il gruppo di lavoro voleva creare qualcosa che rispettasse l’ambiente e che
+              seguisse una sua linea guida del tutto innovativa. <br> La riduzione dell’emissioni è uno degli argomenti più
+              trattati degli ultimi decenni perciò l’obiettivo fu proprio creare un qualcosa che fosse al passo con i tempi
+              e soprattutto che rispettasse la nostra casa.</p>
+          </div>
+      </div>
     </div>
-    </figure>
-  </div>
+  
+  
 
-  <hr class="mt-0">
+  <hr class="mt-0 mb-5">
 
   <div id="sw1" class="swiper container mb-5">
     <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">MOTO</h2>
+    <h2 class="mb-3 ps-3">MOTO</h2>
 
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper mb-5" id="ouput-div1">
@@ -112,11 +116,11 @@
     <div class="swiper-scrollbar"></div>
   </div>
 
-<hr class="mt-0">
+<hr class="mt-0 mb-5">
 
   <div id="sw2" class="swiper container mb-5">
     <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">MONOPATTINI</h2>
+    <h2 class="mb-3 ps-3">MONOPATTINI</h2>
 
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper mb-5" id="ouput-div2">
@@ -132,10 +136,10 @@
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
   </div>
-<hr class="mt-0">
+<hr class="mt-0 mb-5">
   <div id="sw3" class="swiper container mb-5">
     <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">AUTO</h2>
+    <h2 class="mb-3 ps-3">AUTO</h2>
 
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper mb-5" id="ouput-div3">
@@ -147,13 +151,13 @@
      <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
   </div>
-<hr class="mt-0">
+<hr class="mt-0 mb-5">
   <div id="sw4" class="swiper container mb-5">
     <!-- swiper è una classe per il carousel, container è una classe di BS -->
-    <h2 class="mb-3">BICICLETTE</h2>
+    <h2 class="mb-3 ps-3">BICICLETTE</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-3" id="ouput-div4">
+    <div class="swiper-wrapper mb-5" id="ouput-div4">
     </div>
 
     <div class="swiper-button-prev"></div>
@@ -165,15 +169,38 @@
 
 <hr>
 
+<div id="quote" class="hquote position-relative">
+  <div class="position-absolute top-50 start-50 translate-middle">
+    <figure  class="text-center">
+      <blockquote class="blockquote fst-italic fs-1">
+        <p>“La vita è come andare in bicicletta: se vuoi stare in equilibrio devi muoverti.”</p>
+      </blockquote>
+      <figcaption class="blockquote-footer fs-5">
+        ALBERT EINSTEIN
+      </figcaption>
+    </div>
+  </figure>
+</div>
+<hr>
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 Tabella                                 -->
+<!-- ----------------------------------------------------------------------- -->
   <div class="container mb-5">
 
     <div class="row">
-      <div class="col-lg-6">
-        <canvas id="myChart"></canvas>
+      
+      <div class="col-lg-6 d-flex justify-content-center flex-column order-lg-2">
+        <h2 class="italic pb-4">IL NOSTRO OBIETTIVO</h2>
+        <p>
+          Da più di un secolo come ben sappiamo i motori a scoppio, anche se fondamentali per lo sviluppo tecnologico dell’uomo, hanno avuto un impronta incisiva, quasi letale sul cambiamento climatico del nostro pianeta, portandolo ad un  livello critico con previsioni catastrofiche. 
+          Negli ultimi due decenni lo sviluppo e la fusione nel rendere le nostre tecnologie compatibili con energia pulita ha incentivato l’uomo ad affacciarsi all’utilizzo di veicoli elettrici.
+          L’obiettivo di MUVT infatti è quello di seguire questo ideale bilanciando natura e tecnologia, fornendo una vasta quantità di veicoli di diverse categorie tra cui bici, monopattini, motocicli e auto per muoversi in totale libertà salvaguardando la natura del pianeta. Che cosa aspetti a effettuare la tua prova gratuita per iniziare la tua esperienza con noi? 
+        </p>
+        <p class="lead fw-bold">LET’S MUVT</p>
       </div>
 
-      <div class="col-lg-6 border border-danger">
-        testo
+      <div class="col-lg-6 order-lg-1">
+        <canvas id="myChart"></canvas>
       </div>
     </div>
 
@@ -227,7 +254,7 @@
   <!-- <script th:replace="fragments/script"></script> -->
 
   <!-- ----------------------------------------------------------------------- -->
-  <!--                             script tabella                              -->
+  <!--                             script grafico                              -->
   <!-- ----------------------------------------------------------------------- -->
 
   <script>
@@ -256,7 +283,7 @@
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'right',
       },
       title: {
         display: true,

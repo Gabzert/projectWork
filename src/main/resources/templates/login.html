@@ -24,8 +24,8 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Ricorda Password</label>
           </div>
-          <button type="submit" class="btn btn-primary mb-3">Login</button>
-          <a class="btn btn-warning mb-3" href="/login/logout">Logout</a>
+          <button type="submit" class="btn btn-primary mb-3" th:unless="${utente!=null && utente.nome!=null}">Login</button>
+          <a class="btn btn-warning mb-3" href="/login/logout" th:if="${utente!=null && utente.nome!=null}">Logout</a>
           <div id="reg" class="form-text">Non hai un account?</div>
           <a href="Registrati" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Registrati</a>
         </form>
