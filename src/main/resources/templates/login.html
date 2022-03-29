@@ -14,15 +14,15 @@
           <div class="mb-3">
             <h2 class="bold mb-4">Login</h2>
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete="off">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+            <input type="password" class="form-control" name="password" id="password" required>
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Ricorda Password</label>
+            <input type="checkbox" class="form-check-input" value="lsRememberMe" id="rememberMe"> 
+            <label for="rememberMe" class="form-check-label">Ricorda password</label>
           </div>
           <button type="submit" class="btn btn-primary mb-3" th:unless="${utente!=null && utente.nome!=null}">Login</button>
           <a class="btn btn-warning mb-3" href="/login/logout" th:if="${utente!=null && utente.nome!=null}">Logout</a>
@@ -52,28 +52,31 @@
               <div class="row">
                 <div class="col-lg">
                   <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Mario">
+                    <label for="formGroupExampleInput" class="form-label" th:if="${utente!=null && utente.nome!=null}">Nome</label>
+                    <input type="text" class="form-control" placeholder="Mario">
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Cognome</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rossi">
+                    <label for="formGroupExampleInput" class="form-label" th:if="${utente!=null && utente.nome!=null}">Cognome</label>
+                    <input type="text" class="form-control" placeholder="Rossi">
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                    <label for="formGroupExampleInput2" class="form-label" th:if="${utente!=null && utente.nome!=null}">E-mail</label>
+                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
                       placeholder="mario.rossi@email.com">
+                      <div class="invalid-feedback">
+                        Inserisci mail corretta
+                      </div>
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput3" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="321-1234567">
+                    <label for="formGroupExampleInput3" class="form-label" th:if="${utente!=null && utente.nome!=null}">Telefono</label>
+                    <input type="text" class="form-control" placeholder="321-1234567">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Iscriviti alla newsletter</label>
+                      <input type="checkbox" class="form-check-input" id="newsletter">
+                      <label class="form-check-label" for="newsletter">Iscriviti alla newsletter</label>
                     </div>
                   </div>
                 </div>
@@ -90,6 +93,29 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  
+  <script>
+    const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("email");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rmCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+} else {
+  rmCheck.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+function lsRememberMe() {
+  if (rmCheck.checked && emailInput.value !== "") {
+    localStorage.username = emailInput.value;
+    localStorage.checkbox = rmCheck.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }
+}
   </script>
 </body>
 

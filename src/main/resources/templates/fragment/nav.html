@@ -10,13 +10,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center align-items-center">
 
+        
+        <li class="mb-0" th:if="${utente!=null && utente.nome!=null}">
+          <p class="btn mb-0" th:inline="text">Email: [[${utente.email}]]</p>
+        </li>
+        
         <li th:if="${utente!=null && utente.nome!=null}" class="mb-4">
           <p th:if="${utente.ruolo =='Cliente'}">Utente Loggato</p>
-          <p th:if="${utente.ruolo =='Amministratore'}">Amministratore Loggato</p>
-        </li>
-
-        <li th:if="${utente!=null && utente.nome!=null}">
-          <p th:inline="text">Email: [[${utente.email}]]</p>
+          <p th:if="${utente.ruolo =='Amministratore'}">
+            <a class="nav-link " href="/pannello"><button class="btn">Pannello di gestione</button></a>
+          </p>
         </li>
         
         <li class="nav-item ">
@@ -26,7 +29,7 @@
           <a class="nav-link" aria-current="page" href="/utente"><button class="btn">Profilo</button></a>
         </li>
         <li class="nav-item d-flex d-lg-block">
-          <a class="nav-link btn btn-primary mx-auto px-2 " th:if="${utente!=null && utente.nome!=null}" href="/">Logout</a>
+          <a class="nav-link btn btn-primary mx-auto px-2 " th:if="${utente!=null && utente.nome!=null}" th:href="@{/login/logout}">Logout</a>
           <a class="nav-link btn btn-primary mx-auto px-2 " th:unless="${utente!=null && utente.nome!=null}" href="/login">Login</a>
         </li>
       </ul>

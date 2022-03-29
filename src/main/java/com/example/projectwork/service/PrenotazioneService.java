@@ -14,9 +14,9 @@ public class PrenotazioneService {
     @Autowired
     PrenotazioneDB db;
 
-    public List<PrenotazioneEntity> getall(){
+    public List<PrenotazioneEntity> getall(int utente_id){
 
-        return db.findAll();
+        return db.findByUtenteId(utente_id);
     }
 
 

@@ -21,9 +21,11 @@ async function getVeicoli(){
 
     for(let i = 1 ; i<=arrayJson.length; i++){
         let sw = 'swiper_veicoli' + i;
+
         const context = {
             'veicoli' : arrayJson[i-1]
         }
+        
         let ts = "template-swiper";
         let od = "ouput-div" + i;
 

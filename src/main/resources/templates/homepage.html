@@ -259,20 +259,20 @@
 
   <script>
     const CHART_COLORS = {
-  red: 'rgb(255, 99, 132)',
-  orange: 'rgb(255, 159, 64)',
-  yellow: 'rgb(255, 205, 86)',
-  green: 'rgb(75, 192, 192)',
   blue: 'rgb(54, 162, 235)',
+  green: 'rgb(75, 192, 192)',
+  yellow: 'rgb(255, 205, 86)',
+  orange: 'rgb(255, 159, 64)',
+  red: 'rgb(255, 99, 132)',
   purple: 'rgb(153, 102, 255)',
   grey: 'rgb(201, 203, 207)'
 };
     const data = {
-      labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+      labels: ['Bicicletta', 'Monopattino', 'Auto Elettrica', 'Auto con motore a scoppio', 'Moto'],
       datasets: [{
         label: 'My First dataset',
         backgroundColor: Object.values(CHART_COLORS),
-        data: [15, 10, 15, 20, 40],
+        data: [0.5, 1, 6, 30, 42],
       }]
     };
   
@@ -287,7 +287,7 @@
       },
       title: {
         display: true,
-        text: 'Risparmiamo co2 Siamo troppo ecologici'
+        text: 'Co2 emessa per tipologia di veicolo'
       }
     }
   },
@@ -359,7 +359,7 @@
   <script id="template-swiper" type="text/x-handlebars-template">
     {{#each veicoli}}
       <div class="swiper-slide">
-        <img class="sw-img" src="{{this.immagine}}" alt="">
+        <img class="sw-img" th:src="@{{{this.immagine}}}" alt="">
         <div class="slideText">
           <h2>{{this.modello}}</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
