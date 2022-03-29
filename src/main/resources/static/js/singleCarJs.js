@@ -1,14 +1,17 @@
+
+
 async function getVeicoloById(id){
 
     let response = await fetch('http://localhost:8080/api/veicoli/veicolo/' + id);
     let veicolo = await response.json();
 
 
+
     const context = {
         'veico': veicolo
     };
 
-    handle("template", "ouput-div", context);
+    handle("template-swiper", "ouput-div", context);
 }
 
 

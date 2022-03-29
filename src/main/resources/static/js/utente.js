@@ -52,13 +52,22 @@ function editPrenotazione(event){
 
 function salvaModifiche(event){
 	let originator = event.currentTarget;
-/*	
-	fetch(url+"/editPrenotazione/"+
-	let prenotazione_id = document.getElementById("input_id").value;
-	let prenotazione_veicolo = document.getElementById("input_veicolo").value;
-	let prenotazione_data = document.getElementById("input_data").value;
+
+
+
 	
-	)
+/*	
+	fetch(url+"/editPrenotazione", {
+        method: 'POST',
+        body: JSON.stringify(newPrenotazione),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
 */	
 	refreshPrenotazioni();
 
@@ -99,8 +108,11 @@ function refreshPrenotazioni(event){
 	fetch(url)
 	.then(function(response) {
 		return response.json();
+		
 	})
 	.then(function(json) {
+
+		console.log(json);
 
 		if(json.result !== 0){
 			alert("Error "+json.result+" in prenotazioni: "+json.message);
@@ -146,5 +158,5 @@ window.addEventListener(
         let btn_modifica = document.getElementById("bottone_modifica");
         let btn_cancella = document.getElementById("bottone_cancella");
  
-		refreshPrenotazioni();
+		refreshPrenotazioni(null);
 });

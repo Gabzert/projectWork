@@ -38,7 +38,7 @@ public class PrenotazioneREST {
           return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
       }
       
-      return ResponseEntity.ok(service.getall());
+      return ResponseEntity.ok(service.getall(utente.getId()));
 
   }catch(Exception e){
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
