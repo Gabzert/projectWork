@@ -52,20 +52,23 @@
               <div class="row">
                 <div class="col-lg">
                   <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nome</label>
+                    <label for="formGroupExampleInput" class="form-label" th:if="${utente!=null && utente.nome!=null}">Nome</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Mario">
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Cognome</label>
+                    <label for="formGroupExampleInput" class="form-label" th:if="${utente!=null && utente.nome!=null}">Cognome</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rossi">
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                    <label for="formGroupExampleInput2" class="form-label" th:if="${utente!=null && utente.nome!=null}">E-mail</label>
+                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
                       placeholder="mario.rossi@email.com">
+                      <div class="invalid-feedback">
+                        Inserisci mail corretta
+                      </div>
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput3" class="form-label">Telefono</label>
+                    <label for="formGroupExampleInput3" class="form-label" th:if="${utente!=null && utente.nome!=null}">Telefono</label>
                     <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="321-1234567">
                   </div>
                 </div>

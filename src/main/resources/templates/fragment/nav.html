@@ -15,8 +15,8 @@
           <p th:if="${utente.ruolo =='Amministratore'}">Amministratore Loggato</p>
         </li>
 
-        <li th:if="${utente!=null && utente.nome!=null}">
-          <p th:inline="text">Email: [[${utente.email}]]</p>
+        <li class="mb-0" th:if="${utente!=null && utente.nome!=null}">
+          <p class="btn mb-0" th:inline="text">Email: [[${utente.email}]]</p>
         </li>
         
         <li class="nav-item ">
