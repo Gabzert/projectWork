@@ -70,13 +70,16 @@ public class PrenotazioneEntity {
         this.utente = utente;
     }
 
+
     public VeicoloEntity getVeicolo() {
         return veicolo;
     }
 
+
     public void setVeicolo(VeicoloEntity veicolo) {
         this.veicolo = veicolo;
     }
+
     
 
 

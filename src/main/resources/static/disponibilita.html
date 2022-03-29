@@ -7,7 +7,7 @@
 
   </head>
 
-<body>
+<body onload="getVeicoliById('auto')">
 
 
   <div id="header">
@@ -25,30 +25,19 @@
     </div>
 
     <div class="container">
-
-      <div class="card my-5">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="https://www.targetmotori.com/wp-content/uploads/2021/04/Panda-City-Life-8-1024x683.jpg"
-              class="img-fluid rounded-start" alt="panda">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">FIAT PANDA</h5>
-              <p class="card-text">La citycar migliore di sempre è qui. Comoda ed agile è perfetta per l'utilizzo
-                urbano.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Motore: 1.0 FireFly 70Cv S&S Hybrid Cross</li>
-              <li class="list-group-item">Auto</li>
-            </ul>
-            <div class="card-body">
-              <button class="btn btn-primary">Prenota</button>
-            </div>
-          </div>
-        </div>
+      <div class="row d-flex">
+        <button class="btn btn-primary col-3" id="auto" onclick="getVeicoliById(this.id)">Auto</button>
+        <button class="btn btn-primary col-3" id="moto" onclick="getVeicoliById(this.id)">Moto</button>
+        <button class="btn btn-primary col-3" id="bici" onclick="getVeicoliById(this.id)">Bici</button>
+        <button class="btn btn-primary col-3" id="monopattino" onclick="getVeicoliById(this.id)">Monopattini</button>
       </div>
     </div>
+
+
+    <div class="container" id="ouput-div1"></div>
+    <div class="container" id="ouput-div2"></div>
+    <div class="container" id="ouput-div3"></div>
+    <div class="container" id="ouput-div4"></div>
   </div>
   </div>
 
@@ -79,7 +68,38 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <script id="template-swiper" type="text/x-handlebars-template">
+    {{#each veicoli}}
+     <div class="card my-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.targetmotori.com/wp-content/uploads/2021/04/Panda-City-Life-8-1024x683.jpg"
+              class="img-fluid rounded-start" alt="panda">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{this.marca}}</h5>
+              <p class="card-text">La citycar migliore di sempre è qui. Comoda ed agile è perfetta per l'utilizzo
+                urbano.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Alimentazione: {{this.alimentazione}} Trazione: {{this.trazione}}</li>
+              <li class="list-group-item">{{this.categoria}}</li>
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-primary">Prenota</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
   </script>
+
+  <script src="js/handleId.js"></script>
 
 </body>
 

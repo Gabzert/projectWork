@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.projectwork.model.VeicoloEntity;
-
 import com.example.projectwork.service.VeicoloService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/veicoli")
-public class VeicoliREST {
+public class VeicoloREST {
 
 	@Autowired
 	VeicoloService service;
@@ -27,13 +26,6 @@ public class VeicoliREST {
 	public List<VeicoloEntity> getByCategoria(@PathVariable String categoria) {
 
 		return service.getVeicoloByCategoria(categoria);
-	}
-
-	@GetMapping("descrizione/{descrizione}")
-	public List<VeicoloEntity> getByDescrizione(@PathVariable String descrizione) {
-
-		return service.getVeicolocoloByDescrizione(descrizione);
-
 	}
 
 	@GetMapping("indirizzo/{indirizzo}")
@@ -64,14 +56,20 @@ public class VeicoliREST {
 	public VeicoloEntity getPositon(@PathVariable int id){
 		return service.getVeicoloById(id);
 	}
+
+
+	@GetMapping("/veicolo/{id}")
+	public VeicoloEntity getVeicoloById(@PathVariable int id){
+		return service.getVeicoloById(id);
+	}
 /*
 	@PostMapping("/desc/{modello}")
-	public List<VeicoloEntity> getByDesc(@PathVariable String modello){
+	public List<VeicoliEntity> getByDesc(@PathVariable String modello){
 
 		ObjectMapper mapper = service.getVeicoli();
 		
 
-		List<VeicoloEntity> veicoli = (List<VeicoloEntity>) obj.get("Students");
+		List<VeicoliEntity> veicoli = (List<VeicoliEntity>) obj.get("Students");
 		Object[] rentVeic = veicoli
     	.stream()
     	.filter(veicolo -> ((Map)veicolo).get("modello").equals(modello))

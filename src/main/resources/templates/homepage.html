@@ -7,7 +7,7 @@
 
   </head>
 
-<body>
+<body onload="getVeicoli()">
 
 
   <div id="header">
@@ -98,43 +98,7 @@
     <h2 class="mb-3">MOTO</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?motorbike" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?motorcicle" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?enduro" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?honda" alt="">
-        <div class="slideText">
-          <h2>Moto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
+    <div class="swiper-wrapper mb-5" id="ouput-div1">
 
     </div>
     <!-- If we need pagination -->
@@ -155,43 +119,7 @@
     <h2 class="mb-3">MONOPATTINI</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?kickscooter" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?ninebot" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?ostrich" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?m365" alt="">
-        <div class="slideText">
-          <h2>Monopattino</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
+    <div class="swiper-wrapper mb-5" id="ouput-div2">
 
     </div>
     <!-- If we need pagination -->
@@ -210,44 +138,13 @@
     <h2 class="mb-3">AUTO</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cars" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?car" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?porche" alt="">
-        <div class="slideText">
-          <h2>Automobile</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
+    <div class="swiper-wrapper mb-5" id="ouput-div3">
 
     </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
+  
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
+     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
   </div>
 <hr class="mt-0">
@@ -256,49 +153,9 @@
     <h2 class="mb-3">BICICLETTE</h2>
 
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper mb-5">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?Bianchi" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?specilized" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?gravel-bike" alt="">
-        <div class="slideText">
-          <h2>Bicicletta</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-
+    <div class="swiper-wrapper mb-3" id="ouput-div4">
     </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
 
-    <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 
@@ -429,7 +286,7 @@
     const swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'horizontal',
-      loop: true,
+      loop: false,
       slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
       spaceBetween: 0,
       breakpoints: {
@@ -467,6 +324,61 @@
       },
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> 
+
+  <script id="template-swiper" type="text/x-handlebars-template">
+    {{#each veicoli}}
+      <div class="swiper-slide">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.modello}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <!--
+  <script id="template-swiper2" type="text/x-handlebars-template">
+    {{#each monopattini}}
+      <div class="swiper-slide" id="swiper_veicoli2">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <script id="template-swiper3" type="text/x-handlebars-template">
+    {{#each bici}}
+      <div class="swiper-slide" id="swiper_veicoli3">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <script id="template-swiper4" type="text/x-handlebars-template">
+    {{#each moto}}
+      <div class="swiper-slide" id="swiper_veicoli4">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+    -->
+  </script>
+
+  <script src="js/handle.js"></script>
 
 </body>
 
