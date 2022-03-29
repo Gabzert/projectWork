@@ -9,6 +9,8 @@ import com.example.projectwork.model.UtenteEntity;
 import com.example.projectwork.service.PrenotazioneService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,13 +31,19 @@ public class PrenotazioneREST {
   PrenotazioneService service;
 
   @GetMapping
-  public List<PrenotazioneEntity> getAll(@SessionAttribute UtenteEntity utente) {
-    
-    if(!utente.getRuolo().equals("")){
-    return service.getall();
-    }
-    return null;
+  public ResponseEntity<List<PrenotazioneEntity>> getAll(@SessionAttribute UtenteEntity utente) {
+  
+    try{
+      if(!utente.getRuolo().equals("")){
+          return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+      }
+      
+      return ResponseEntity.ok(service.getall());
+
+  }catch(Exception e){
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
   }
+}
 
   
 
