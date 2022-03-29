@@ -99,8 +99,11 @@ function refreshPrenotazioni(event){
 	fetch(url)
 	.then(function(response) {
 		return response.json();
+		
 	})
 	.then(function(json) {
+
+		console.log(json);
 
 		if(json.result !== 0){
 			alert("Error "+json.result+" in prenotazioni: "+json.message);
@@ -146,5 +149,5 @@ window.addEventListener(
         let btn_modifica = document.getElementById("bottone_modifica");
         let btn_cancella = document.getElementById("bottone_cancella");
  
-		refreshPrenotazioni();
+		refreshPrenotazioni(null);
 });
