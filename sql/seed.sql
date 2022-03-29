@@ -8,11 +8,16 @@ CREATE TABLE if not exists users (
   ruolo enum('cliente', 'amministratore')
 );
 
-CREATE TABLE if not exists stato (
+CREATE TABLE if not exists veicoli (
   id int PRIMARY KEY AUTO_INCREMENT,
+  categoria enum('auto','monopattino','bicicletta','motoveicolo'),
+  descrizione JSON,
+  alimentazione enum('diesel','benzina','elettrica','ibrida', 'muscolare'),
   indirizzo varchar(255),
   gps varchar(50),
-  disponibilita boolean
+  disponibilita boolean,
+  immagine varchar(255),
+  status enum('prenotata','disponibile')
 );
 
 CREATE TABLE if not exists prenotazioni (
@@ -22,22 +27,6 @@ CREATE TABLE if not exists prenotazioni (
   data_prenotazione date,
   status enum('in prenotazione','terminata')
 );
-
-
-
-CREATE TABLE if not exists veicoli (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  modello varchar(20),
-  marca varchar(20),
-  categoria enum('auto','monopattino','bicicletta','motoveicolo'),
-  alimentazione enum('diesel','benzina','elettrica','ibrida', 'muscolare'),
-  immagine varchar(255),
-  trazione enum('anteriore','posteriore','integrale'),
-  stato_id int
-);
-
-
-ALTER TABLE veicoli ADD FOREIGN KEY (`stato_id`) REFERENCES `stato` (`id`);
 
 ALTER TABLE prenotazioni ADD FOREIGN KEY (`utente_id`) REFERENCES `users` (`id`);
 

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+  <head th:replace="fragment/head">
+
+    <title>MUVT Home</title>
+
+  </head>
+
+<body onload="getVeicoli()">
+
+
+  <div id="header">
+    <nav th:replace="fragment/nav"></nav>
+  </div>
+
+
+  <div id="hero">
+    <div class="container-fluid ml-0 px-0 frontimg">
+      <img src=".\IMG\van-side-view-mockup-cro.png" alt="hero" width="100%">
+      <ul class="centered px-0 list-unstyled ">
+        <li>
+          <h2 class="pac italic">CHE BISOGNA FATTURARE</h1>
+        </li>
+        <li class="mb-3">Trim1 smettila di magna i panzerotti</li>
+        <button type="button" class="btn btn-primary">Bottone</button>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-fluid serv-svg mt-0 pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 px-3 py-3">
+          <div class="square position-relative mb-5">
+            <img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Car.svg" alt="">
+          </div>
+          <div class="slideText">
+            <h2 class="white">AUTO</h2>
+            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          </div>
+        </div>
+        <div class="col-lg-3 px-3 py-3">
+          <div class="square position-relative mb-5">
+            <img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Scooter.svg" alt="">
+          </div>
+          <div class="slideText">
+            <h2 class="white">MONOPATTINO</h2>
+            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          </div>
+        </div>
+        <div class="col-lg-3 px-3 py-3">
+          <div class="square position-relative mb-5">
+            <img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Bike.svg" alt="">
+          </div>
+          <div class="slideText">
+            <h2 class="white">BICICLETTA</h2>
+            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          </div>
+        </div>
+        <div class="col-lg-3 px-3 py-3">
+          <div class="square position-relative mb-5">
+            <img class="px-2 pt-5 mx-auto d-block position-absolute bottom-0 start-50 translate-middle-x" src="./IMG/SVG/Motorcycle.svg" alt="">
+          </div>
+          <div class="slideText">
+            <h2 class="white">MOTOVEICOLO</h2>
+            <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          </div>
+        </div>
+        <div class="my-5 col-12 d-flex">
+          <a class="btn btn-primary col-lg-6 mx-auto px-5" href="/dispo">
+            Tutti i veicoli
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+  
+  
+    <div class="container py-4 py-lg-5">
+      <div class="row justify-content-center">
+      
+          <div class="col-lg-10">
+            <h2 class="fst-italic fs-1">CHI SIAMO?</h2>
+            <p class=" fst-italic fs-3">MUVT in origine nasce da un team di sei ragazzi in cerca di realizzare i propri obiettivi rendendoli il
+              lavoro della propria vita. Il gruppo di lavoro voleva creare qualcosa che rispettasse l’ambiente e che
+              seguisse una sua linea guida del tutto innovativa. <br> La riduzione dell’emissioni è uno degli argomenti più
+              trattati degli ultimi decenni perciò l’obiettivo fu proprio creare un qualcosa che fosse al passo con i tempi
+              e soprattutto che rispettasse la nostra casa.</p>
+          </div>
+      </div>
+    </div>
+  
+  
+
+  <hr class="mt-0 mb-5">
+
+  <div id="sw1" class="swiper container mb-5">
+    <!-- swiper è una classe per il carousel, container è una classe di BS -->
+    <h2 class="mb-3 ps-3">MOTO</h2>
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper mb-5" id="ouput-div1">
+
+    </div>
+    <!-- If we need pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+<hr class="mt-0 mb-5">
+
+  <div id="sw2" class="swiper container mb-5">
+    <!-- swiper è una classe per il carousel, container è una classe di BS -->
+    <h2 class="mb-3 ps-3">MONOPATTINI</h2>
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper mb-5" id="ouput-div2">
+
+    </div>
+    <!-- If we need pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+<hr class="mt-0 mb-5">
+  <div id="sw3" class="swiper container mb-5">
+    <!-- swiper è una classe per il carousel, container è una classe di BS -->
+    <h2 class="mb-3 ps-3">AUTO</h2>
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper mb-5" id="ouput-div3">
+
+    </div>
+  
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+     <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+<hr class="mt-0 mb-5">
+  <div id="sw4" class="swiper container mb-5">
+    <!-- swiper è una classe per il carousel, container è una classe di BS -->
+    <h2 class="mb-3 ps-3">BICICLETTE</h2>
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper mb-5" id="ouput-div4">
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+<hr>
+
+<div id="quote" class="hquote position-relative">
+  <div class="position-absolute top-50 start-50 translate-middle">
+    <figure  class="text-center">
+      <blockquote class="blockquote fst-italic fs-1">
+        <p>“La vita è come andare in bicicletta: se vuoi stare in equilibrio devi muoverti.”</p>
+      </blockquote>
+      <figcaption class="blockquote-footer fs-5">
+        ALBERT EINSTEIN
+      </figcaption>
+    </div>
+  </figure>
+</div>
+<hr>
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 Tabella                                 -->
+<!-- ----------------------------------------------------------------------- -->
+  <div class="container mb-5">
+
+    <div class="row">
+      
+      <div class="col-lg-6 d-flex justify-content-center flex-column order-lg-2">
+        <h2 class="italic pb-4">IL NOSTRO OBIETTIVO</h2>
+        <p>
+          Da più di un secolo come ben sappiamo i motori a scoppio, anche se fondamentali per lo sviluppo tecnologico dell’uomo, hanno avuto un impronta incisiva, quasi letale sul cambiamento climatico del nostro pianeta, portandolo ad un  livello critico con previsioni catastrofiche. 
+          Negli ultimi due decenni lo sviluppo e la fusione nel rendere le nostre tecnologie compatibili con energia pulita ha incentivato l’uomo ad affacciarsi all’utilizzo di veicoli elettrici.
+          L’obiettivo di MUVT infatti è quello di seguire questo ideale bilanciando natura e tecnologia, fornendo una vasta quantità di veicoli di diverse categorie tra cui bici, monopattini, motocicli e auto per muoversi in totale libertà salvaguardando la natura del pianeta. Che cosa aspetti a effettuare la tua prova gratuita per iniziare la tua esperienza con noi? 
+        </p>
+        <p class="lead fw-bold">LET’S MUVT</p>
+      </div>
+
+      <div class="col-lg-6 order-lg-1">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="imageSpacer"></div>
+
+
+  <footer th:replace="fragment/footer"></footer>
+
+
+  <!-- MODAL -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- LOGIN FORM -->
+          <form action="#">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username" placeholder="il tuo username">
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="passwrod" class="form-control" id="password" placeholder="la tua password">
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <!-- <script th:replace="fragments/script"></script> -->
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                             script grafico                              -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <script>
+    const CHART_COLORS = {
+  red: 'rgb(255, 99, 132)',
+  orange: 'rgb(255, 159, 64)',
+  yellow: 'rgb(255, 205, 86)',
+  green: 'rgb(75, 192, 192)',
+  blue: 'rgb(54, 162, 235)',
+  purple: 'rgb(153, 102, 255)',
+  grey: 'rgb(201, 203, 207)'
+};
+    const data = {
+      labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: Object.values(CHART_COLORS),
+        data: [15, 10, 15, 20, 40],
+      }]
+    };
+  
+    const config = {
+  type: 'pie',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: true,
+        text: 'Risparmiamo co2 Siamo troppo ecologici'
+      }
+    }
+  },
+};
+
+  </script>
+
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
+
+  <!-- IMPORTO JS PER SWIPER -->
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI -->
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
+      spaceBetween: 0,
+      breakpoints: {
+        // when window width is >= 576
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 0
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 0
+        },
+        // when window width is >= 1200px
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 0
+        }
+      },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> 
+
+  <script id="template-swiper" type="text/x-handlebars-template">
+    {{#each veicoli}}
+      <div class="swiper-slide">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.modello}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <!--
+  <script id="template-swiper2" type="text/x-handlebars-template">
+    {{#each monopattini}}
+      <div class="swiper-slide" id="swiper_veicoli2">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <script id="template-swiper3" type="text/x-handlebars-template">
+    {{#each bici}}
+      <div class="swiper-slide" id="swiper_veicoli3">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+  <script id="template-swiper4" type="text/x-handlebars-template">
+    {{#each moto}}
+      <div class="swiper-slide" id="swiper_veicoli4">
+        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <div class="slideText">
+          <h2>{{this.categoria}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <button class="btn btn-primary">Dettagli</button>
+        </div>
+      </div>
+    {{/each}}
+    -->
+  </script>
+
+  <script th:src="@{/js/handle.js}"></script>
+
+</body>
+
+</html>

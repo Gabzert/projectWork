@@ -8,8 +8,7 @@ import javax.transaction.Transactional;
 
 import java.util.List;
 
-import com.example.projectwork.model.VeicoloEntity;
-import com.example.projectwork.repository.VeicoliDB;
+import com.example.projectwork.repository.VeicoloDB;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ProjectworkApplicationTests {
 
 	@Autowired
-	VeicoliDB vecDB;
+	VeicoloDB vecDB;
 
 	@Test
 	@Transactional
@@ -31,20 +30,4 @@ class ProjectworkApplicationTests {
 		System.out.println(v.get("modello"));
 		System.out.println("--------------");*/
 		}
-	void findCar() {
-
-		List<VeicoloEntity> veicoli = vecDB.findByDescrizione("modello");
-
-		for(VeicoloEntity v : veicoli){
-			System.out.println("--------------");
-			System.out.println(v);
-			System.out.println("--------------");
-		}
-	}
-
-
-
-
-
-
 }

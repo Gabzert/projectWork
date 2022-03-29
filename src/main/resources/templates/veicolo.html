@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/head">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+</head>
+
+<body>
+  <div id="header">
+    <nav th:replace="fragment/nav"></nav>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- img -->
+        <img src=".\IMG\png-clipart-audi-audi-removebg-preview.png" alt="">
+      </div>
+      <div class="col-4">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h5 class="card-title">Nome Veicolo</h5>
+            <div class="card-text">
+              <ul class="list-unstyled">
+                <li>Car1</li>
+                <li>car2</li>
+                <li>car3</li>
+                <li>car4</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary">Prenota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-4 border border-danger">
+        <h3 class="italic">IL TUO MEZZO SI TROVA QUI:</h3>
+        <div id="map" class="m-2"></div>
+      </div>
+      <div id="calendar" class="col-lg-8">
+
+        <div class="card-header bg-primary">
+          <ul class="list-unstyled">
+            <li id="month" class="text-white text-uppercase text-center">
+              Marzo
+            </li>
+            <li id="year fd-2" class="text-white text-uppercase text-center">
+              2022
+            </li>
+          </ul>
+        </div>
+        <table class="table calendar table-bordered table-responsive-sm" id="calendar">
+          <thead>
+            <tr class="weekdays bg-dark">
+              <th scope="col" class="text-white text-center">Lunedì</th>
+              <th scope="col" class="text-white text-center">Martedì</th>
+              <th scope="col" class="text-white text-center">Mercoledì</th>
+              <th scope="col" class="text-white text-center">Giovedì</th>
+              <th scope="col" class="text-white text-center">Venerdì</th>
+              <th scope="col" class="text-white text-center">Sabato</th>
+              <th scope="col" class="text-white text-center">Domenica</th>
+            </tr>
+          </thead>
+          <tbody class="days bg-light" id="days"></tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer id="mainFooter">
+
+    <div class="container">
+      <div class="row d-flex align-items-center py-5">
+        <div class="col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
+          Vicolo Corto 12<br>
+          10100 Barletta<br>
+          ITALY
+        </div>
+        <div class="col-lg-4 text-center mb-2 mb-lg-0">
+          <ul class="list-inline">
+            <li class="list-inline-item"><i class="bi bi-facebook"></i></li>
+            <li class="list-inline-item"><i class="bi bi-instagram"></i></li>
+            <li class="list-inline-item"><i class="bi bi-twitter"></i></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          © MUVT 2022
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="./js/maps.js"></script>
+</body>
+
+</html>
