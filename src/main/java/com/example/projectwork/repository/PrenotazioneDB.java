@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PrenotazioneDB extends JpaRepository<PrenotazioneEntity, Integer>{
-    List<PrenotazioneEntity> findByUtenteID (int utente_id);
+    List<PrenotazioneEntity> findByUtenteId (int utente_id);
 }

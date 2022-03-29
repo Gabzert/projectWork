@@ -226,5 +226,10 @@ a:hover {
     .swiper-slide{
         padding: 0rem 3rem 0rem 3rem;
     }  
+    #mainFooter {
+        height: 10rem;
+    }
+}
+@media (min-width: 575px) {
    
 }
