@@ -17,19 +17,10 @@
     </div>
     <div class="container greenbg">
       <div class="d-flex flex-wrap justify-content-around">
-        <button class="btn btn-primary px-2 italic font">AUTO</button>
-        <button class="btn btn-primary px-2 italic font">MOTO</button>
-        <button class="btn btn-primary px-2 italic font">BICI</button>
-        <button class="btn btn-primary px-2 italic font">MONOPATTINO</button>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row d-flex">
-        <button class="btn btn-primary col-3" id="auto" onclick="getVeicoliById(this.id)">Auto</button>
-        <button class="btn btn-primary col-3" id="moto" onclick="getVeicoliById(this.id)">Moto</button>
-        <button class="btn btn-primary col-3" id="bici" onclick="getVeicoliById(this.id)">Bici</button>
-        <button class="btn btn-primary col-3" id="monopattino" onclick="getVeicoliById(this.id)">Monopattini</button>
+        <button class="btn btn-primary px-2 italic font" id="auto" onclick="getVeicoliById(this.id)">AUTO</button>
+        <button class="btn btn-primary px-2 italic font" id="moto" onclick="getVeicoliById(this.id)">MOTO</button>
+        <button class="btn btn-primary px-2 italic font" id="bici" onclick="getVeicoliById(this.id)">BICI</button>
+        <button class="btn btn-primary px-2 italic font" id="monopattino" onclick="getVeicoliById(this.id)">MONOPATTINO</button>
       </div>
     </div>
 
@@ -99,7 +90,7 @@
       {{/each}}
   </script>
 
-  <script src="js/handleId.js"></script>
+  <script th:src="@{/js/handleId.js}"></script>
 
 </body>
 

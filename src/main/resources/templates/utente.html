@@ -27,21 +27,19 @@
             <a class="nav-link btn" href="pannello.html" th:if="${role == 'admin'}">Pannello</a>
           </li> -->
           <li class="nav-item ">
-            <a class="nav-link " href="disponibilita.html">Disponibilità</a>
+            <a class="nav-link " href="/dispo">Disponibilità</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="utente.html">Profilo</a>
+            <a class="nav-link" aria-current="page" href="/utente">Profilo</a>
           </li>
           <li class="nav-item d-flex d-lg-block">
-            <a class="nav-link btn btn-primary mx-auto px-2 " href="login.html">Login</a>
+            <a class="nav-link btn btn-primary mx-auto px-2 " href="/login">Login</a>
             <!-- <a class="nav-link btn btn-primary mx-auto px-2 " href="homepage.html" th:if="${sessione == 'off'}">Login</a> -->
           </li>
         </ul>
       </div>
     </div>
   </nav>
-<<<<<<< HEAD
-=======
 
   <div class="container">
     <div class="row">
@@ -84,7 +82,6 @@
 
   </div>
   <footer id="mainFooter">
->>>>>>> USER
 
     <div class="container">
       <div class="row d-flex align-items-center py-5">
@@ -130,9 +127,7 @@
       {{/each}}
 
     </script>
-<<<<<<< HEAD
     <!-- <script th:replace="fragments/script"></script> -->
-=======
   <script id="template_old" type="text/x-handlebars-template">
     {{#each prenotazione}}
     <div id="old" class="col-12 card-pren">
@@ -148,7 +143,6 @@
     </script>
 
 
->>>>>>> USER
 
 </body>
 
