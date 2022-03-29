@@ -353,15 +353,17 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> 
+  <script th:src="@{/js/handle.js}"></script>
+  <script th:src="@{/js/redirect.js}"></script>
 
   <script id="template-swiper" type="text/x-handlebars-template">
     {{#each veicoli}}
       <div class="swiper-slide">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
+        <img class="sw-img" src="{{this.immagine}}" alt="">
         <div class="slideText">
           <h2>{{this.modello}}</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
+          <button class="btn btn-primary" id="{{this.id}}" onclick="getRedirection(this.id)">Dettagli</button>
         </div>
       </div>
     {{/each}}
@@ -405,7 +407,7 @@
     -->
   </script>
 
-  <script th:src="@{/js/handle.js}"></script>
+ 
 
 </body>
 
