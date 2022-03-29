@@ -62,7 +62,7 @@
           <div class="card-body pb-0">
             <h5 class="card-title">Profilo</h5>
             <div class="card-text">
-              <ul class="list-styled">
+              <ul class="list-styled" id="info_utente">
                 <li>{{id}}</li>
                 <li>{{Nome}}</li>
                 <li>{{Cognome}}</li>
@@ -130,6 +130,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
 
   <script id="template_attuale" type="text/x-handlebars-template">
    {{#each prenotazioni}}
@@ -140,8 +142,8 @@
             <div class="card-body">
               <h5 class="card-title" data-prenotazione-id="{{this.id}}">{{this.veicolo}}</h5>
               <p class="card-text">{{this.prezzo}}</p>
-              <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Modifica</button>
-              <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Cancella</button>
+              <button class="btn btn-primary bottone_modifica" data-prenotazione-id="{{this.id}}">Modifica</button>
+              <button class="btn btn-primary bottone_cancella" data-prenotazione-id="{{this.id}}">Cancella</button>
             </div>
           </div>
         </div>
@@ -151,7 +153,7 @@
     </script>
     <!-- <script th:replace="fragments/script"></script> -->
   <script id="template_old" type="text/x-handlebars-template">
-    {{#each prenotazione}}
+    {{#each prenotazioni}}
     <div id="old" class="col-12 card-pren">
       <div class="card border border-danger border-3">
         <h5 class="card-header">{{{this.data_prenotazione}}}</h5>
