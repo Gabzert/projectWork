@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-  <head >
-    <div th:include="fragment/head"></div>
+<head>
+  <div th:include="fragment/head"></div>
 
-    <title>MUVT Utente</title>
+  <title>MUVT Utente</title>
 
-  </head>
+</head>
 
-<body>
+<body th:attr="onload='loadUtente()'">
   <div id="header">
     <nav th:replace="fragment/nav"></nav>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <!-- img -->
-        <img class="utenteImg py-3" src="https://i.pinimg.com/550x/94/59/bf/9459bf41db1001621040fcbec85563d0.jpg" alt="">
-      </div>
-      <div class="col-lg-6 pt-3">
-        <div class="card mt-3 mb-3">
-          <div class="card-body pb-0">
-            <h5 class="card-title">Profilo</h5>
-            <div class="card-text">
-              <ul class="list-styled" id="info_utente">
-                <li>{{id}}</li>
-                <li>{{Nome}}</li>
-                <li>{{Cognome}}</li>
-                <li>{{Data di nascita}}</li>
-                <li>{{Email}}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- desc -->
-      </div>
-    </div>
-  </div>
+  <div class="container" id="output-div2"></div>
 
   <div class="container mb-5">
     <h2 class="mb-4">Prenotazioni</h2>
@@ -53,7 +29,7 @@
     <div id="div_old"></div>
 
   </div>
-  
+
   <footer th:replace="fragment/footer"></footer>
 
 
@@ -86,7 +62,7 @@
       {{/each}}
 
     </script>
-    <!-- <script th:replace="fragments/script"></script> -->
+  <!-- <script th:replace="fragments/script"></script> -->
   <script id="template_old" type="text/x-handlebars-template">
     {{#each prenotazioni}}
     <div id="old" class="col-12 card-pren">
@@ -101,7 +77,35 @@
     {{/each}} 
     </script>
 
-    <script src=".\js\utente.js"></script>
+  <script id="template_swiper2" type="text/x-handlebars-template">
+    {{#utente}}
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- img -->
+        <img class="utenteImg py-3" src="https://i.pinimg.com/550x/94/59/bf/9459bf41db1001621040fcbec85563d0.jpg" alt="">
+      </div>
+      <div class="col-lg-6 pt-3">
+        <div class="card mt-3 mb-3">
+          <div class="card-body pb-0">
+            <h5 class="card-title">Profilo</h5>
+            <div class="card-text">
+              <ul class="list-styled" id="info_utente">
+                <li>{{id}}</li>
+                <li>{{nome}}</li>
+                <li>{{cognome}}</li>
+                <li>{{data_nascita}}</li>
+                <li>{{email}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/utente}}
+  </script>
+
+
+  <script th:src="@{/js/utente.js}"></script>
 
 
 </body>

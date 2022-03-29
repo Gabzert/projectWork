@@ -1,54 +1,47 @@
-let url="http://localhost:8080/api/prenotazioni";
+/*let url="http://localhost:8080/api/prenotazioni";
 
 let template_old =null;
 let template_incorso = null;
 let p_old = null;
 let p_incorso = null;
 let hb_incorso = null;
-let hb_old = null;
+let hb_old = null;*/
 
-function loadUtente(){
+async function loadUtente(){
 
-	
-	fetch(url)
-			.then(function(response) {
-				return response.json();
-			})
-			.then(function(json) {
-				console.log(json);
-				let righe = "";
-				if(json.result !== 0){
-					alert("Error "+json.result+" in prenotazioni: "+json.message);
-				} else {
-					let riga = document.getElementById("info_utente").innerHTML;
-					righe += riga.replaceAll("{{id}}", json.data.utente.id)
-						.replaceAll("{{Nome}}", json.data.utente.nome)
-						.replaceAll("{{Cognome}}", json.data.utente.cognome)
-						.replaceAll("{{Data di nascita}}", json.data.utente.data_nascita)
-						.replaceAll("{{Email}}", json.data.utente.email);
-					}
-				document.getElementById("info_utente").innerHTML = righe;
-				agganciaEventi();
-			})
-			.catch(function(err) { 
-					alert(err);
-					console.log('Failed to fetch page: ', err);
-			});	
-			
+	let response = await fetch('http://localhost:8080/api/utenti/utente');
+    let utenti = await response.json();
 
+    const context = {
+        'utente': utenti
+    };
 
+    handle("template_swiper2", "output-div2", context);	
 }
 
+function handle(idTemplate, idOutput, context) {			
+			
+    let templateScript = document.getElementById(idTemplate).innerHTML;
 
+    // handlebar
+    let template = Handlebars.compile(templateScript);
+    let htmlCompilato = template(context);
+
+    let output = document.getElementById(idOutput);
+    output.innerHTML = htmlCompilato;
+    
+}
+
+/*
 function editPrenotazione(event){
 	let originator = event.currentTarget;
 	let prenotazione_id = originator.getAttribute('data-prenotazione-id');
 	let slot_veicolo =document.querySelector(".card-title[data-prenotazione-id="+prenotazione_id+"]") ;
 	let slot_data = document.querySelector(".card-header[data-prenotazione-id="+prenotazione_id+"]") ;
 	let prenotazione_veicolo = slot_veicolo.innerHTML;
-	let prenotazione_data = slot_data.innerHTML;
+	let prenotazione_data = slot_data.innerHTML;*/
 	
-		
+	/*	
 		let dd = document.createElement('select');
 		dd.id ="dropdownVeicoli"
 		slot_veicolo.replaceWith(dd);
@@ -77,13 +70,13 @@ function editPrenotazione(event){
 		slot_data.replaceWith(data_select);
 		data_select.value = prenotazione_data;
 	
-	}
+	}*/
 
 
 
-
+/*
 function salvaModifiche(event){
-	let originator = event.currentTarget;
+	let originator = event.currentTarget;*/
 
 
 
@@ -100,12 +93,12 @@ function salvaModifiche(event){
     .then(json => {
         console.log(json);
     });
-*/	
+*/	/*
 	refreshPrenotazioni();
 
 	
-}
-
+}*/
+/*
 function deletePrenotazione(event){
 	let originator = event.currentTarget;
 	let id = originator.getAttribute('data-prenotazione-id');
@@ -137,7 +130,7 @@ function deletePrenotazione(event){
 
 function refreshPrenotazioni(event){
 let response ="";
-let lista_prenotazioni="";
+let lista_prenotazioni="";*/
 /*
 
 response = fetch(url);
@@ -147,7 +140,7 @@ const context = {
 	'prenotazioni': lista_prenotazioni
 };
 */
-			fetch(url)
+			/*fetch(url)
 			.then(function(response) {
 
 				return response.json();
@@ -184,12 +177,12 @@ const context = {
 
 function agganciaEventi(event){
 	let btn_modifica = document.getElementsByClassName("bottone_modifica");
-	for(let li=0; li<brn_modifica.length; li++){
+	for(let li=0; li<btn_modifica.length; li++){
 		btn_modifica[li].addEventListener("click", editPrenotazione);
 	}
 
 	let btn_cancella = document.getElementsByClassName("bottone_cancella");
-	for(let li=0; li<brn_cancella.length; li++){
+	for(let li=0; li<btn_cancella.length; li++){
 		btn_cancella[li].addEventListener("click", deletePrenotazione);
 	}
 }
@@ -209,4 +202,4 @@ window.addEventListener(
 
 		loadUtente;
 		refreshPrenotazioni(null);
-});
+});*/
