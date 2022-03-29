@@ -3,8 +3,10 @@ package com.example.projectwork.presentation;
 import com.example.projectwork.model.UtenteEntity;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -28,9 +30,13 @@ public class HomeCtrl {
         return "admin";
     }
 
-    @GetMapping("/veicolo")
-    public String veicoloK(@ModelAttribute UtenteEntity utente) {
-        return "veicoloK";
+    @GetMapping("/veicolo/{id}")
+    public String veicoloK(@ModelAttribute UtenteEntity utente,@PathVariable int id,Model m) {
+
+        m.addAttribute("idl",id);
+        m.addAttribute("Veicolo1", "Veicolo");
+
+        return "veicolo";
     }
 
     @GetMapping("/utente")
