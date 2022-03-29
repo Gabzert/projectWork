@@ -15,10 +15,10 @@
           <p class="btn mb-0" th:inline="text">Email: [[${utente.email}]]</p>
         </li>
         
-        <li th:if="${utente!=null && utente.nome!=null}" class="mb-4">
-          <p th:if="${utente.ruolo =='Cliente'}">Utente Loggato</p>
-          <p th:if="${utente.ruolo =='Amministratore'}">
-            <a class="nav-link " href="/pannello"><button class="btn">Pannello di gestione</button></a>
+        <li th:if="${utente!=null && utente.nome!=null}" >
+          <p class="btn mb-0" th:if="${utente.ruolo =='cliente'}">Utente Loggato</p>
+          <p  class="mb-0" th:if="${utente.ruolo =='amministratore'}">
+            <a class="nav-link btn mb-0" href="/pannello"><button class="btn">Pannello di gestione</button></a>
           </p>
         </li>
         
