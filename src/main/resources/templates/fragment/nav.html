@@ -16,7 +16,7 @@
         </li>
         
         <li th:if="${utente!=null && utente.nome!=null}" >
-          <p class="btn mb-0" th:if="${utente.ruolo =='cliente'}">Utente Loggato</p>
+          <p class="btn mb-0" th:if="${utente.ruolo =='cliente'}">Benvenuto su MUVT</p>
           <p  class="mb-0" th:if="${utente.ruolo =='amministratore'}">
             <a class="nav-link btn mb-0" href="/pannello"><button class="btn">Pannello di gestione</button></a>
           </p>
