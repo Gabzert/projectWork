@@ -88,7 +88,7 @@ a:hover {
 /*                                    Range                                   */
 /* -------------------------------------------------------------------------- */
 
-.range-cloud {
+/* .range-cloud {
     background-color: red !important;
     &:after {
     border-top-color: red !important; 
@@ -106,7 +106,7 @@ background: green !important;
 &::-ms-thumb {
 background: green !important;
 }
-}
+} */
 
 
 
@@ -197,8 +197,8 @@ background: green !important;
 #mainFooter {
     background:#00e687;
     color:#3d3e3f;
-    height: 30rem;
-    padding: 8rem 2rem 8rem 2rem;
+    
+    padding: 5rem 2rem;
 }
 
 hr.ft-hr{
