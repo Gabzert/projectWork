@@ -88,25 +88,17 @@ a:hover {
 /*                                    Range                                   */
 /* -------------------------------------------------------------------------- */
 
-/* .range-cloud {
-    background-color: red !important;
-    &:after {
-    border-top-color: red !important; 
-    }
+.form-range::-webkit-slider-thumb {
+    background: #00e687;
 }
 
-.range-field input[type="range"] {
-&::-webkit-slider-thumb {
-background: green !important;
+.form-range::-moz-range-thumb {
+background: #00e687;
 }
 
-&::-moz-range-thumb {
-background: green !important;
+.form-range::-ms-thumb {
+background: #00e687;
 }
-&::-ms-thumb {
-background: green !important;
-}
-} */
 
 
 
@@ -252,6 +244,18 @@ hr.ft-hr{
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                 Dispositivo                                */
+/* -------------------------------------------------------------------------- */
+
+
+.filtri-disp {
+    position: relative;
+    border: 3px solid #00e687;
+    /* margin-top: 3rem; */
+    margin-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                 Media Query                                */
 /* -------------------------------------------------------------------------- */
 
@@ -263,6 +267,8 @@ hr.ft-hr{
         height: 10rem;
     }
 }
-@media (min-width: 575px) {
-   
+@media (min-width: 1200px) {
+    .filtri-disp{
+        position: fixed;
+    }
 }
