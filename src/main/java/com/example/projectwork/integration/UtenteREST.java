@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @RestController
-@RequestMapping("/api/utenti")
+@RequestMapping("api/utenti")
 public class UtenteREST {
     @Autowired
     UtenteService service;

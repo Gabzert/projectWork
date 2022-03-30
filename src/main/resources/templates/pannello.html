@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body th:attr="onload='getVeicoliPannel()'">
   <div id="header">
     <nav th:replace="fragment/nav"></nav>
   </div>
@@ -18,41 +18,14 @@
       <button class="btn btn-primary px-5 mt-3 italic font" id="Aggiungi" data-bs-toggle="modal"
         data-bs-target="#add">Aggiungi</button>
     </div>
-
-    <table class="table table-striped align-middle">
-
-      <thead>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th></th>
-        <th></th>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="">campo 1</td>
-          <td class="">campo 2</td>
-          <td class="">campo 3</td>
-          <td class="">campo 4</td>
-          <td>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary italic font" data-bs-toggle="modal" data-bs-target="#update">
-              Modifica
-            </button>
-          </td>
-          <td><button class="btn btn-danger italic font" data-bs-toggle="modal" data-bs-target="#delete"
-              id="Elimina">Elimina</button></td>
-        </tr>
-
-      </tbody>
-    </table>
+    <div id="output-div"></div>
   </div>
 
   <footer th:replace="fragment/footer"></footer>
 
   <!-- Modal 4 add-->
-  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="add" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
 
@@ -116,7 +89,8 @@
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
-                    <textarea class="form-control" placeholder="Descrizione del veicolo" style="height: 210px"></textarea>
+                    <textarea class="form-control" placeholder="Descrizione del veicolo"
+                      style="height: 210px"></textarea>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Cambio</label>
@@ -155,7 +129,82 @@
   </div>
 
   <!-- Modal 4 update-->
-  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="output-div1"></div>
+
+  <!-- Modal 4 delete-->
+  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="delete" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminazione del veicolo</h5>
+        </div>
+        <div class="modal-body">
+          Sei sicuro di voler eliminare il veicolo?
+        </div>
+        <div class="modal-footer" id="el">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annulla</button>
+          <button type="button" class="btn btn-danger" @click="button = false">Elimina</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <script th:src="@{/js/handlePannel.js}"></script>
+
+  <script id="template-swiper" type="text/x-handlebars-template">
+    <table class="table table-striped align-middle">
+      <thead>
+        <th scope="col">Codice Identificativo</th>
+        <th scope="col">Tipologia</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modello</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </thead>
+      {{#each veicoli}}
+        
+      <tbody>
+       
+        <tr>
+          <td class="">{{this.id}}</td>
+          <td class="">{{this.categoria}}</td>
+          <td class="">{{this.marca}}</td>
+          <td class="">{{this.modello}}</td>
+          <td class="">{{this.prezzo}}</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary italic font" data-bs-toggle="modal" th:attr="onclick='modifyVeicolo(' + '{{this.id}}' + ')'">
+              Modifica
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-danger italic font" data-bs-toggle="modal" id="preDelete" th:attr="onclick='deleteVeicolo(' + '{{this.id}}' + ')'">
+              Elimina
+            </button>
+        </td>
+        </tr>
+      </tbody>
+      {{/each}}
+    </table>
+  </script>
+
+  <script th:src="@{/js/modifyVeicolo.js}"></script>
+
+  <script id="template-swiper1" type="text/x-handlebars-template">
+    {{#veicolo}}
+      <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="update" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -163,79 +212,92 @@
         </div>
         <div class="modal-body">
 
-          <form action="">
+          <form action="/admin/modifyVeicolo" method="post" id="myform" enctype="multipart/form-data" modelAttribute="veicolo">
             <div class="container mb-5 mt-2">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="mb-3">
+                    <label for="id2" class="form-label">id</label>
+                    <input type="text" class="form-control" id="id2" name="id" value="{{this.id}}" readonly>
+                  </div>
+                  <div class="mb-3">
                     <label for="exampleInput" class="form-label">Marca</label>
-                    <input type="text" class="form-control" id="exampleInput">
+                    <input type="text" class="form-control" id="exampleInput" name="marca" value="{{this.marca}}">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInput2" class="form-label">Modello</label>
-                    <input type="text" class="form-control" id="exampleInput2">
+                    <input type="text" class="form-control" id="exampleInput2" name="modello" value="{{this.modello}}">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInput3" class="form-label">Prezzo</label>
-                    <input type="number" class="form-control" id="exampleInput3">
+                    <input type="number" class="form-control" id="exampleInput3" name="prezzo" value="{{this.prezzo}}">
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label" for="">Trazione</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Anteriore</option>
-                      <option value="2">Posteriore</option>
-                      <option value="3">Integrale</option>
+                    <select class="form-select" name="trazione">
+                      {{#select this.trazione}}
+                      <option value="anteriore">Anteriore</option>
+                      <option value="posteriore">Posteriore</option>
+                      <option value="integrale">Integrale</option>
+                      {{/select}}
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Alimentazione</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Diesel</option>
-                      <option value="2">Benzina</option>
-                      <option value="3">Elettrica</option>
-                      <option value="3">Muscolare</option>
+                    <select class="form-select" name="alimentazione">
+                      {{#select this.alimentazione}}
+                      <option value="diesel">Diesel</option>
+                      <option value="benzina">Benzina</option>
+                      <option value="elettrica">Elettrica</option>
+                      <option value="muscolare">Muscolare</option>
+                      {{/select}}
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Status</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Prenotata</option>
-                      <option value="2">Disponibile</option>
-                      <option value="3">Non disponibile</option>
+                    <select class="form-select" name="status">
+                      {{#select this.status}}
+                      <option value="prenotata">Prenotata</option>
+                      <option value="disponibile">Disponibile</option>
+                      <option value="non disponibile">Non disponibile</option>
+                      {{/select}}
                     </select>
                   </div>
                   <div class="mb-3">
+                    <label for="inputImg" class="form-label">Percorso img</label>
+                    <input type="text" class="form-control" id="inputImg" name="immagine" value="{{this.immagine}}" readonly>
+                  </div>
+                  <div class="mb-3">
                     <label for="formFile" class="form-label">Cambia immagine </label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" name="file" id="formFile" accept="image/png, image/jpeg, image/jpg">
                   </div>
 
                 </div>
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
-                    <textarea class="form-control" placeholder="Descrizione del veicolo" style="height: 210px"></textarea>
+                    <textarea class="form-control" placeholder="Descrizione del veicolo"
+                      style="height: 210px" value="{{this.descrizione}}" name="descrzione"></textarea>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Cambio</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Manuale</option>
-                      <option value="2">Automatico</option>
-                      <option value="3">-</option>
+                    <select class="form-select" name="cambio">
+                      {{#select this.cambio}}
+                        <option value="manuale">Manuale</option>
+                        <option value="automatico">Automatico</option>
+                      {{/select}}
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Categoria</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Auto</option>
-                      <option value="2">Moto</option>
-                      <option value="2">Bicicletta</option>
-                      <option value="3">Monopattino</option>
+                    <select class="form-select" name="categoria">
+                      {{#select this.categoria}}
+                        <option value="auto">Auto</option>
+                        <option value="moto">Moto</option>
+                        <option value="bicicletta">Bicicletta</option>
+                        <option value="monopattino">Monopattino</option>
+                      {{/select}}
                     </select>
                   </div>
 
@@ -249,33 +311,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Chiudi</button>
-          <button type="button" class="btn btn-primary">Salva modifiche</button>
+          <input class="btn btn-primary" type="submit" value="Salva Modifiche" form="myform" />
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Modal 4 delete-->
-  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Eliminazione del veicolo</h5>
-        </div>
-        <div class="modal-body">
-          Sei sicuro di voler eliminare il veicolo?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annulla</button>
-          <button type="button" class="btn btn-danger">Elimina</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  {{/veicolo}}
   </script>
+
+
 </body>
 
 </html>
