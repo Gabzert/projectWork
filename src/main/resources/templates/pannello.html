@@ -59,25 +59,88 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInput" class="form-label">Campo1</label>
-            <input type="text" class="form-control" id="exampleInput">
+
+
+
+        <form action="">
+          <div class="container my-5">
+          <h2 class="title mb-5">Contattaci</h2>
+            <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label for="exampleInput" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="exampleInput">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInput2" class="form-label">Modello</label>
+                <input type="text" class="form-control" id="exampleInput2">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInput3" class="form-label">Prezzo</label>
+                <input type="number" class="form-control" id="exampleInput3">
+              </div>
+              
+              <div class="mb-3">
+                <select class="custom-select form-control">
+                  <option selected>Trazione</option>
+                  <option value="1">Anteriore</option>
+                  <option value="2">Posteriore</option>
+                  <option value="3">Integrale</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <select class="custom-select form-control">
+                  <option selected>Alimentazione</option>
+                  <option value="1">Diesel</option>
+                  <option value="2">Benzina</option>
+                  <option value="3">Elettrica</option>
+                  <option value="3">Muscolare</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <select class="custom-select form-control">
+                  <option selected>Status</option>
+                  <option value="1">Prenotata</option>
+                  <option value="2">Disponibile</option>
+                  <option value="3">Non disponibile</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input type="file" class="custom-file-input" id="inputGroupFile02">
+                <label class="custom-file-label" for="inputGroupFile02">Scegli immagine</label>
+              </div>
+
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
+                <textarea class="form-control" placeholder="Leave a comment here"  style="height: 210px"></textarea>
+              </div>
+              <div class="mb-3">
+                <select class="custom-select form-control">
+                  <option selected>Cambio</option>
+                  <option value="1">Manuale</option>
+                  <option value="2">Automatico</option>
+                  <option value="3">-</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <select class="custom-select form-control">
+                  <option selected>Categoria</option>
+                  <option value="1">Auto</option>
+                  <option value="2">Moto</option>
+                  <option value="2">Bicicletta</option>
+                  <option value="3">Monopattino</option>
+                </select>
+              </div>
+              
+              
+            </div>
+            </div>
+            
           </div>
-          <div class="mb-3">
-            <label for="exampleInput2" class="form-label">Campo2</label>
-            <input type="text" class="form-control" id="exampleInput2">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInput3" class="form-label">Campo3</label>
-            <input type="text" class="form-control" id="exampleInput3">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInput4" class="form-label">Campo4</label>
-            <input type="text" class="form-control" id="exampleInput4">
-          </div>
-          
         </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
