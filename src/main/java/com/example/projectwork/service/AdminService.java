@@ -47,6 +47,11 @@ public class AdminService {
         return veicoloDB.save(veicolo);
     }
 
+
+    public Integer deleteVeicolo(int id) throws IOException{
+        return veicoloDB.deleteVeicoloById(id);
+    }
+
     public List<VeicoloEntity> getAllVeicoli(){
         return veicoloDB.findAll();
     }

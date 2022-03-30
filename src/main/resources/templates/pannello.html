@@ -142,13 +142,15 @@
         <div class="modal-body">
           Sei sicuro di voler eliminare il veicolo?
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="el">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annulla</button>
-          <button type="button" class="btn btn-danger">Elimina</button>
+          <button type="button" class="btn btn-danger" @click="button = false">Elimina</button>
         </div>
       </div>
     </div>
   </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
@@ -171,6 +173,7 @@
         <th scope="col"></th>
       </thead>
       {{#each veicoli}}
+        
       <tbody>
        
         <tr>
@@ -185,8 +188,11 @@
               Modifica
             </button>
           </td>
-          <td><button class="btn btn-danger italic font" data-bs-toggle="modal" data-bs-target="#delete"
-            id="Elimina">Elimina</button></td>
+          <td>
+            <button class="btn btn-danger italic font" data-bs-toggle="modal" id="preDelete" th:attr="onclick='deleteVeicolo(' + '{{this.id}}' + ')'">
+              Elimina
+            </button>
+        </td>
         </tr>
       </tbody>
       {{/each}}
