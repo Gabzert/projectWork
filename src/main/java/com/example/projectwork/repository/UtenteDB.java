@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UtenteDB extends JpaRepository<UtenteEntity, Integer>{
-
+    public UtenteEntity findUtenteById(int id);
 }

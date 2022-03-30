@@ -259,20 +259,20 @@
 
   <script>
     const CHART_COLORS = {
-  red: 'rgb(255, 99, 132)',
-  orange: 'rgb(255, 159, 64)',
-  yellow: 'rgb(255, 205, 86)',
-  green: 'rgb(75, 192, 192)',
   blue: 'rgb(54, 162, 235)',
+  green: 'rgb(75, 192, 192)',
+  yellow: 'rgb(255, 205, 86)',
+  orange: 'rgb(255, 159, 64)',
+  red: 'rgb(255, 99, 132)',
   purple: 'rgb(153, 102, 255)',
   grey: 'rgb(201, 203, 207)'
 };
     const data = {
-      labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+      labels: ['Bicicletta', 'Monopattino', 'Auto Elettrica', 'Auto con motore a scoppio', 'Moto'],
       datasets: [{
         label: 'My First dataset',
         backgroundColor: Object.values(CHART_COLORS),
-        data: [15, 10, 15, 20, 40],
+        data: [0.5, 1, 6, 30, 42],
       }]
     };
   
@@ -287,7 +287,7 @@
       },
       title: {
         display: true,
-        text: 'Risparmiamo co2, Siamo troppo ecologici'
+        text: 'Co2 emessa per tipologia di veicolo'
       }
     }
   },
@@ -368,43 +368,6 @@
       </div>
     {{/each}}
   </script>
-  <!--
-  <script id="template-swiper2" type="text/x-handlebars-template">
-    {{#each monopattini}}
-      <div class="swiper-slide" id="swiper_veicoli2">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
-        <div class="slideText">
-          <h2>{{this.categoria}}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-    {{/each}}
-  </script>
-  <script id="template-swiper3" type="text/x-handlebars-template">
-    {{#each bici}}
-      <div class="swiper-slide" id="swiper_veicoli3">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
-        <div class="slideText">
-          <h2>{{this.categoria}}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-    {{/each}}
-  </script>
-  <script id="template-swiper4" type="text/x-handlebars-template">
-    {{#each moto}}
-      <div class="swiper-slide" id="swiper_veicoli4">
-        <img class="sw-img" src="https://source.unsplash.com/400x400/?cannondale" alt="">
-        <div class="slideText">
-          <h2>{{this.categoria}}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Dettagli</button>
-        </div>
-      </div>
-    {{/each}}
-    -->
   </script>
 
  
