@@ -83,6 +83,33 @@ a:hover {
     color:#00995a;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                    Range                                   */
+/* -------------------------------------------------------------------------- */
+
+/* .range-cloud {
+    background-color: red !important;
+    &:after {
+    border-top-color: red !important; 
+    }
+}
+
+.range-field input[type="range"] {
+&::-webkit-slider-thumb {
+background: green !important;
+}
+
+&::-moz-range-thumb {
+background: green !important;
+}
+&::-ms-thumb {
+background: green !important;
+}
+} */
+
+
+
 .logo {
     width: 10rem;
 }
@@ -170,8 +197,8 @@ a:hover {
 #mainFooter {
     background:#00e687;
     color:#3d3e3f;
-    height: 30rem;
-    padding: 8rem 2rem 8rem 2rem;
+    
+    padding: 5rem 2rem;
 }
 
 hr.ft-hr{
