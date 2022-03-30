@@ -1,6 +1,7 @@
 package com.example.projectwork.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import com.example.projectwork.model.VeicoloEntity;
 import com.example.projectwork.repository.VeicoloDB;
@@ -34,5 +35,9 @@ public class AdminService {
 		}
 
         return veicoloDB.save(veicolo);
+    }
+
+    public List<VeicoloEntity> getAllVeicoli(){
+        return veicoloDB.findAll();
     }
 }
