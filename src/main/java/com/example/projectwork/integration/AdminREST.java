@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -55,15 +56,15 @@ public class AdminREST {
         }
     }
 
-    @PutMapping("/modifyVeicolo")
+    @PostMapping("/modifyVeicolo")
     public ResponseEntity<VeicoloEntity> modifyVeicolo(@ModelAttribute VeicoloEntity veicolo,
-            @SessionAttribute UtenteEntity utente, @RequestPart(name = "file") MultipartFile file) {
+            @SessionAttribute UtenteEntity utente, @RequestPart (name = "file", required=false) MultipartFile file1) {
         try {
             if (!utente.getRuolo().equals("amministratore")) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
             }
 
-            return ResponseEntity.ok(service.addVeicolo(veicolo, file));
+            return ResponseEntity.ok(service.addVeicolo(veicolo, file1));
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

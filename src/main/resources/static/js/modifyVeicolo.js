@@ -8,7 +8,7 @@ async function modifyVeicolo(id){
         'veicolo': veicolo1
     };
 
-    handle1("template-swiper1", "ouput-div1", context);
+    handle1("template-swiper1", "output-div1", context);
 
     $("#update").modal('show');
 
@@ -26,3 +26,9 @@ function handle1(idTemplate, idOutput, context) {
     output.innerHTML = htmlCompilato;
     
 }
+
+window.Handlebars.registerHelper('select', function( value, options ){
+    var $el = $('<select />').html( options.fn(this) );
+    $el.find('[value="' + value + '"]').attr({'selected':'selected'});
+    return $el.html();
+});

@@ -37,6 +37,16 @@ public class AdminService {
         return veicoloDB.save(veicolo);
     }
 
+    public VeicoloEntity updateVeicolo(VeicoloEntity veicolo, MultipartFile img) throws IOException{
+
+        if(img != null && !img.isEmpty()){
+            String percorso = fs.saveFile("img/veicoli", veicolo.getCategoria()+img.getName(), img);
+            veicolo.setImmagine(percorso);
+        }
+
+        return veicoloDB.save(veicolo);
+    }
+
     public List<VeicoloEntity> getAllVeicoli(){
         return veicoloDB.findAll();
     }
