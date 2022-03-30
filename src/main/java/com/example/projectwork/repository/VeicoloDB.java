@@ -15,7 +15,9 @@ public interface VeicoloDB extends JpaRepository<VeicoloEntity,Integer> {
     List<VeicoloEntity> findByAlimentazione(String alimentazione);
     List<VeicoloEntity> findByPrezzoBetween(double min, double max);
     
-     List<VeicoloEntity> findAll();
+    List<VeicoloEntity> findAll();
+
+    public int deleteVeicoloById(int id);
     
     public VeicoloEntity findVeicoloById(int id);
 }

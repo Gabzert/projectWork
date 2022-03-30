@@ -10,7 +10,7 @@ async function getVeicoliPannel(){
 
     
 
-    handle("template-swiper", "ouput-div", context);	
+    handle("template-swiper", "output-div", context);	
 }
 
 

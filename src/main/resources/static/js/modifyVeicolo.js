@@ -1,6 +1,6 @@
 
 
-async function modifyVeicolo(id){
+async function modifyVeicolo(id) {
     let response = await fetch('http://localhost:8080/api/veicoli/veicolo/' + id);
     let veicolo1 = await response.json();
 
@@ -8,14 +8,14 @@ async function modifyVeicolo(id){
         'veicolo': veicolo1
     };
 
-    handle1("template-swiper1", "ouput-div1", context);
+    handle1("template-swiper1", "output-div1", context);
 
     $("#update").modal('show');
 
 }
 
-function handle1(idTemplate, idOutput, context) {			
-			
+function handle1(idTemplate, idOutput, context) {
+
     let templateScript = document.getElementById(idTemplate).innerHTML;
 
     // handlebar
@@ -24,5 +24,23 @@ function handle1(idTemplate, idOutput, context) {
 
     let output = document.getElementById(idOutput);
     output.innerHTML = htmlCompilato;
-    
+
 }
+
+window.Handlebars.registerHelper('select', function (value, options) {
+    var $el = $('<select />').html(options.fn(this));
+    $el.find('[value="' + value + '"]').attr({ 'selected': 'selected' });
+    return $el.html();
+});
+
+
+async function deleteVeicolo(id) {
+
+    fetch('http://localhost:8080/api/admin/deleteVeicolo/' + id, {
+        method: 'GET',
+    })
+    .then(res => res.text()) // or res.json()
+    .then(res => console.log(res))
+    location.reload();
+}
+
