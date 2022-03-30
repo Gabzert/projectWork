@@ -1,22 +1,47 @@
-let url="http://localhost:8080/api/prenotazioni";
+/*let url="http://localhost:8080/api/prenotazioni";
 
 let template_old =null;
 let template_incorso = null;
 let p_old = null;
 let p_incorso = null;
 let hb_incorso = null;
-let hb_old = null;
+let hb_old = null;*/
 
+async function loadUtente(){
 
+	let response = await fetch('http://localhost:8080/api/utenti/utente');
+    let utenti = await response.json();
+
+    const context = {
+        'utente': utenti
+    };
+
+    handle("template_swiper2", "output-div2", context);	
+}
+
+function handle(idTemplate, idOutput, context) {			
+			
+    let templateScript = document.getElementById(idTemplate).innerHTML;
+
+    // handlebar
+    let template = Handlebars.compile(templateScript);
+    let htmlCompilato = template(context);
+
+    let output = document.getElementById(idOutput);
+    output.innerHTML = htmlCompilato;
+    
+}
+
+/*
 function editPrenotazione(event){
 	let originator = event.currentTarget;
 	let prenotazione_id = originator.getAttribute('data-prenotazione-id');
 	let slot_veicolo =document.querySelector(".card-title[data-prenotazione-id="+prenotazione_id+"]") ;
 	let slot_data = document.querySelector(".card-header[data-prenotazione-id="+prenotazione_id+"]") ;
 	let prenotazione_veicolo = slot_veicolo.innerHTML;
-	let prenotazione_data = slot_data.innerHTML;
+	let prenotazione_data = slot_data.innerHTML;*/
 	
-		
+	/*	
 		let dd = document.createElement('select');
 		dd.id ="dropdownVeicoli"
 		slot_veicolo.replaceWith(dd);
@@ -45,13 +70,13 @@ function editPrenotazione(event){
 		slot_data.replaceWith(data_select);
 		data_select.value = prenotazione_data;
 	
-	}
+	}*/
 
 
 
-
+/*
 function salvaModifiche(event){
-	let originator = event.currentTarget;
+	let originator = event.currentTarget;*/
 
 
 
@@ -68,12 +93,12 @@ function salvaModifiche(event){
     .then(json => {
         console.log(json);
     });
-*/	
+*/	/*
 	refreshPrenotazioni();
 
 	
-}
-
+}*/
+/*
 function deletePrenotazione(event){
 	let originator = event.currentTarget;
 	let id = originator.getAttribute('data-prenotazione-id');
@@ -104,42 +129,63 @@ function deletePrenotazione(event){
 }
 
 function refreshPrenotazioni(event){
+let response ="";
+let lista_prenotazioni="";*/
+/*
 
-	fetch(url)
-	.then(function(response) {
-		return response.json();
-		
-	})
-	.then(function(json) {
+response = fetch(url);
+lista_prenotazioni =  response.json();
 
-		console.log(json);
+const context = {
+	'prenotazioni': lista_prenotazioni
+};
+*/
+			/*fetch(url)
+			.then(function(response) {
 
-		if(json.result !== 0){
-			alert("Error "+json.result+" in prenotazioni: "+json.message);
-		} else {
-			for(let li=0; li<json.length; li++){
-			if(json.data[li].status == "in prenotazione"){
-				p_incorso.innerHTML = hb_incorso(json);
-			}
-			p_old.innerHTML = hb_old(json);
-			}
-		}
-		agganciaEventiAppreciateDeleteEdit();
-	})
-	.catch(function(err) { 
-			alert(err);
-			console.log('Failed to fetch page: ', err);
-	});	
+				return response.json();
+				
+			})
+			.then(function(json) {
+				console.log(json);
+
+				lista_prenotazioni= json;
+				console.log(lista_prenotazioni);
+				const context = {
+					'prenotazioni': lista_prenotazioni
+				};
+				console.log(lista_prenotazioni);
+
+				if(json.result !== 0){
+					alert("Error "+json.result+" in prenotazioni: "+json.message);
+				} else {
+					for(let li=0; li<json.length; li++){
+					if(json.data[li].status == "in prenotazione"){
+						p_incorso.innerHTML = hb_incorso(json);
+					}
+					p_old.innerHTML = hb_old(json);
+					}
+				}
+				agganciaEventi();
+			})
+			.catch(function(err) { 
+					alert(err);
+					console.log('Failed to fetch page: ', err);
+			});	
+			
 }
 
-/*
-Handlebars.registerHelper("if", function(, options) {
-	if (conditional) {
-	  return 
+function agganciaEventi(event){
+	let btn_modifica = document.getElementsByClassName("bottone_modifica");
+	for(let li=0; li<btn_modifica.length; li++){
+		btn_modifica[li].addEventListener("click", editPrenotazione);
 	}
-  });
-*/
 
+	let btn_cancella = document.getElementsByClassName("bottone_cancella");
+	for(let li=0; li<btn_cancella.length; li++){
+		btn_cancella[li].addEventListener("click", deletePrenotazione);
+	}
+}
 
 
 window.addEventListener(
@@ -154,9 +200,6 @@ window.addEventListener(
 		hb_incorso =Handlebars.compile(template_incorso);
 		hb_old = Handlebars.compile(template_old);
 
-    
-        let btn_modifica = document.getElementById("bottone_modifica");
-        let btn_cancella = document.getElementById("bottone_cancella");
- 
+		loadUtente;
 		refreshPrenotazioni(null);
-});
+});*/

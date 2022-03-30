@@ -1,42 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-  <head th:replace="fragment/head">
+<head>
+  <div th:include="fragment/head"></div>
 
-    <title>MUVT Utente</title>
+  <title>MUVT Utente</title>
 
-  </head>
+</head>
 
-<body>
+<body th:attr="onload='loadUtente()'">
   <div id="header">
     <nav th:replace="fragment/nav"></nav>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <!-- img -->
-        <img class="utenteImg py-3" src="https://www.teahub.io/photos/full/51-512780_facebook-blank.jpg" alt="">
-      </div>
-      <div class="col-lg-6 pt-3">
-        <div class="card mt-3 mb-3">
-          <div class="card-body pb-0">
-            <h5 class="card-title">Profilo</h5>
-            <div class="card-text">
-              <ul class="list-styled">
-                <li>{{id}}</li>
-                <li>{{Nome}}</li>
-                <li>{{Cognome}}</li>
-                <li>{{Data di nascita}}</li>
-                <li>{{Email}}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- desc -->
-      </div>
-    </div>
-  </div>
+  <div class="container" id="output-div2"></div>
 
   <div class="container mb-5">
     <h2 class="mb-4">Prenotazioni</h2>
@@ -52,7 +29,7 @@
     <div id="div_old"></div>
 
   </div>
-  
+
   <footer th:replace="fragment/footer"></footer>
 
 
@@ -64,6 +41,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
 
   <script id="template_attuale" type="text/x-handlebars-template">
    {{#each prenotazioni}}
@@ -74,8 +53,8 @@
             <div class="card-body">
               <h5 class="card-title" data-prenotazione-id="{{this.id}}">{{this.veicolo}}</h5>
               <p class="card-text">{{this.prezzo}}</p>
-              <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Modifica</button>
-              <button class="btn btn-primary" data-prenotazione-id="{{this.id}}">Cancella</button>
+              <button class="btn btn-primary bottone_modifica" data-prenotazione-id="{{this.id}}">Modifica</button>
+              <button class="btn btn-primary bottone_cancella" data-prenotazione-id="{{this.id}}">Cancella</button>
             </div>
           </div>
         </div>
@@ -83,9 +62,9 @@
       {{/each}}
 
     </script>
-    <!-- <script th:replace="fragments/script"></script> -->
+  <!-- <script th:replace="fragments/script"></script> -->
   <script id="template_old" type="text/x-handlebars-template">
-    {{#each prenotazione}}
+    {{#each prenotazioni}}
     <div id="old" class="col-12 card-pren">
       <div class="card border border-danger border-3">
         <h5 class="card-header">{{{this.data_prenotazione}}}</h5>
@@ -98,14 +77,34 @@
     {{/each}} 
     </script>
 
-    <script src=".\js\utente.js"></script>
+  <script id="template_swiper2" type="text/x-handlebars-template">
+    {{#utente}}
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- img -->
+        <img class="utenteImg py-3" src="https://i.pinimg.com/550x/94/59/bf/9459bf41db1001621040fcbec85563d0.jpg" alt="">
+      </div>
+      <div class="col-lg-6 pt-3">
+        <div class="card mt-3 mb-3">
+          <div class="card-body pb-0">
+            <h5 class="card-title">Profilo</h5>
+            <div class="card-text">
+              <ul class="list-styled" id="info_utente">
+                <li>{{nome}}</li>
+                <li>{{cognome}}</li>
+                <li>{{data_nascita}}</li>
+                <li>{{email}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/utente}}
+  </script>
 
 
-
-
-
-
-
+  <script th:src="@{/js/utente.js}"></script>
 
 
 </body>

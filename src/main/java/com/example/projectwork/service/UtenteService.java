@@ -18,6 +18,10 @@ public class UtenteService {
 		return uDB.findAll();
 	}
 
+	public UtenteEntity getUtenteById(int id){
+		return uDB.findUtenteById(id);
+	}
+
 	public UtenteEntity login(UtenteEntity ut) throws Exception {
 		
 		List<UtenteEntity> lista = uDB.findAll(); 
