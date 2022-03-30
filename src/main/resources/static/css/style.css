@@ -17,6 +17,7 @@ body{
 h1, h2, h3, h4, h5, h6{
     font-weight: 800;
 }
+
 .ftdim{
     font-size: 12;
 }
@@ -28,6 +29,9 @@ h1, h2, h3, h4, h5, h6{
 }
 .white{
     color: #efefef;
+}
+.black{
+    color: black;
 }
 a { 
     color: inherit;
@@ -169,8 +173,8 @@ background: #00e687;
     max-width: 80rem;
 }
 
-#imageSpacer {
-    height:15rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
+/* #imageSpacer {
+    height:15rem; è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(2,0,36,1) 100%);
     background-size: cover;
@@ -178,7 +182,8 @@ background: #00e687;
     background-position: center center;
     background-attachment: fixed;
 
-}
+} 
+*/
 
 .greenbg{
     border-radius: 0.6rem;
@@ -207,10 +212,29 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 /*                                    Hero                                    */
 /* -------------------------------------------------------------------------- */
+#hero {
+    position:relative; 
+}  
+#hero ul{
+    z-index: 2;
+}
+
+
+.overlay {     
+    display: block;     
+    width:100%;     
+    height:100%;     
+    position:absolute;     
+    background: rgb(0,0,0);     
+    background: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%); 
+    z-index: 1;
+}
+
 .frontimg{
     
     position: relative;
     text-align: center;
+    
     
 }
 .centered {
