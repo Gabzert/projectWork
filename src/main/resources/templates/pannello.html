@@ -35,7 +35,7 @@
 
 
 
-          <form th:action="@{/veicolo/update}">
+          <form th:action="@{/veicolo/update}" method="put">
             <div class="container my-5">
               <h2 class="title mb-5">Contattaci</h2>
               <div class="row">
@@ -84,13 +84,13 @@
                   </div>
                   <div class="mb-3">
                     <input type="file" class="custom-file-input" id="inputGroupFile02">
-                    <label class="custom-file-label" for="inputGroupFile02">Scegli immagine</label>
+                    <label class="custom-file-label" for="inputGroupFile02" id="immagine">Scegli immagine</label>
                   </div>
 
                 </div>
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
+                    <label for="formGroupExampleInput3" class="form-label" id="descrizione">Descrizione</label>
                     <textarea class="form-control" placeholder="Leave a comment here" style="height: 210px"></textarea>
                   </div>
                   <div class="mb-3">
@@ -153,6 +153,7 @@
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
   <script th:src="@{/js/handlePannel.js}"></script>
+  <!--<script th:src="@{/js/modifyVeicolo.js}"></script>-->
 
   <script id="template-swiper" type="text/x-handlebars-template">
     <table class="table table-striped align-middle">
