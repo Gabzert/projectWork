@@ -4,6 +4,8 @@
 <head th:include="fragment/head">
 
   <title th:replace="${Veicolo1}">Veicolo</title>
+  <link href='../static/fullcalendar/lib/main.css' rel='stylesheet' />
+    
 </head>
 
 <body th:attr="onload='getVeicoloById(' + ${idl} + ')'">
@@ -23,45 +25,20 @@
         <h3 class="italic">IL TUO MEZZO SI TROVA QUI:</h3>
         <div id="map" class="m-2"></div>
       </div>
-
-      <div id="calendar" class="col-lg-8">
-
-        <div class="card-header bg-primary">
-          <ul class="list-unstyled">
-            <li id="month" class="text-white text-uppercase text-center">
-              Marzo
-            </li>
-            <li id="year fd-2" class="text-white text-uppercase text-center">
-              2022
-            </li>
-          </ul>
-        </div>
-        <table class="table calendar table-bordered table-responsive-sm" id="calendar">
-          <thead>
-            <tr class="weekdays bg-dark">
-              <th scope="col" class="text-white text-center">Lunedì</th>
-              <th scope="col" class="text-white text-center">Martedì</th>
-              <th scope="col" class="text-white text-center">Mercoledì</th>
-              <th scope="col" class="text-white text-center">Giovedì</th>
-              <th scope="col" class="text-white text-center">Venerdì</th>
-              <th scope="col" class="text-white text-center">Sabato</th>
-              <th scope="col" class="text-white text-center">Domenica</th>
-            </tr>
-          </thead>
-          <tbody class="days bg-light" id="days"></tbody>
-          <tfoot></tfoot>
-        </table>
-      </div>
-
     </div>
+      <div id="calendar" class="col-lg-8"></div>
   </div>
 
 
   <footer th:replace="fragment/footer"></footer>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+<script th:src="@{/fullcalendar/lib/main.js}"></script>
+
+<!--  <script src='../static/fullcalendar/lib/main.js'></script>-->
 
   <script th:inline="javascript" type="text/javascript">
     /*<![CDATA[*/
@@ -94,7 +71,7 @@
                 <li>Cambio: {{cambio}}</li>
               </ul>
             </div>
-            <a href="#" class="btn btn-primary">Prenota</a>
+            <a  class="btn btn-primary" href="#" id="bottone_prenota">Prenota</a>
           </div>
         </div>
       </div>
@@ -102,31 +79,6 @@
     {{/veico}}
 </script>
 
-<!-- <script id="template-swiper" type="text/x-handlebars-template">
-  {{#veico}}
-  <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <img th:src="@{{{this.immagine}}}" class="img-fluid rounded-start" alt="img-veicolo">
-      </div>
-      <div class="col-md-4">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <div class="card-text">
-            <ul class="list-unstyled">
-              <li>Alimentazione: {{alimentazione}}</li>
-              <li>Trazione: {{trazione}}</li>
-              <li>Stato: {{status}}</li>
-              <li>Cambio: {{cambio}}</li>
-            </ul>
-          </div>
-          <a href="#" class="btn btn-primary">Prenota</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{/veico}}
-</script> -->
 
 
 </body>
