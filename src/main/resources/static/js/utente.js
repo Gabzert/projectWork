@@ -9,7 +9,7 @@ let hb_old = null;
 
 function loadUtente(){
 
-	
+	/*
 	fetch(url)
 			.then(function(response) {
 				return response.json();
@@ -34,7 +34,7 @@ function loadUtente(){
 					alert(err);
 					console.log('Failed to fetch page: ', err);
 			});	
-			
+			*/
 
 
 }
@@ -184,12 +184,12 @@ const context = {
 
 function agganciaEventi(event){
 	let btn_modifica = document.getElementsByClassName("bottone_modifica");
-	for(let li=0; li<brn_modifica.length; li++){
+	for(let li=0; li<btn_modifica.length; li++){
 		btn_modifica[li].addEventListener("click", editPrenotazione);
 	}
 
 	let btn_cancella = document.getElementsByClassName("bottone_cancella");
-	for(let li=0; li<brn_cancella.length; li++){
+	for(let li=0; li<btn_cancella.length; li++){
 		btn_cancella[li].addEventListener("click", deletePrenotazione);
 	}
 }
