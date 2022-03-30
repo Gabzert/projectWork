@@ -83,6 +83,25 @@ a:hover {
     color:#00995a;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                    Range                                   */
+/* -------------------------------------------------------------------------- */
+
+.form-range::-webkit-slider-thumb {
+    background: #00e687;
+}
+
+.form-range::-moz-range-thumb {
+background: #00e687;
+}
+
+.form-range::-ms-thumb {
+background: #00e687;
+}
+
+
+
 .logo {
     width: 10rem;
 }
@@ -170,8 +189,8 @@ a:hover {
 #mainFooter {
     background:#00e687;
     color:#3d3e3f;
-    height: 30rem;
-    padding: 8rem 2rem 8rem 2rem;
+    
+    padding: 5rem 2rem;
 }
 
 hr.ft-hr{
@@ -225,6 +244,18 @@ hr.ft-hr{
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                 Dispositivo                                */
+/* -------------------------------------------------------------------------- */
+
+
+.filtri-disp {
+    position: relative;
+    border: 3px solid #00e687;
+    /* margin-top: 3rem; */
+    margin-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                 Media Query                                */
 /* -------------------------------------------------------------------------- */
 
@@ -236,6 +267,8 @@ hr.ft-hr{
         height: 10rem;
     }
 }
-@media (min-width: 575px) {
-   
+@media (min-width: 1200px) {
+    .filtri-disp{
+        position: fixed;
+    }
 }
