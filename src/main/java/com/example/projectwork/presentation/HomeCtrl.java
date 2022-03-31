@@ -51,6 +51,10 @@ public class HomeCtrl {
     public String pannello(@ModelAttribute UtenteEntity utente) {
         return "pannello";
     }
+    @GetMapping("/privacy")
+    public String privacy(@ModelAttribute UtenteEntity utente) {
+        return "privacy";
+    }
 
     @GetMapping("/index")
     public String index(@ModelAttribute UtenteEntity utente) {

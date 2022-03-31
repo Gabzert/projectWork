@@ -19,12 +19,14 @@
 
   <div class="container">
     <div class="row mb-5">
-      <div class="col-lg-4 border border-success">
-        <h3 class="italic">IL TUO MEZZO SI TROVA QUI:</h3>
-        <div id="map" class="m-2"></div>
+      <div class="col-lg-4">
+        <div class="border border-success p-3">
+          <h3 class="italic pt-2">IL TUO MEZZO SI TROVA QUI:</h3>
+          <div id="map" class=""></div>
+        </div>
       </div>
 
-      <div id="calendar" class="col-lg-8">
+      <!-- <div id="calendar" class="col-lg-8">
 
         <div class="card-header bg-primary">
           <ul class="list-unstyled">
@@ -51,7 +53,7 @@
           <tbody class="days bg-light" id="days"></tbody>
           <tfoot></tfoot>
         </table>
-      </div>
+      </div> -->
 
     </div>
   </div>
@@ -76,7 +78,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-  <script id="template-swiper" type="text/x-handlebars-template">
+  <!-- <script id="template-swiper" type="text/x-handlebars-template">
   {{#veico}}
       <div class="row">
       <div class="col-lg-6 ps-5 mb-5">
@@ -101,33 +103,33 @@
       </div>
     </div>
     {{/veico}}
-</script>
+</script> -->
 
-<!-- <script id="template-swiper" type="text/x-handlebars-template">
+<script id="template-swiper" type="text/x-handlebars-template">
   {{#veico}}
   <div class="card mb-3">
     <div class="row g-0">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <img th:src="@{{{this.immagine}}}" class="img-fluid rounded-start" alt="img-veicolo">
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fs-3">Informazioni veicolo</h5>
           <div class="card-text">
             <ul class="list-unstyled">
-              <li>Alimentazione: {{alimentazione}}</li>
-              <li>Trazione: {{trazione}}</li>
-              <li>Stato: {{status}}</li>
-              <li>Cambio: {{cambio}}</li>
+              <li class="fs-4"><i class="fa-solid fa-gas-pump pe-2"></i>Alimentazione: {{alimentazione}}</li>
+              <li class="fs-4"><i class="fa-solid fa-gauge-high pe-2"></i>Trazione: {{trazione}}</li>
+              <li class="fs-4"><i class="fa-solid fa-list-check pe-2"></i>Stato: {{status}}</li>
+              <li class="fs-4"><i class="fa-solid fa-gears pe-2"></i>Cambio: {{cambio}}</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary">Prenota</a>
+          <a href="#" class="btn btn-primary font italic">Prenota</a>
         </div>
       </div>
     </div>
   </div>
   {{/veico}}
-</script> -->
+</script>
 
 
 </body>

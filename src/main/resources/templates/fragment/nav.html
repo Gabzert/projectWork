@@ -29,8 +29,8 @@
           <a class="nav-link" aria-current="page" href="/utente"><button class="btn">Profilo</button></a>
         </li>
         <li class="nav-item d-flex d-lg-block">
-          <a class="nav-link btn btn-primary mx-auto px-2 " th:if="${utente!=null && utente.nome!=null}" th:href="@{/login/logout}">Logout</a>
-          <a class="nav-link btn btn-primary mx-auto px-2 " th:unless="${utente!=null && utente.nome!=null}" href="/login">Login</a>
+          <a class="nav-link btn btn-danger mx-auto px-2 italic font" th:if="${utente!=null && utente.nome!=null}" th:href="@{/login/logout}">Logout</a>
+          <a class="nav-link btn btn-primary mx-auto px-2 italic font" th:unless="${utente!=null && utente.nome!=null}" href="/login">Login</a>
         </li>
       </ul>
     </div>

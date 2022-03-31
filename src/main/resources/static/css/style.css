@@ -10,10 +10,14 @@
 body{
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
+    
+    background: rgb(0,230,135);
+    background: linear-gradient(0deg, rgba(0,230,135,1) 0%, rgba(255,255,255,0) 30%);
 }
 h1, h2, h3, h4, h5, h6{
     font-weight: 800;
 }
+
 .ftdim{
     font-size: 12;
 }
@@ -25,6 +29,9 @@ h1, h2, h3, h4, h5, h6{
 }
 .white{
     color: #efefef;
+}
+.black{
+    color: black;
 }
 a { 
     color: inherit;
@@ -38,7 +45,7 @@ a:hover {
 /*                                    Login                                   */
 /* -------------------------------------------------------------------------- */
 .login{
-    background-image: url("https://motori.ilgiornale.it/wp-content/uploads/2021/09/car_sharing_roma_polizia_penitenziaria.jpg");
+    background-image: url("../IMG/Sentiero_traffico_lig.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-position: left center;
@@ -68,10 +75,26 @@ a:hover {
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
     /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
-    background-color:#00995a;
+    background-color:#12e78e;
     border-color: #00995a;
 
 }
+
+.btn-danger{
+    background-color:#eb0000;
+    border-color: #eb0000;
+    color: #3d3e3f;
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+    /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
+    background-color:#ff8686;
+    border-color: #800000;
+    color: #efefef;
+
+}
+
+
+
 .btn-primary:focus {
     box-shadow: 0 0 0 0rem rgb(49 132 253 / 50%);
 }
@@ -166,8 +189,8 @@ background: #00e687;
     max-width: 80rem;
 }
 
-#imageSpacer {
-    height:15rem; /*è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina*/
+/* #imageSpacer {
+    height:15rem; è un DIV vuoto, allora forzo un'altezza per mostrarlo sulla pagina
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,230,128,1) 50%, rgba(2,0,36,1) 100%);
     background-size: cover;
@@ -175,7 +198,8 @@ background: #00e687;
     background-position: center center;
     background-attachment: fixed;
 
-}
+} 
+*/
 
 .greenbg{
     border-radius: 0.6rem;
@@ -204,10 +228,29 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 /*                                    Hero                                    */
 /* -------------------------------------------------------------------------- */
+#hero {
+    position:relative; 
+}  
+#hero ul{
+    z-index: 2;
+}
+
+
+.overlay {     
+    display: block;     
+    width:100%;     
+    height:100%;     
+    position:absolute;     
+    background: rgb(0,0,0);     
+    background: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%); 
+    z-index: 1;
+}
+
 .frontimg{
     
     position: relative;
     text-align: center;
+    
     
 }
 .centered {
@@ -241,6 +284,12 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 #map{
     height: 400px;
+    width: 100%;
+
+}
+.border-success {
+    border-color:#00e687!important;
+    border-radius: 5px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -260,15 +309,22 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 575px) {
+
     .swiper-slide{
         padding: 0rem 3rem 0rem 3rem;
     }  
-    #mainFooter {
-        height: 10rem;
+
+    #map{
+        height: 400px;
+        /* min-width: 300px; */
+        width: 100%;
     }
+   
 }
 @media (min-width: 1200px) {
+
     .filtri-disp{
         position: fixed;
     }
+   
 }
