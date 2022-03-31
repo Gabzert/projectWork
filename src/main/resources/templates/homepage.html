@@ -361,8 +361,8 @@
       <div class="swiper-slide">
         <img class="sw-img" th:src="@{{{this.immagine}}}" alt="">
         <div class="slideText">
-          <h2>{{this.modello}}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <h2>{{this.marca}} {{this.modello}}</h2>
+          <p>{{this.descrizione}}</p>
           <button class="btn btn-primary italic font" id="{{this.id}}" onclick="getRedirection(this.id)">Dettagli</button>
         </div>
       </div>
