@@ -35,54 +35,51 @@
 
         <div class="modal-body">
 
-          <form action="">
+          <form action="/admin/addVeicolo" method="post" id="myform2" enctype="multipart/form-data" modelAttribute="veicolo">
             <div class="container mb-5 mt-2">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="exampleInput" class="form-label">Marca</label>
-                    <input type="text" class="form-control" id="exampleInput">
+                    <input type="text" class="form-control" id="exampleInput" name="marca">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInput2" class="form-label">Modello</label>
-                    <input type="text" class="form-control" id="exampleInput2">
+                    <input type="text" class="form-control" id="exampleInput2" name="modello">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInput3" class="form-label">Prezzo</label>
-                    <input type="number" class="form-control" id="exampleInput3">
+                    <input type="number" class="form-control" id="exampleInput3" name="prezzo">
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label" for="">Trazione</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Anteriore</option>
-                      <option value="2">Posteriore</option>
-                      <option value="3">Integrale</option>
+                    <select class="form-select" name="trazione">
+                      <option value="anteriore">Anteriore</option>
+                      <option value="posteriore">Posteriore</option>
+                      <option value="integrale">Integrale</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Alimentazione</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Diesel</option>
-                      <option value="2">Benzina</option>
-                      <option value="3">Elettrica</option>
-                      <option value="3">Muscolare</option>
+                    <select class="form-select" name="alimentazione">
+                      <option value="diesel">Diesel</option>
+                      <option value="benzina">Benzina</option>
+                      <option value="elettrica">Elettrica</option>
+                      <option value="muscolare">Muscolare</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Status</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Prenotata</option>
-                      <option value="2">Disponibile</option>
-                      <option value="3">Non disponibile</option>
+                    <select class="form-select" name="status">                
+                      <option value="disponibile">Disponibile</option>
+                      <option value="prenotata">Prenotata</option>
+                      <option value="non disponibile">Non disponibile</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Cambia immagine </label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" id="formFile" name="file">
                   </div>
 
                 </div>
@@ -90,25 +87,22 @@
                   <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
                     <textarea class="form-control" placeholder="Descrizione del veicolo"
-                      style="height: 210px"></textarea>
+                      style="height: 210px" name="descrizione"></textarea>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Cambio</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Manuale</option>
-                      <option value="2">Automatico</option>
-                      <option value="3">-</option>
+                    <select class="form-select" name="cambio">
+                      <option value="manuale">Manuale</option>
+                      <option value="automatico">Automatico</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Categoria</label>
-                    <select class="form-select">
-                      <option selected>Scegli</option>
-                      <option value="1">Auto</option>
-                      <option value="2">Moto</option>
-                      <option value="2">Bicicletta</option>
-                      <option value="3">Monopattino</option>
+                    <select class="form-select" name="categoria">
+                      <option value="auto">Auto</option>
+                      <option value="moto">Moto</option>
+                      <option value="bicicletta">Bicicletta</option>
+                      <option value="monopattino">Monopattino</option>
                     </select>
                   </div>
 
@@ -122,7 +116,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Chiudi</button>
-          <button type="button" class="btn btn-primary">Aggiungi</button>
+          <input class="btn btn-primary" type="submit" value="Aggiungi" form="myform2" />
         </div>
       </div>
     </div>
@@ -278,7 +272,7 @@
                   <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
                     <textarea class="form-control" placeholder="Descrizione del veicolo"
-                      style="height: 210px" value="{{this.descrizione}}" name="descrzione"></textarea>
+                      style="height: 210px" value="{{this.descrizione}}" name="descrizione"></textarea>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Cambio</label>
