@@ -75,10 +75,26 @@ a:hover {
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
     /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
-    background-color:#00995a;
+    background-color:#12e78e;
     border-color: #00995a;
 
 }
+
+.btn-danger{
+    background-color:#eb0000;
+    border-color: #eb0000;
+    color: #3d3e3f;
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+    /*sovrascrivo i colori dei pulsanti  al passaggio del mouse*/
+    background-color:#ff8686;
+    border-color: #800000;
+    color: #efefef;
+
+}
+
+
+
 .btn-primary:focus {
     box-shadow: 0 0 0 0rem rgb(49 132 253 / 50%);
 }
@@ -268,10 +284,12 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 #map{
     height: 400px;
+    width: 100%;
+
 }
 .border-success {
-    border-color:#00e687;
-    border-radius: 2px;
+    border-color:#00e687!important;
+    border-radius: 5px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -291,16 +309,20 @@ hr.ft-hr{
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 575px) {
+
     .swiper-slide{
         padding: 0rem 3rem 0rem 3rem;
     }  
+
     #map{
         height: 400px;
-        width: 300px;
+        /* min-width: 300px; */
+        width: 100%;
     }
    
 }
 @media (min-width: 1200px) {
+
     .filtri-disp{
         position: fixed;
     }

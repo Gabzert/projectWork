@@ -13,10 +13,15 @@
   </div>
 
 
-  <div class="container mb-5">
-    <div class="d-flex flex-wrap justify-content-around">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="italic">Gestione dei veicoli</h1>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-end mb-2">
       <button class="btn btn-primary px-5 mt-3 italic font" id="Aggiungi" data-bs-toggle="modal"
-        data-bs-target="#add">Aggiungi</button>
+        data-bs-target="#add"><i class="fa-solid fa-plus me-2"></i>Aggiungi il veicolo </button>
     </div>
     <div id="output-div"></div>
   </div>
@@ -162,41 +167,43 @@
   <script th:src="@{/js/handlePannel.js}"></script>
 
   <script id="template-swiper" type="text/x-handlebars-template">
-    <table class="table table-striped align-middle">
-      <thead>
-        <th scope="col">Codice Identificativo</th>
-        <th scope="col">Tipologia</th>
-        <th scope="col">Marca</th>
-        <th scope="col">Modello</th>
-        <th scope="col">Prezzo</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </thead>
-      {{#each veicoli}}
-        
-      <tbody>
-       
-        <tr>
-          <td class="">{{this.id}}</td>
-          <td class="">{{this.categoria}}</td>
-          <td class="">{{this.marca}}</td>
-          <td class="">{{this.modello}}</td>
-          <td class="">{{this.prezzo}}</td>
-          <td>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary italic font" data-bs-toggle="modal" th:attr="onclick='modifyVeicolo(' + '{{this.id}}' + ')'">
-              Modifica
-            </button>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead style="background-color: rgb(200, 200 , 200);">
+          <th scope="col">ID</th>
+          <th scope="col">Tipologia</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modello</th>
+          <th scope="col">Prezzo</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </thead>
+        {{#each veicoli}}
+      
+        <tbody>
+      
+          <tr>
+            <td class="">{{this.id}}</td>
+            <td class="">{{this.categoria}}</td>
+            <td class="">{{this.marca}}</td>
+            <td class="">{{this.modello}}</td>
+            <td class="">{{this.prezzo}}</td>
+            <td>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary italic font" data-bs-toggle="modal" th:attr="onclick='modifyVeicolo(' + '{{this.id}}' + ')'">
+                Modifica <i class="ms-2 fa-solid fa-pen-to-square"></i>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger italic font" data-bs-toggle="modal" id="preDelete" th:attr="onclick='deleteVeicolo(' + '{{this.id}}' + ')'">
+                Elimina <i class="ms-2 fa-solid fa-trash"></i>
+              </button>
           </td>
-          <td>
-            <button class="btn btn-danger italic font" data-bs-toggle="modal" id="preDelete" th:attr="onclick='deleteVeicolo(' + '{{this.id}}' + ')'">
-              Elimina
-            </button>
-        </td>
-        </tr>
-      </tbody>
-      {{/each}}
-    </table>
+          </tr>
+        </tbody>
+        {{/each}}
+      </table>
+    </div>
   </script>
 
   <script th:src="@{/js/modifyVeicolo.js}"></script>
