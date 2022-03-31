@@ -26,8 +26,18 @@ public class VeicoloEntity {
     private String status;
     private String cambio;
     private String descrizione;
+    private String citta;
 
     
+    
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+
     public String getDescrizione() {
         return descrizione;
     }

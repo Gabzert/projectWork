@@ -44,4 +44,10 @@ public class VeicoloService {
         return vDB.findByPrezzoBetween(min, max);
     }
 
+
+    public List<VeicoloEntity> getVeicoliByCategoriaECitta(String categoria, String citta) {
+
+        return vDB.findByCategoriaAndCitta(categoria, citta);
+    }
+
 }

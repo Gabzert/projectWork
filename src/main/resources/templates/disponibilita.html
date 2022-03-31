@@ -18,11 +18,10 @@
 
     <div class="container greenbg">
       <div class="d-flex flex-wrap justify-content-around">
-        <button class="btn btn-primary px-2 italic font" id="auto" onclick="getVeicoliById(this.id)">AUTO</button>
-        <button class="btn btn-primary px-2 italic font" id="moto" onclick="getVeicoliById(this.id)">MOTO</button>
-        <button class="btn btn-primary px-2 italic font" id="bici" onclick="getVeicoliById(this.id)">BICI</button>
-        <button class="btn btn-primary px-2 italic font" id="monopattino"
-          onclick="getVeicoliById(this.id)">MONOPATTINO</button>
+        <button class="btn btn-primary px-2 italic font" id="auto">AUTO</button>
+        <button class="btn btn-primary px-2 italic font" id="moto">MOTO</button>
+        <button class="btn btn-primary px-2 italic font" id="bici">BICI</button>
+        <button class="btn btn-primary px-2 italic font" id="monopattino">MONOPATTINO</button>
       </div>
     </div>
 
@@ -35,13 +34,13 @@
       <div class="p-3 rounded-3 filtri-disp">
         <ul class="list-unstyled">
           <li class="mb-2">
-            <select class="form-select mb-2" aria-label="select example">
+            <select class="form-select mb-2" aria-label="select example" id="cityFilter" onchange="getVeicoliCategoriaAndCitta(value)">
               <option selected>Seleziona la citta</option>
-              <option value="1">Torino</option>
-              <option value="2">Milano</option>
-              <option value="3">Roma</option>
-              <option value="4">Bari</option>
-              <option value="5">Napoli</option>
+              <option value="Torino">Torino</option>
+              <option value="Milano">Milano</option>
+              <option value="Roma">Roma</option>
+              <option value="Bari">Bari</option>
+              <option value="Lecce">Lecce</option>
             </select>
           </li>
           <!--<li class="mb-2">
