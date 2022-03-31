@@ -1,6 +1,7 @@
 package com.example.projectwork.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.projectwork.model.PrenotazioneEntity;
 import com.example.projectwork.repository.PrenotazioneDB;
@@ -19,6 +20,11 @@ public class PrenotazioneService {
         return db.findByUtenteId(utente_id);
     }
 
+    public PrenotazioneEntity getById(int id){
+
+        return db.findById(id);
+        
+    }
 
     public PrenotazioneEntity addPrenotazione(PrenotazioneEntity prenotazione){
 
@@ -36,4 +42,10 @@ public class PrenotazioneService {
         db.deleteById(id);
     }
 
+    public void terminaPrenotazione(int id){
+        System.out.println("------------entrato nel service --------------------------");
+        PrenotazioneEntity  pren = db.getById(id);
+        pren.setStatus("terminata");
+        db.save(pren);
+    }
 }

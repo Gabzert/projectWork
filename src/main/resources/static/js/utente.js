@@ -43,6 +43,7 @@ function editPrenotazione(event) {
 
 	let dd = document.createElement('select');
 	dd.id = "dropdownVeicoli"
+	
 	slot_veicolo.replaceWith(dd);
 
 
@@ -54,7 +55,9 @@ function editPrenotazione(event) {
 			for (let li = 0; li < json.length; li++) {
 				if (json[li].status == "disponibile") {
 					let opzione = document.createElement("option");
-					opzione.text = json[li].modello;
+					opzione.text = json[li].marca + " "+json[li].modello;
+					opzione.value= json[li].id;
+					//opzione.text += json[li].modello;
 					dd.appendChild(opzione);
 				}
 			}
@@ -69,6 +72,7 @@ function editPrenotazione(event) {
 			}
 
 			let data_select = document.createElement("input");
+			data_select.id = "input_data"
 			data_select.setAttribute("type", "date");
 			slot_data.replaceWith(data_select);
 
@@ -87,26 +91,26 @@ function editPrenotazione(event) {
 
 function salvaModifiche(event) {
 	let originator = event.currentTarget;
+	let prenotazione_id = originator.getAttribute('data-prenotazione-id');
+	let new_veicolo = document.getElementById("dropdownVeicoli").value;
+	let new_data = document.getElementById("input_data").value;
+
+
 
 	fetch(url + "/editPrenotazione", {
 		method: 'POST',
 		body: JSON.stringify({
-			"id": id,
-			"new_data": new_data,
-			"new_veicolo": new_veicolo,
-			"utente_id": utente_id
+			"id": prenotazione_id,
+			"data_prenotazione": new_data,
+			"veicolo_id": new_veicolo
 		}),
 		headers: {
 			'Content-type': 'application/json; charset=UTF-8'
 		}
-	})
-		.then(response => response.json())
-		.then(json => {
-			console.log(json);
+		})
+		.then(function(){
+			refreshPrenotazioni();
 		});
-
-	refreshPrenotazioni();
-
 
 }
 
@@ -115,31 +119,27 @@ function deletePrenotazione(event) {
 	let id = originator.getAttribute('data-prenotazione-id');
 
 
-	if (confirm("Sei sicuro di voler cancellare la prenotazione: " + id)) {
-		fetch(url + "/?id=" + encodeURIComponent(id)
-
-		)
-			.then(function (response) {
-				return response.json();
-			})
-			.then(function (json) {
-
-				console.log(json);
-
-				if (json.result !== 0) {
-					alert("Error " + json.result + " in deleteThought: " + json.message);
-				}
-				refreshPrenotazioni();
-
-			})
-			.catch(function (err) {
-				alert(err);
-				console.log('Failed to fetch page: ', err);
-			});
-	}
+	if (confirm("Sei sicuro di voler cancellare la prenotazione: " + id + "?")) {
+		fetch(url + "/deletePrenotazione/"+ encodeURIComponent(id))
+		.then(function(){
+			refreshPrenotazioni();
+		})
+		}
 }
 
-function refreshPrenotazioni(event) {
+function terminaPrenotazione(event){
+	let originator = event.currentTarget;
+	let id = originator.getAttribute('data-prenotazione-id');
+
+	if (confirm("Sei sicuro di voler terminare la prenotazione: " + id + "?")) {
+		fetch(url + "/terminaPrenotazione/"+ encodeURIComponent(id))
+		.then(function(){
+			refreshPrenotazioni();
+		})
+		}
+}
+
+function refreshPrenotazioni() {
 
 let lista1 =[]
 let lista2 =[]
@@ -148,17 +148,11 @@ let context_terminate={};
 
 	fetch(url)
 		.then(function (response) {
-
 			return response.json();
 
 		})
 		.then(function (json) {
-			console.log(json);
-
 			lista_prenotazioni = json;
-
-			
-			
 
 			for (let li = 0; li < lista_prenotazioni.length; li++) {
 				if (lista_prenotazioni[li].status == "in prenotazione") {
@@ -197,6 +191,11 @@ function agganciaEventi(event) {
 	for (let li = 0; li < btn_salva.length; li++) {
 		btn_salva[li].addEventListener("click", salvaModifiche);
 	}
+
+	let btn_termina =document.getElementsByClassName("bottone_termina");
+	for (let li = 0; li < btn_termina.length; li++) {
+		btn_termina[li].addEventListener("click", terminaPrenotazione);
+	}
 }
 
 Handlebars.registerHelper('dateFormat', function (date, options) {
@@ -209,5 +208,5 @@ window.addEventListener(
 	function (event) {
 	
 		loadUtente;
-		refreshPrenotazioni(null);
+		refreshPrenotazioni();
 	});
