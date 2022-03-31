@@ -72,9 +72,9 @@ function editPrenotazione(event) {
 			data_select.setAttribute("type", "date");
 			slot_data.replaceWith(data_select);
 
-			//moment(prenotazione_data).toDate();
-			const utcDate = moment.utc(prenotazione_data).toDate();
-			const localDate = moment(utcDate).local().format('YYYY-MM-DD');
+			
+			const utcDate = moment(prenotazione_data, 'DD-MM-YYYY')
+			const localDate = moment(utcDate).format('YYYY-MM-DD');
 
 			console.log(prenotazione_data);
 			data_select.value = localDate;
@@ -90,7 +90,12 @@ function salvaModifiche(event) {
 
 	fetch(url + "/editPrenotazione", {
 		method: 'POST',
-		body: JSON.stringify(newPrenotazione),
+		body: JSON.stringify({
+			"id": id,
+			"new_data": new_data,
+			"new_veicolo": new_veicolo,
+			"utente_id": utente_id
+		}),
 		headers: {
 			'Content-type': 'application/json; charset=UTF-8'
 		}
@@ -136,6 +141,11 @@ function deletePrenotazione(event) {
 
 function refreshPrenotazioni(event) {
 
+let lista1 =[]
+let lista2 =[]
+let context_incorso={};
+let context_terminate={};
+
 	fetch(url)
 		.then(function (response) {
 
@@ -147,19 +157,22 @@ function refreshPrenotazioni(event) {
 
 			lista_prenotazioni = json;
 
-			const context = {
-				'prenotazioni': lista_prenotazioni
-			};
-			console.log(context);
+			
+			
 
-			for (let li = 0; li < context.prenotazioni.length; li++) {
-				if (context.prenotazioni[li].status == "in prenotazione") {
-					handle("template_attuale", "div_attuale", context)
+			for (let li = 0; li < lista_prenotazioni.length; li++) {
+				if (lista_prenotazioni[li].status == "in prenotazione") {
+					lista1.push(lista_prenotazioni[li])
 				} else {
-					handle("template_old", "div_old", context)
+					lista2.push(lista_prenotazioni[li])
 				}
-
+				
 			}
+			context_incorso = {"prenotazioni":lista1}
+			context_terminate = {"prenotazioni":lista2}
+
+			handle("template_attuale", "div_attuale", context_incorso)
+			handle("template_old", "div_old", context_terminate)
 
 			agganciaEventi();
 		})
@@ -186,6 +199,10 @@ function agganciaEventi(event) {
 	}
 }
 
+Handlebars.registerHelper('dateFormat', function (date, options) {
+    const formatToUse = (arguments[1] && arguments[1].hash && arguments[1].hash.format) || "DD/MM/YYYY"
+    return moment(date).format(formatToUse);
+});
 
 window.addEventListener(
 	'DOMContentLoaded',

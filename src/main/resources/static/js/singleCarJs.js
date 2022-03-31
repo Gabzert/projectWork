@@ -31,14 +31,16 @@ function prenota(event) {
             if (data_selezionata == "") {
                 alert("Selezionare data della prenotazione")
             } else {
-                fetch("http://localhost:8080/api/prenotazioni/addprenotazione", {
+                fetch("http://localhost:8080/api/prenotazioni/addPrenotazione", {
                     method: "POST",
-                    redirect: "follow",
-                    body: JSON.stringify(
-                        veicolo_id,
-                        utente_id,
-                        data_selezionata
-                    )
+                    headers: {'Content-Type': 'application/json'},
+                    
+                    body: JSON.stringify({
+                        "status": "in prenotazione",
+                        "veicolo_id" : veicolo_id,
+                        "utente_id": utente_id,
+                        "data_prenotazione": data_selezionata
+                    })
                 }).then(res => {
                     console.log("Request complete! response:", res);
                 });
