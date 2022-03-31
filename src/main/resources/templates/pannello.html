@@ -119,6 +119,10 @@
                     <input class="btn btn-primary" type="button" id="sendLoc" value="Vai" onclick="getLoc()">
                     
                   </div>-->
+                  <label for="formFil2es" class="form-label">Inserisci Città </label>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" id="ccc" name="citta">
+                  </div>
                   <label class="form-label">Trova indirizzo</label>
                   <div class="input-group mb-3">
                   <input type="text"  id="textRicerca">
@@ -321,6 +325,10 @@
                         <option value="monopattino">Monopattino</option>
                       {{/select}}
                     </select>
+                  </div>
+                  <label for="formFil2e" class="form-label">Inserisci Città </label>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" id="citta" name="citta" readonly value="{{this.citta}}">
                   </div>
                   <label class="form-label">Trova indirizzo</label>
                     <div class="input-group mb-3">
