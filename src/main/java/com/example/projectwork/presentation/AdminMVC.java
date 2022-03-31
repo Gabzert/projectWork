@@ -40,4 +40,23 @@ public class AdminMVC {
 
         return "redirect:/pannello";
     }
+
+
+    @PostMapping("/addVeicolo")
+    public String addVeicolo(@ModelAttribute("veicolo") VeicoloEntity veicolo,
+            @SessionAttribute UtenteEntity utente, @RequestPart (name = "file", required = false) MultipartFile file) {
+        try {
+            if (!utente.getRuolo().equals("amministratore")) {
+                return "redirect:/";
+            }
+
+            service.addVeicolo(veicolo, file);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+         return "redirect:/pannello";
+    }
 }
