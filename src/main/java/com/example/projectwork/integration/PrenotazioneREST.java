@@ -76,16 +76,27 @@ public class PrenotazioneREST {
     
 
   @PostMapping("/editPrenotazione")
-  public void editPrenotazione(@RequestBody PrenotazioneEntity prenotazioneForm, UtenteEntity utente) {
+  public void editPrenotazione(@RequestBody PrenotazioneDTO prenotazione_editata ,@SessionAttribute UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){
-    service.editPrenotazione(prenotazioneForm);
+      PrenotazioneEntity p = service.getById(prenotazione_editata.getId());
+      p.setData_prenotazione(prenotazione_editata.getData_prenotazione());
+      p.setVeicolo(vService.getVeicoloById(prenotazione_editata.getVeicolo_id())); 
+      service.editPrenotazione(p);
     }
   }
 
-  @DeleteMapping("/{id}")
-  public void deletePrenotazione(@PathVariable("id") int id, UtenteEntity utente) {
+  @GetMapping("/deletePrenotazione/{id}")
+  public void deletePrenotazione(@PathVariable("id") int id,@SessionAttribute UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){ 
     service.deletePrenotazione(id);
+    }
+  }
+
+  @GetMapping("/terminaPrenotazione/{id}")
+  public void terminaPrenotazione(@PathVariable("id") int id,@SessionAttribute UtenteEntity utente) {
+    if(!utente.getRuolo().equals("")){ 
+    System.out.println("------------entrato nel termina--------------------");
+    service.terminaPrenotazione(id);
     }
   }
 }
