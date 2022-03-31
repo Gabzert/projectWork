@@ -35,7 +35,8 @@
 
         <div class="modal-body">
 
-          <form action="/admin/addVeicolo" method="post" id="myform2" enctype="multipart/form-data" modelAttribute="veicolo">
+          <form action="/admin/addVeicolo" method="post" id="myform2" enctype="multipart/form-data"
+            modelAttribute="veicolo">
             <div class="container mb-5 mt-2">
               <div class="row">
                 <div class="col-lg-6">
@@ -71,7 +72,7 @@
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Status</label>
-                    <select class="form-select" name="status">                
+                    <select class="form-select" name="status">
                       <option value="disponibile">Disponibile</option>
                       <option value="prenotata">Prenotata</option>
                       <option value="non disponibile">Non disponibile</option>
@@ -86,8 +87,8 @@
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Descrizione</label>
-                    <textarea class="form-control" placeholder="Descrizione del veicolo"
-                      style="height: 210px" name="descrizione"></textarea>
+                    <textarea class="form-control" placeholder="Descrizione del veicolo" style="height: 210px"
+                      name="descrizione"></textarea>
                   </div>
                   <div class="mb-3">
                     <label class="form-label" for="">Cambio</label>
@@ -105,7 +106,28 @@
                       <option value="monopattino">Monopattino</option>
                     </select>
                   </div>
+                  <!--
+                  <div class="mb-3">
 
+                    
+                    <input type="text" id="textRicerca">
+                    <input class="btn btn-primary" type="button" id="sendLoc" value="Vai" onclick="getLoc()">
+                    
+                  </div>-->
+                  <label class="form-label">Trova indirizzo</label>
+                  <div class="input-group mb-3">
+                  <input type="text"  id="textRicerca">
+                  <input class="btn btn-primary" type="button" id="sendLoc" value="Vai" onclick="getLoc()"/>
+                </div>
+
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Località </label>
+                    <input class="form-control" type="text" id="location" name="indirizzo" readonly>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gps </label>
+                    <input class="form-control" type="text" id="gps" name="gps"  required readonly>
+                  </div>
 
                 </div>
               </div>
@@ -145,12 +167,11 @@
   </div>
 
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-  
+
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
   <script th:src="@{/js/handlePannel.js}"></script>
@@ -294,7 +315,19 @@
                       {{/select}}
                     </select>
                   </div>
-
+                  <label class="form-label">Trova indirizzo</label>
+                    <div class="input-group mb-3">
+                    <input type="text" id="textRicerca1">
+                    <input class="btn btn-primary" type="button" id="sendLoc1" value="Vai" onclick="getLoc1()"/>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Località </label>
+                    <input class="form-control" type="text" id="location1" name="indirizzo" readonly value="{{this.indirizzo}}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gps </label>
+                    <input class="form-control" type="text" id="gps1" name="gps" value="{{this.gps}}"  required readonly>
+                  </div>
 
                 </div>
               </div>
@@ -312,6 +345,8 @@
   </div>
   {{/veicolo}}
   </script>
+
+  <script th:src="@{/js/localita.js}"></script>
 
 
 </body>
