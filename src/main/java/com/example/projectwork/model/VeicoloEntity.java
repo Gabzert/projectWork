@@ -29,9 +29,16 @@ public class VeicoloEntity {
     private String gps;
     private String status;
     private String cambio;
+    private String descrizione;
 
     
-
+    public String getDescrizione() {
+        return descrizione;
+    }
+    
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
     public String getCambio() {
         return cambio;
     }
