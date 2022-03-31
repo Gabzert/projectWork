@@ -1,28 +1,37 @@
-async function getVeicoliById(id){
+var botVeicolo = "auto";
+getVeicoloByCategoria(botVeicolo);
 
-    let categoria1 = "auto";
-    let categoria2 = "monopattino";
-    let categoria3 = "bicicletta";
-    let categoria4 = "moto";
+document.getElementById("auto").addEventListener("click", function(){
+     botVeicolo = "auto";
+     getVeicoloByCategoria(botVeicolo);
+});
+
+document.getElementById("moto").addEventListener("click", function(){
+     botVeicolo = "moto";
+     getVeicoloByCategoria(botVeicolo);
+});
+
+document.getElementById("bici").addEventListener("click", function(){
+     botVeicolo = "bici";
+     getVeicoloByCategoria(botVeicolo);
+});
+
+document.getElementById("monopattino").addEventListener("click", function(){
+     botVeicolo = "monopattino";
+     getVeicoloByCategoria(botVeicolo);
+});
+
+
+
+async function getVeicoloByCategoria(){
 
     
     let response = "";
     let listaVeicoli = "";
 
-    if(id == "auto"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria1);
-         listaVeicoli = await response.json();
-    }else if(id == "monopattino"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria2);
-         listaVeicoli = await response.json();
-    }else if(id == "bici"){
-         response= await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria3);
-         listaVeicoli = await response.json();
-    }else if(id == "moto"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria4);
-         listaVeicoli = await response.json();
-    }
-    
+     response = await fetch('http://localhost:8080/api/veicoli/categoria/' + botVeicolo);
+     listaVeicoli = await response.json();
+
     const context = {
         'veicoli': listaVeicoli
     };
@@ -32,6 +41,24 @@ async function getVeicoliById(id){
     handle("template-swiper", "ouput-div1", context);	
 }
 
+async function getVeicoliCategoriaAndCitta(citta){
+
+     let response = "";
+     let listaVeicoli = "";
+
+     response = await fetch('http://localhost:8080/api/veicoli/veicolo/categoria/' + botVeicolo + '/citta/' + citta);
+     listaVeicoli = await response.json();
+
+
+     
+     const context = {
+         'veicoli': listaVeicoli
+     };
+ 
+     
+ 
+     handle("template-swiper", "ouput-div1", context);	
+}
 
 function handle(idTemplate, idOutput, context) {			
 			
