@@ -34,7 +34,7 @@
     <div class="col-12 col-xl-4 position-relative">
       <div class="p-3 rounded-3 filtri-disp">
         <ul class="list-unstyled">
-          <li>
+          <li class="mb-2">
             <select class="form-select mb-2" aria-label="select example">
               <option selected>Seleziona la citta</option>
               <option value="1">Torino</option>
@@ -44,18 +44,35 @@
               <option value="5">Napoli</option>
             </select>
           </li>
-          <li>
+          <li class="mb-2">
             <label for="min-price" class="form-label">Prezzo minimo</label>
             <input type="range" class="form-range rang" name="minPriceNameIN" id="minPriceIdIN" value="10" min="1" max="100" oninput="minPriceIdOU.value = minPriceIdIN.value">
             <output class="mb-2 " name="minPriceNameOU" id="minPriceIdOU">10</output> 
             <!-- TODO gestione non presenza veicoli nella selezione -->
           </li>
-          <li>
+          <li class="mb-2">
             <label for="max-price" class="form-label">Prezzo massimo</label>
             <input type="range" class="form-range" name="maxPriceNameIN" id="maxPriceIdIN" value="60" min="1" max="100" oninput="maxPriceIdOU.value = maxPriceIdIN.value">
-            <output class="" name="maxPriceNameOU" id="maxPriceIdOU">60</output> 
+            <output class="mb-2" name="maxPriceNameOU" id="maxPriceIdOU">60</output> 
             <!-- TODO gestione non presenza veicoli nella selezione -->
           </li>
+          <li class="mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Mostra tutti i veicoli
+              </label>
+            </div>
+          </li>
+          <li class="mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Mostra solo veicoli disponibili
+              </label>
+            </div>
+          </li>
+          
         </ul>
       </div>
     
