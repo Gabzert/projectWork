@@ -4,8 +4,10 @@
 <head th:include="fragment/head">
 
   <title th:replace="${Veicolo1}">Veicolo</title>
-</head>
 
+
+</head>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/thedatepicker@latest/dist/the-datepicker.css"/> -->
 <body th:attr="onload='getVeicoloById(' + ${idl} + ')'">
   
   <div id="header">
@@ -25,45 +27,20 @@
           <div id="map" class=""></div>
         </div>
       </div>
-
-      <!-- <div id="calendar" class="col-lg-8">
-
-        <div class="card-header bg-primary">
-          <ul class="list-unstyled">
-            <li id="month" class="text-white text-uppercase text-center">
-              Marzo
-            </li>
-            <li id="year fd-2" class="text-white text-uppercase text-center">
-              2022
-            </li>
-          </ul>
-        </div>
-        <table class="table calendar table-bordered table-responsive-sm" id="calendar">
-          <thead>
-            <tr class="weekdays bg-dark">
-              <th scope="col" class="text-white text-center">Lunedì</th>
-              <th scope="col" class="text-white text-center">Martedì</th>
-              <th scope="col" class="text-white text-center">Mercoledì</th>
-              <th scope="col" class="text-white text-center">Giovedì</th>
-              <th scope="col" class="text-white text-center">Venerdì</th>
-              <th scope="col" class="text-white text-center">Sabato</th>
-              <th scope="col" class="text-white text-center">Domenica</th>
-            </tr>
-          </thead>
-          <tbody class="days bg-light" id="days"></tbody>
-          <tfoot></tfoot>
-        </table>
-      </div> -->
-
+      <div id="calendar" class="col-lg-8">
+        <input type="date" id="data"> 
+      </div>
     </div>
   </div>
 
 
   <footer th:replace="fragment/footer"></footer>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/thedatepicker@latest/dist/the-datepicker.min.js"></script> -->
 
   <script th:inline="javascript" type="text/javascript">
     /*<![CDATA[*/
@@ -97,7 +74,7 @@
                 <li>Sono Qui: {{indirizzo}}</li>
               </ul>
             </div>
-            <a href="#" class="btn btn-primary">Prenota</a>
+            <a  class="btn btn-primary" href="#" id="bottone_prenota">Prenota</a>
           </div>
         </div>
       </div>
@@ -124,7 +101,7 @@
               <li class="fs-4"><i class="fa-solid fa-gears pe-2"></i>Via: {{indirizzo}}</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary font italic">Prenota</a>
+          <a href="#" class="btn btn-primary font italic" id="bottone_prenota">Prenota</a>
         </div>
       </div>
     </div>

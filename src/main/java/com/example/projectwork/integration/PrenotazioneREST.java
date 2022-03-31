@@ -2,11 +2,11 @@ package com.example.projectwork.integration;
 
 import java.util.List;
 
-
-
+import com.example.projectwork.model.PrenotazioneDTO;
 import com.example.projectwork.model.PrenotazioneEntity;
 import com.example.projectwork.model.UtenteEntity;
 import com.example.projectwork.service.PrenotazioneService;
+import com.example.projectwork.service.VeicoloService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +30,9 @@ public class PrenotazioneREST {
   @Autowired
   PrenotazioneService service;
 
+  @Autowired
+  VeicoloService vService;
+
   @GetMapping
   public ResponseEntity<List<PrenotazioneEntity>> getAll(@SessionAttribute UtenteEntity utente) {
   
@@ -48,14 +51,23 @@ public class PrenotazioneREST {
   
 
   @PostMapping("/addPrenotazione")
-    public String addPrenotazione(@RequestBody PrenotazioneEntity prenotazione,@SessionAttribute UtenteEntity utente){
+    public String addPrenotazione(@RequestBody PrenotazioneDTO prenotazione,@SessionAttribute UtenteEntity utente){
+      System.out.println(utente);
+      System.out.println(prenotazione);
       try {
             if(!utente.getRuolo().equals("")){
-            service.addPrenotazione(prenotazione);
+            PrenotazioneEntity p = new PrenotazioneEntity();
+            p.setData_prenotazione(prenotazione.getData_prenotazione());
+            p.setVeicolo(vService.getVeicoloById(prenotazione.getVeicolo_id()));
+            p.setUtente(utente);
+            p.setStatus(prenotazione.getStatus());
+            service.addPrenotazione(p);
+            System.out.println(p);
             return "Prenotazione effettuata";
             }
            
           } catch(Exception e) {
+            System.out.println(e);
             return e.getMessage();
           }
       return null;
@@ -64,14 +76,14 @@ public class PrenotazioneREST {
     
 
   @PostMapping("/editPrenotazione")
-  public void editPrenotazione(@RequestBody PrenotazioneEntity prenotazioneForm,@SessionAttribute UtenteEntity utente) {
+  public void editPrenotazione(@RequestBody PrenotazioneEntity prenotazioneForm, UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){
     service.editPrenotazione(prenotazioneForm);
     }
   }
 
   @DeleteMapping("/{id}")
-  public void deletePrenotazione(@PathVariable("id") int id, @SessionAttribute UtenteEntity utente) {
+  public void deletePrenotazione(@PathVariable("id") int id, UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){ 
     service.deletePrenotazione(id);
     }

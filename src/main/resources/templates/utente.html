@@ -42,6 +42,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 
   <script id="template_attuale" type="text/x-handlebars-template">
@@ -49,12 +50,14 @@
       <div class="row">
         <div id="now" class="col-12 card-pren">
           <div class="card border border-success border-3">
-            <h5 class="card-header" data-prenotazione-id="{{this.id}}" >{{this.data_prenotazione}}</h5>
+            <h5 class="card-header" id="titolo_{{this.id}}" >{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}</h5>
             <div class="card-body">
-              <h5 class="card-title" data-prenotazione-id="{{this.id}}">{{this.veicolo}}</h5>
+              <h5 class="card-title" id="modello_{{this.id}}">{{this.veicolo.marca}} {{this.veicolo.modello}}</h5>
               <p class="card-text">{{this.prezzo}}</p>
               <button class="btn btn-primary bottone_modifica" data-prenotazione-id="{{this.id}}">Modifica</button>
               <button class="btn btn-primary bottone_cancella" data-prenotazione-id="{{this.id}}">Cancella</button>
+              <button class="btn btn-danger bottone_ternima" data-prenotazione-id="{{this.id}}">Termina</button>
+              <button class="btn btn-secondary bottone_salva" id="bottone_salva_{{this.id}}" hidden>Salva</button>
             </div>
           </div>
         </div>
@@ -62,14 +65,14 @@
       {{/each}}
 
     </script>
-  <!-- <script th:replace="fragments/script"></script> -->
+
   <script id="template_old" type="text/x-handlebars-template">
     {{#each prenotazioni}}
     <div id="old" class="col-12 card-pren">
       <div class="card border border-danger border-3">
-        <h5 class="card-header">{{{this.data_prenotazione}}}</h5>
+        <h5 class="card-header">{{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}}</h5>
         <div class="card-body">
-          <h5 class="card-title">{{this.veicolo}}</h5>
+          <h5 class="card-title">{{this.veicolo.marca}} {{this.veicolo.modello}}</h5>
           <p class="card-text">{{this.prezzo}}</p>
         </div>
       </div>
