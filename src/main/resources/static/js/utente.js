@@ -42,6 +42,7 @@ function editPrenotazione(event) {
 	salva.removeAttribute("hidden");
 
 	let dd = document.createElement('select');
+	dd.className="form-select form-select-lg mb-3";
 	dd.id = "dropdownVeicoli"
 	slot_veicolo.replaceWith(dd);
 
@@ -70,6 +71,7 @@ function editPrenotazione(event) {
 
 			let data_select = document.createElement("input");
 			data_select.setAttribute("type", "date");
+			data_select.className="form-control form-control-lg my-3 mx-3";
 			slot_data.replaceWith(data_select);
 
 			

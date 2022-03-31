@@ -9,13 +9,11 @@
 
 <body onload="getVeicoliById('auto')">
 
+  <div id="header">
+    <nav th:replace="fragment/nav"></nav>
+  </div>
 
-  <div>
-
-    <div id="header">
-      <nav th:replace="fragment/nav"></nav>
-    </div>
-
+  <div class="wrapper-page">
     <div class="container greenbg">
       <div class="d-flex flex-wrap justify-content-around">
         <button class="btn btn-primary px-2 italic font" id="auto" onclick="getVeicoliById(this.id)">AUTO</button>
@@ -25,78 +23,75 @@
           onclick="getVeicoliById(this.id)">MONOPATTINO</button>
       </div>
     </div>
-
-<div class="container mt-5">
-  <div class="row">
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                             Barra laterale                              -->
-    <!-- ----------------------------------------------------------------------- -->
-    <div class="col-12 col-xl-4 position-relative">
-      <div class="p-3 rounded-3 filtri-disp">
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <select class="form-select mb-2" aria-label="select example">
-              <option selected>Seleziona la citta</option>
-              <option value="1">Torino</option>
-              <option value="2">Milano</option>
-              <option value="3">Roma</option>
-              <option value="4">Bari</option>
-              <option value="5">Napoli</option>
-            </select>
-          </li>
-          <li class="mb-2">
-            <label for="min-price" class="form-label">Prezzo minimo</label>
-            <input type="range" class="form-range rang" name="minPriceNameIN" id="minPriceIdIN" value="10" min="1" max="100" oninput="minPriceIdOU.value = minPriceIdIN.value">
-            <output class="mb-2 " name="minPriceNameOU" id="minPriceIdOU">10</output> 
-            <!-- TODO gestione non presenza veicoli nella selezione -->
-          </li>
-          <li class="mb-2">
-            <label for="max-price" class="form-label">Prezzo massimo</label>
-            <input type="range" class="form-range" name="maxPriceNameIN" id="maxPriceIdIN" value="60" min="1" max="100" oninput="maxPriceIdOU.value = maxPriceIdIN.value">
-            <output class="mb-2" name="maxPriceNameOU" id="maxPriceIdOU">60</output> 
-            <!-- TODO gestione non presenza veicoli nella selezione -->
-          </li>
-          <li class="mb-2">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                Mostra tutti i veicoli
-              </label>
-            </div>
-          </li>
-          <li class="mb-2">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Mostra solo veicoli disponibili
-              </label>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                             Barra laterale                              -->
+        <!-- ----------------------------------------------------------------------- -->
+        <div class="col-12 col-xl-4 position-relative">
+          <div class="p-3 rounded-3 filtri-disp">
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <select class="form-select mb-2" aria-label="select example">
+                  <option selected>Seleziona la citta</option>
+                  <option value="1">Torino</option>
+                  <option value="2">Milano</option>
+                  <option value="3">Roma</option>
+                  <option value="4">Bari</option>
+                  <option value="5">Napoli</option>
+                </select>
+              </li>
+              <!-- <li class="mb-2">
+                <label for="min-price" class="form-label">Prezzo minimo</label>
+                <input type="range" class="form-range rang" name="minPriceNameIN" id="minPriceIdIN" value="10" min="1" max="100" oninput="minPriceIdOU.value = minPriceIdIN.value">
+                <output class="mb-2 " name="minPriceNameOU" id="minPriceIdOU">10</output>
+              </li>
+              <li class="mb-2">
+                <label for="max-price" class="form-label">Prezzo massimo</label>
+                <input type="range" class="form-range" name="maxPriceNameIN" id="maxPriceIdIN" value="60" min="1" max="100" oninput="maxPriceIdOU.value = maxPriceIdIN.value">
+                <output class="mb-2" name="maxPriceNameOU" id="maxPriceIdOU">60</output>
+              </li> -->
+              <li class="mb-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Mostra tutti i veicoli
+                  </label>
+                </div>
+              </li>
+              <li class="mb-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Mostra solo veicoli disponibili
+                  </label>
+                </div>
+              </li>
     
-    </div>
-
-    <div class="col-xl-8">
-      <div class="row" id="ouput-div1">
-      <div class="row" id="ouput-div2"></div>
-      <div class="row" id="ouput-div3"></div>
-      <div class="row" id="ouput-div4"></div> 
+            </ul>
+          </div>
+    
+        </div>
+        <div class="col-xl-8">
+          <div class="row" id="ouput-div1">
+          <div class="row" id="ouput-div2"></div>
+          <div class="row" id="ouput-div3"></div>
+          <div class="row" id="ouput-div4"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 <!-- <div class="container" id="ouput-div1"></div>
   <div class="container" id="ouput-div2"></div>
   <div class="container" id="ouput-div3"></div>
   <div class="container" id="ouput-div4"></div> 
+  
+    </div>
+    </div>
 -->
-
-  </div>
-  </div>
 
 
   <footer th:replace="fragment/footer"></footer>
