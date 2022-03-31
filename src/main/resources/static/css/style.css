@@ -269,6 +269,10 @@ hr.ft-hr{
 #map{
     height: 400px;
 }
+.border-success {
+    border-color:#00e687;
+    border-radius: 2px;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 Dispositivo                                */
@@ -290,10 +294,15 @@ hr.ft-hr{
     .swiper-slide{
         padding: 0rem 3rem 0rem 3rem;
     }  
+    #map{
+        height: 400px;
+        width: 300px;
+    }
    
 }
 @media (min-width: 1200px) {
     .filtri-disp{
         position: fixed;
     }
+   
 }
