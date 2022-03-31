@@ -20,7 +20,7 @@ function prenota(event) {
     fetch("http://localhost:8080/api/utenti/utente")
         .then(function (response) {
             if (!response.ok) {
-                window.location.replace("http://localhost:8080/login")
+                window.location.assign("http://localhost:8080/login")
             }else{
             return response.json();
             }
@@ -43,6 +43,8 @@ function prenota(event) {
                     })
                 }).then(res => {
                     console.log("Request complete! response:", res);
+                }).then(function(){
+                    window.location.assign("http://localhost:8080/utente");
                 });
             }
         })
