@@ -16,7 +16,7 @@
   <div class="container" id="output-div2"></div>
 
   <div class="container mb-5">
-    <h2 class="mb-4">Prenotazioni</h2>
+    <h2 class="mb-4">Prenotazioni in corso</h2>
 
     <div id="div_attuale"></div>
 
@@ -25,7 +25,7 @@
         <hr class="my-4">
       </div>
     </div>
-
+    <h2 class="mb-4">Prenotazioni terminate</h2>
     <div id="div_old"></div>
 
   </div>
@@ -52,12 +52,13 @@
           <div class="card border border-success border-3">
             <h5 class="card-header" id="titolo_{{this.id}}" >{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}</h5>
             <div class="card-body">
-              <h5 class="card-title" id="modello_{{this.id}}">{{this.veicolo.marca}} {{this.veicolo.modello}}</h5>
+              <h4 class="card-title italic" id="modello_{{this.id}}"> {{this.veicolo.marca}}</h4>
+              <h5 class="card-title" id="modello_{{this.id}}"> {{this.veicolo.modello}}</h5>
               <p class="card-text">{{this.prezzo}}</p>
-              <button class="btn btn-primary bottone_modifica" data-prenotazione-id="{{this.id}}">Modifica</button>
-              <button class="btn btn-primary bottone_cancella" data-prenotazione-id="{{this.id}}">Cancella</button>
-              <button class="btn btn-danger bottone_termina" data-prenotazione-id="{{this.id}}">Termina</button>
-              <button class="btn btn-secondary bottone_salva" data-prenotazione-id="{{this.id}}" id="bottone_salva_{{this.id}}" hidden>Salva</button>
+              <button class="btn btn-primary bottone_modifica italic font" data-prenotazione-id="{{this.id}}">Modifica</button>
+              <button class="btn btn-primary bottone_cancella italic font" data-prenotazione-id="{{this.id}}">Cancella</button>
+              <button class="btn btn-danger bottone_ternima italic font" data-prenotazione-id="{{this.id}}">Termina</button>
+              <button class="btn btn-outline-secondary bottone_salva italic font" data-prenotazione-id="{{this.id}}" id="bottone_salva_{{this.id}}" hidden>Salva</button>
             </div>
           </div>
         </div>
@@ -72,7 +73,8 @@
       <div class="card border border-danger border-3">
         <h5 class="card-header">{{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}}</h5>
         <div class="card-body">
-          <h5 class="card-title">{{this.veicolo.marca}} {{this.veicolo.modello}}</h5>
+          <h4 class="card-title italic"> {{this.veicolo.marca}}</h4>
+          <h5 class="card-title"> {{this.veicolo.modello}}</h5>
           <p class="card-text">{{this.prezzo}}</p>
         </div>
       </div>

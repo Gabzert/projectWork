@@ -19,16 +19,16 @@
 
 
 
-  <div class="container">
+  <div class="container" th:if="${utente!=null && utente.nome!=null}">
     <div class="row mb-5">
-      <div class="col-lg-4">
+      <div class="col-lg-">
         <div class="border border-success p-3">
           <h3 class="italic pt-2">IL TUO MEZZO SI TROVA QUI:</h3>
           <div id="map" class=""></div>
         </div>
       </div>
       <div id="calendar" class="col-lg-8">
-        <input type="date" id="data"> 
+        <!-- <input type="date" class="form-control" id="data">  -->
       </div>
     </div>
   </div>
@@ -84,9 +84,9 @@
 
 <script id="template-swiper" type="text/x-handlebars-template">
   {{#veico}}
-  <div class="card mb-3">
+  <div class="card mb-3 mt-3">
     <div class="row g-0">
-      <div class="col-lg-8">
+      <div class="col-lg-8 d-flex align-items-center justify-content-center">
         <img th:src="@{{{this.immagine}}}" class="img-fluid rounded-start" alt="img-veicolo">
       </div>
       <div class="col-lg-4">
@@ -98,9 +98,11 @@
               <li class="fs-4"><i class="fa-solid fa-gauge-high pe-2"></i>Trazione: {{trazione}}</li>
               <li class="fs-4"><i class="fa-solid fa-list-check pe-2"></i>Stato: {{status}}</li>
               <li class="fs-4"><i class="fa-solid fa-gears pe-2"></i>Cambio: {{cambio}}</li>
-              <li class="fs-4"><i class="fa-solid fa-gears pe-2"></i>Via: {{indirizzo}}</li>
+              <li class="fs-4" th:if="${utente!=null && utente.nome!=null}"><i class="fa-solid fa-location-dot pe-2" ></i>Via: {{indirizzo}}</li>
             </ul>
           </div>
+          Prenota per il giorno:
+          <input type="date" class="form-control mb-3" id="data"> 
           <a href="#" class="btn btn-primary font italic" id="bottone_prenota">Prenota</a>
         </div>
       </div>
