@@ -27,7 +27,7 @@ function prenota(event) {
         })
         .then(function (json) {
             utente_id = json.id;
-            data_selezionata = document.getElementById("data").innerText;
+            data_selezionata = document.getElementById("data").value;
             if (data_selezionata == "") {
                 alert("Selezionare data della prenotazione")
             } else {
