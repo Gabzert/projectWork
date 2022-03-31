@@ -4,18 +4,22 @@ import javax.servlet.http.HttpSession;
 
 import com.example.projectwork.model.UtenteEntity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/")
 @SessionAttributes("utente")
 public class HomeCtrl {
+    
+
 
     @GetMapping
     public String homeCliente(@ModelAttribute UtenteEntity utente, HttpSession session) {
@@ -48,8 +52,17 @@ public class HomeCtrl {
     }
 
     @GetMapping("/pannello")
-    public String pannello(@ModelAttribute UtenteEntity utente) {
-        return "pannello";
+    public String pannello(@ModelAttribute UtenteEntity utente1,@SessionAttribute UtenteEntity utente) {
+
+        if(utente.getRuolo().equals("amministratore")){
+            return "pannello";
+        }
+
+        return "redirect:/";
+    }
+    @GetMapping("/privacy")
+    public String privacy(@ModelAttribute UtenteEntity utente) {
+        return "privacy";
     }
 
     @GetMapping("/index")

@@ -1,7 +1,6 @@
 package com.example.projectwork.presentation;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
 
 import com.example.projectwork.model.UtenteEntity;

@@ -80,8 +80,9 @@ public class PrenotazioneEntity {
         this.veicolo = veicolo;
     }
 
-    
-
-
-    
+    @Override
+    public String toString() {
+        return "PrenotazioneEntity [data_prenotazione=" + data_prenotazione + ", id=" + id + ", status=" + status
+                + ", utente=" + utente + ", veicolo=" + veicolo + "]";
+    }
 }
