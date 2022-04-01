@@ -41,7 +41,7 @@ document.getElementById("disponibili").addEventListener("click", function(){
 });
 
 document.getElementById("non-disponibili").addEventListener("click", function(){
-     checkDispo = "non-disponibile";
+     checkDispo = "non disponibile";
      getVeicoliCategoriaAndCittaAndDisponibilita();
 });
 
