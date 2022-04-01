@@ -33,18 +33,18 @@ public class PrenotazioneREST {
   VeicoloService vService;
 
   @GetMapping
-  public ResponseEntity<List<PrenotazioneEntity>> getAll(@SessionAttribute UtenteEntity utente) {
+  public List<PrenotazioneEntity> getAll(@SessionAttribute UtenteEntity utente) {
   
     try{
-      if(utente.getRuolo().equals("")){
-          return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+      if(utente.getRuolo().equals("amministratore") || utente.getRuolo().equals("cliente") ){
+        return service.getall(utente.getId());
       }
-      
-      return ResponseEntity.ok(service.getall(utente.getId()));
 
   }catch(Exception e){
-      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+      e.printStackTrace();
   }
+
+  return null;
 }
 
   
