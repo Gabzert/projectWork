@@ -37,8 +37,9 @@ a {
     color: inherit;
     /* --swiper-theme-color: #fff !important; */
 } 
-a:hover { 
-    color: #c3c3c3; 
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
 } 
 
 /* -------------------------------------------------------------------------- */
