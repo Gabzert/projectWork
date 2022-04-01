@@ -19,6 +19,11 @@ public class PrenotazioneService {
         return db.findByUtenteId(utente_id);
     }
 
+    public PrenotazioneEntity getById(int id){
+
+        return db.findById(id);
+        
+    }
 
     public PrenotazioneEntity addPrenotazione(PrenotazioneEntity prenotazione){
 
@@ -36,4 +41,9 @@ public class PrenotazioneService {
         db.deleteById(id);
     }
 
+    public void terminaPrenotazione(int id){
+        PrenotazioneEntity  pren = db.getById(id);
+        pren.setStatus("terminata");
+        db.save(pren);
+    }
 }

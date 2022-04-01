@@ -1,28 +1,61 @@
-async function getVeicoliById(id){
+var botVeicolo = "auto";
 
-    let categoria1 = "auto";
-    let categoria2 = "monopattino";
-    let categoria3 = "bicicletta";
-    let categoria4 = "moto";
+var checkDispo = "disponibile"
+
+var checkCitta = "Milano";
+
+getVeicoliCategoriaAndCittaAndDisponibilita();
+
+//EVENT CATEGORIA
+document.getElementById("auto").addEventListener("click", function(){
+     botVeicolo = "auto";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+document.getElementById("moto").addEventListener("click", function(){
+     botVeicolo = "moto";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+document.getElementById("bici").addEventListener("click", function(){
+     botVeicolo = "bicicletta";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+document.getElementById("monopattino").addEventListener("click", function(){
+     botVeicolo = "monopattino";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+//EVENT CITTA
+
+document.getElementById("cityFilter").addEventListener("change", function(){
+     checkCitta = document.getElementById("cityFilter").value;
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+//EVENT DISPONIBILITA
+document.getElementById("disponibili").addEventListener("click", function(){
+     checkDispo = "disponibile";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+document.getElementById("non-disponibili").addEventListener("click", function(){
+     checkDispo = "non-disponibile";
+     getVeicoliCategoriaAndCittaAndDisponibilita();
+});
+
+
+/*
+async function getVeicoloByCategoria(){
 
     
     let response = "";
     let listaVeicoli = "";
 
-    if(id == "auto"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria1);
-         listaVeicoli = await response.json();
-    }else if(id == "monopattino"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria2);
-         listaVeicoli = await response.json();
-    }else if(id == "bici"){
-         response= await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria3);
-         listaVeicoli = await response.json();
-    }else if(id == "moto"){
-         response = await fetch('http://localhost:8080/api/veicoli/categoria/' + categoria4);
-         listaVeicoli = await response.json();
-    }
-    
+     response = await fetch('http://localhost:8080/api/veicoli/categoria/' + botVeicolo);
+     listaVeicoli = await response.json();
+
     const context = {
         'veicoli': listaVeicoli
     };
@@ -30,8 +63,49 @@ async function getVeicoliById(id){
     
 
     handle("template-swiper", "ouput-div1", context);	
-}
+}*/
 
+/*
+async function getVeicoliCategoriaAndCitta(citta){
+
+     let response = "";
+     let listaVeicoli = "";
+
+     response = await fetch('http://localhost:8080/api/veicoli/veicolo/categoria/' + botVeicolo + '/citta/' + citta);
+     listaVeicoli = await response.json();
+
+
+     
+     const context = {
+         'veicoli': listaVeicoli
+     };
+ 
+     
+ 
+     handle("template-swiper", "ouput-div1", context);	
+}*/
+
+
+async function getVeicoliCategoriaAndCittaAndDisponibilita(){
+
+     let response = "";
+     let listaVeicoli = "";
+
+     response = await fetch('http://localhost:8080/api/veicoli/veicolo/categoria/' + botVeicolo + '/citta/' + checkCitta + '/dispo/' + checkDispo);
+     listaVeicoli = await response.json();
+
+
+     
+     const context = {
+         'veicoli': listaVeicoli
+     };
+ 
+     
+ 
+     handle("template-swiper", "ouput-div1", context);
+     
+     
+}
 
 function handle(idTemplate, idOutput, context) {			
 			

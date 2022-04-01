@@ -71,10 +71,6 @@ window.addEventListener(
     'DOMContentLoaded',
     function (event) {
 
-        const input = document.getElementById('data');
-        const datepicker = new TheDatepicker.Datepicker(input);
-        datepicker.render();
-
 
     });
 

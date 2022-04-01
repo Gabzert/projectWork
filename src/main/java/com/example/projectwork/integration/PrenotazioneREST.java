@@ -11,7 +11,6 @@ import com.example.projectwork.service.VeicoloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -76,16 +75,26 @@ public class PrenotazioneREST {
     
 
   @PostMapping("/editPrenotazione")
-  public void editPrenotazione(@RequestBody PrenotazioneEntity prenotazioneForm, UtenteEntity utente) {
+  public void editPrenotazione(@RequestBody PrenotazioneDTO prenotazione_editata ,@SessionAttribute UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){
-    service.editPrenotazione(prenotazioneForm);
+      PrenotazioneEntity p = service.getById(prenotazione_editata.getId());
+      p.setData_prenotazione(prenotazione_editata.getData_prenotazione());
+      p.setVeicolo(vService.getVeicoloById(prenotazione_editata.getVeicolo_id())); 
+      service.editPrenotazione(p);
     }
   }
 
-  @DeleteMapping("/{id}")
-  public void deletePrenotazione(@PathVariable("id") int id, UtenteEntity utente) {
+  @GetMapping("/deletePrenotazione/{id}")
+  public void deletePrenotazione(@PathVariable("id") int id,@SessionAttribute UtenteEntity utente) {
     if(!utente.getRuolo().equals("")){ 
     service.deletePrenotazione(id);
+    }
+  }
+
+  @GetMapping("/terminaPrenotazione/{id}")
+  public void terminaPrenotazione(@PathVariable("id") int id,@SessionAttribute UtenteEntity utente) {
+    if(!utente.getRuolo().equals("")){ 
+    service.terminaPrenotazione(id);
     }
   }
 }

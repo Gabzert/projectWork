@@ -20,4 +20,7 @@ public interface VeicoloDB extends JpaRepository<VeicoloEntity,Integer> {
     public int deleteVeicoloById(int id);
     
     public VeicoloEntity findVeicoloById(int id);
+
+    public List<VeicoloEntity> findByCategoriaAndCitta(String categoria, String citta);
+    public List<VeicoloEntity> findByCategoriaAndCittaAndStatus(String categoria, String citta, String disponiblita);
 }

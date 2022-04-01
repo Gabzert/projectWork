@@ -61,6 +61,18 @@ public class VeicoloREST {
 	public VeicoloEntity getVeicoloById(@PathVariable int id){
 		return service.getVeicoloById(id);
 	}
+
+
+	@GetMapping("/veicolo/categoria/{categoria}/citta/{citta}")
+	public List<VeicoloEntity> getVeicoloById(@PathVariable String categoria,@PathVariable String citta ){
+		return service.getVeicoliByCategoriaECitta(categoria,citta);
+	}
+
+
+	@GetMapping("/veicolo/categoria/{categoria}/citta/{citta}/dispo/{disponibilita}")
+	public List<VeicoloEntity> getVeicoliCategoriaAndCittaAndDisponibilita(@PathVariable String categoria,@PathVariable String citta,@PathVariable String disponibilita){
+		return service.getVeicoliByCategoriaAndCittaAndDisponibilita(categoria,citta,disponibilita);
+	}
 /*
 	@PostMapping("/desc/{modello}")
 	public List<VeicoliEntity> getByDesc(@PathVariable String modello){
