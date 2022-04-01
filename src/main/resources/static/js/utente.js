@@ -71,7 +71,7 @@ function editPrenotazione(event) {
 
 			let data_select = document.createElement("input");
 			data_select.setAttribute("type", "date");
-			data_select.className="form-control form-control-lg my-3 mx-3";
+			data_select.className="form-control form-control-lg icon-cal";
 			slot_data.replaceWith(data_select);
 
 			

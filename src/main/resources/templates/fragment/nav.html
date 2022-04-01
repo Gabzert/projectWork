@@ -25,7 +25,7 @@
         <li class="nav-item ">
             <a class="nav-link " href="/dispo"><button class="btn">Disponibilità</button></a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item" th:if="${utente!=null && utente.nome!=null}">
           <a class="nav-link" aria-current="page" href="/utente"><button class="btn">Profilo</button></a>
         </li>
         <li class="nav-item d-flex d-lg-block">
