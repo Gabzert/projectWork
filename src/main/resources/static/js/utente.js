@@ -32,9 +32,10 @@ function editPrenotazione(event) {
 
 	let originator = event.currentTarget;
 	let prenotazione_id = originator.getAttribute('data-prenotazione-id');
-	let slot_veicolo = document.getElementById("modello_" + prenotazione_id);
+	let slot_modello = document.getElementById("modello_" + prenotazione_id);
+	let slot_marca = document.getElementById("marca_" + prenotazione_id);
 	let slot_data = document.getElementById("titolo_" + prenotazione_id);
-	let prenotazione_veicolo = slot_veicolo.innerHTML;
+	let prenotazione_veicolo =slot_marca.innerHTML + slot_modello.innerHTML ;
 	let prenotazione_data = slot_data.innerHTML;
 
 	let salva = document.getElementById("bottone_salva_" + prenotazione_id);
@@ -45,8 +46,8 @@ function editPrenotazione(event) {
 	dd.className="form-select form-select-lg mb-3";
 	dd.id = "dropdownVeicoli"
 	
-	slot_veicolo.replaceWith(dd);
-
+	slot_modello.replaceWith(dd);
+	slot_marca.replaceWith("")
 
 	fetch("http://localhost:8080/api/veicoli")
 		.then(function (response) {
