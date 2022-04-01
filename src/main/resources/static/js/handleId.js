@@ -18,7 +18,7 @@ document.getElementById("moto").addEventListener("click", function(){
 });
 
 document.getElementById("bici").addEventListener("click", function(){
-     botVeicolo = "bici";
+     botVeicolo = "bicicletta";
      getVeicoliCategoriaAndCittaAndDisponibilita();
 });
 
