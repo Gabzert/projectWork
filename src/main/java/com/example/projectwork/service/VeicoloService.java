@@ -50,4 +50,10 @@ public class VeicoloService {
         return vDB.findByCategoriaAndCitta(categoria, citta);
     }
 
+
+    public List<VeicoloEntity> getVeicoliByCategoriaAndCittaAndDisponibilita(String categoria, String citta, String disponibilita) {
+
+        return vDB.findByCategoriaAndCittaAndStatus(categoria, citta,disponibilita);
+    }
+
 }
