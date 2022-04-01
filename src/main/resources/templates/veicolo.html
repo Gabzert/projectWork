@@ -15,20 +15,20 @@
   </div>
 
 
-  <div class="container" id="ouput-div"></div>
-
-
-
-  <div class="container" th:if="${utente!=null && utente.nome!=null}">
-    <div class="row mb-5">
-      <div class="col-lg-">
-        <div class="border border-success p-3">
-          <h3 class="italic pt-2">IL TUO MEZZO SI TROVA QUI:</h3>
-          <div id="map" class=""></div>
+  <div class="wrapper-page">
+    <div class="container" id="ouput-div"></div>
+    
+    <div class="container" th:if="${utente!=null && utente.nome!=null}">
+      <div class="row mb-5">
+        <div class="col-lg-">
+          <div class="border border-success p-3">
+            <h3 class="italic pt-2">IL TUO MEZZO SI TROVA QUI:</h3>
+            <div id="map" class=""></div>
+          </div>
         </div>
-      </div>
-      <div id="calendar" class="col-lg-8">
-        <!-- <input type="date" class="form-control" id="data">  -->
+        <div id="calendar" class="col-lg-8">
+          <!-- <input type="date" class="form-control" id="data">  -->
+        </div>
       </div>
     </div>
   </div>
@@ -101,9 +101,11 @@
               <li class="fs-4" th:if="${utente!=null && utente.nome!=null}"><i class="fa-solid fa-location-dot pe-2" ></i>Via: {{indirizzo}}</li>
             </ul>
           </div>
-          Prenota per il giorno:
-          <input type="date" class="form-control mb-3" id="data"> 
-          <a href="#" class="btn btn-primary font italic" id="bottone_prenota">Prenota</a>
+          <div class="hide-button-nd" th:if="${veicolo.status=disponibile}">
+            Prenota per il giorno:
+            <input type="date" class="form-control mb-3" id="data">
+            <a href="#" class="btn btn-primary font italic" id="bottone_prenota">Prenota</a>
+          </div>
         </div>
       </div>
     </div>
