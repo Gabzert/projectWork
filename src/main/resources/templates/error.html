@@ -13,21 +13,44 @@
     <nav th:replace="fragment/nav"></nav>
   </div>
   
-  <div class="container my-5 pb-5">
-    <div id="404">
-    <a href="/" class="btn btn-primary italic font fs-2" >Vai alla home</a>
-
-    <div class="row g-0">
-      <div class="col-6 border border-danger d-flex align-items-center justify-content-center ">
-        <img th:src="@{/IMG/mb.png}" alt="">
-      </div>
-      <div class="col-6 border border-danger">
-        <h1>Puoi accede</h1>
-        <h2>Our Engineers are on it</h2>
+  <!-- <div class="wrapper-page">
+    <div class="container my-5 pb-5">
+      <div id="404">
+        <div class="row">
+          <div class="d-flex flex-column align-items-stretch justify-content-center">
+            <img th:src="@{/IMG/error_mb.jpeg}" alt="">
+          </div>
+          <div class="col-lg-6 pt-3">
+            <h1>Servizio gratuito </h1>
+            <h2>risponde il numero vattelapesca, questa pagina non è accessibile o non esiste.</h2>
+            <h2>La preghiamo di tornare alla home</h2>
+            <h2>Grazie :)</h2>
+            <a href="/" class="btn btn-primary italic font fs-2 my-2">Vai alla home</a>
+          </div>
+        </div>
       </div>
     </div>
-      
+  </div> -->
+
+  <div class="wrapper-page">
+    <div class="container my-5 pb-5">
+      <div id="404">
+        <div class="">
+          <div class="d-flex flex-column align-items-stretch d-flex align-items-center justify-content-center ">
+            <img th:src="@{/IMG/error_ysnp.jpg}" alt="">
+          </div>
+          <div class="d-flex flex-column mt-3 text-center">
+            <h1>Servizio gratuito </h1>
+            <h2>risponde il numero vattelapesca, questa pagina non è accessibile o non esiste.</h2>
+            <h2>La preghiamo di tornare alla home</h2>
+            <h2>Grazie :)</h2>
+            <a href="/" class="btn btn-primary italic font fs-2 my-2">Vai alla home</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
 
   <footer th:replace="fragment/footer"></footer>
 

@@ -48,7 +48,7 @@
   <script id="template_attuale" type="text/x-handlebars-template">
    {{#each prenotazioni}}
       <div class="row">
-        <div id="now" class="col-12 card-pren">
+        <div id="now" class="col-12 card-pren mb-3">
           <div class="card border border-success border-3">
             <h5 class="card-header" id="titolo_{{this.id}}" >{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}</h5>
             <div class="card-body">
@@ -69,7 +69,7 @@
 
   <script id="template_old" type="text/x-handlebars-template">
     {{#each prenotazioni}}
-    <div id="old" class="col-12 card-pren">
+    <div id="old" class="col-12 card-pren mb-3">
       <div class="card border border-danger border-3">
         <h5 class="card-header">{{{dateFormat this.data_prenotazione format='DD/MM/YYYY'}}}</h5>
         <div class="card-body">
@@ -87,7 +87,7 @@
     <div class="row">
       <div class="col-lg-6">
         <!-- img -->
-        <img class="utenteImg py-3" src="https://i.pinimg.com/550x/94/59/bf/9459bf41db1001621040fcbec85563d0.jpg" alt="">
+        <img class="utenteImg py-3" th:src="@{/IMG/error_mb.jpeg}" alt="">
       </div>
       <div class="col-lg-6 pt-3">
         <div class="card mt-3 mb-3">
