@@ -15,8 +15,7 @@ public class PrenotazioneService {
     PrenotazioneDB db;
 
     public List<PrenotazioneEntity> getall(int utente_id){
-
-        return db.findByUtenteId(utente_id);
+        return db.findPrenotazioniByUtenteId(utente_id);
     }
 
     public PrenotazioneEntity getById(int id){
