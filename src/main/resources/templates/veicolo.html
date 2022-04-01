@@ -101,7 +101,7 @@
               <li class="fs-4" th:if="${utente!=null && utente.nome!=null}"><i class="fa-solid fa-location-dot pe-2" ></i>Via: {{indirizzo}}</li>
             </ul>
           </div>
-          <div class="hide-button-nd" th:if="${veicolo.status=disponibile}">
+          <div class="hide-button-nd">
             Prenota per il giorno:
             <input type="date" class="form-control mb-3" id="data">
             <a href="#" class="btn btn-primary font italic" id="bottone_prenota">Prenota</a>
