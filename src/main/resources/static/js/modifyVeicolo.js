@@ -33,6 +33,11 @@ window.Handlebars.registerHelper('select', function (value, options) {
     return $el.html();
 });
 
+function assegnaId(id){
+    document.getElementById("Modale-delete").value = id;
+    $("#delete").modal('show');
+}
+
 
 async function deleteVeicolo(id) {
 

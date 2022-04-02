@@ -169,7 +169,7 @@
         </div>
         <div class="modal-footer" id="el">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annulla</button>
-          <button type="button" class="btn btn-danger" @click="button = false">Elimina</button>
+          <button type="button" class="btn btn-danger" id="Modale-delete" onclick="deleteVeicolo(value)">Elimina</button>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@
               </button>
             </td>
             <td>
-              <button class="btn btn-danger italic font" data-bs-toggle="modal" id="preDelete" th:attr="onclick='deleteVeicolo(' + '{{this.id}}' + ')'">
+              <button type="button" class="btn btn-danger italic font" data-bs-toggle="modal" th:attr="onclick='assegnaId(' + '{{this.id}}' + ')'">
                 Elimina <i class="ms-2 fa-solid fa-trash"></i>
               </button>
           </td>
