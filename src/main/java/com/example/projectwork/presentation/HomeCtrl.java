@@ -38,10 +38,11 @@ public class HomeCtrl {
     }
 
     @GetMapping("/veicolo/{id}")
-    public String veicoloK(@ModelAttribute UtenteEntity utente,@PathVariable int id,Model m) {
+    public String veicoloK(@ModelAttribute UtenteEntity utente,@PathVariable int id,Model m,HttpSession session) {
 
         m.addAttribute("idl",id);
         m.addAttribute("Veicolo1", "Veicolo");
+        session.setAttribute("chiamante", "/veicolo/" + id);
 
         return "veicolo";
     }
