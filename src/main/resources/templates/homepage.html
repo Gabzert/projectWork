@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-  <head th:replace="fragment/head">
+  <head th:include="fragment/head">
 
     <title>MUVT Home</title>
 
@@ -153,7 +153,7 @@
   </div>
     
     <div class="container-fluid "  style="background: rgb(0,217,127);
-    background: linear-gradient(0deg, rgba(0,217,127,1) 0%, rgba(0,200,156,1) 38%);">
+    background: linear-gradient(0deg, rgba(0,217,127,1) 0%, rgba(0,200,156,1) 100%);">
     <div id="quote" class="hquote position-relative" >
     <div class="position-absolute top-50 start-50 translate-middle">
       <figure  class="text-center">
@@ -244,13 +244,13 @@
 
   <script>
     const CHART_COLORS = {
-  blue: 'rgb(54, 162, 235)',
-  green: 'rgb(75, 192, 192)',
-  yellow: 'rgb(255, 205, 86)',
-  orange: 'rgb(255, 159, 64)',
-  red: 'rgb(255, 99, 132)',
+  blue: 'rgb(255, 99, 132)',
+  green: '#ff9020',
+  yellow: '#ffec58',
+  orange: '#059bff',
+  red: '#d5dae4',
   purple: 'rgb(153, 102, 255)',
-  grey: 'rgb(201, 203, 207)'
+  grey: 'rgb(75, 192, 192)'
 };
     const data = {
       labels: ['Moto', 'Auto con motore a scoppio', 'Auto elettrica', 'Monopattino','Bicicletta'],
